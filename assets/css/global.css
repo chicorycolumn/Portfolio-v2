@@ -33,3 +33,85 @@
 .border-f2 {
   border: fuchsia solid 5px;
 }
+
+.border-g0 {
+  border: greenyellow solid 0.5px;
+}
+
+.border-g1 {
+  border: greenyellow solid 2.5px;
+}
+
+.border-g2 {
+  border: greenyellow solid 5px;
+}
+
+.border-r0 {
+  border: red solid 0.5px;
+}
+
+.border-r1 {
+  border: red solid 2.5px;
+}
+
+.border-r2 {
+  border: red solid 5px;
+}
+
+.z0 {
+  z-index: 0;
+}
+
+.z1 {
+  z-index: 1;
+}
+
+.z2 {
+  z-index: 2;
+}
+
+.z3 {
+  z-index: 3;
+}
+
+.z4 {
+  z-index: 4;
+}
+
+.z5 {
+  z-index: 5;
+}
+
+.z6 {
+  z-index: 6;
+}
+
+.z7 {
+  z-index: 7;
+}
+
+.absoluteSpread {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.overflow-h {
+  overflow: hidden;
+}
+
+.p-rel {
+  position: relative;
+}
+
+.p-fix {
+  position: fixed;
+}
+
+.p-abs {
+  position: absolute;
+}

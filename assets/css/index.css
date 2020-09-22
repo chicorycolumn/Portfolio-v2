@@ -1,11 +1,3 @@
-.lemon {
-  background-color: yellow;
-}
-
-.lime {
-  background-color: yellowgreen;
-}
-
 .bodyGradient1 {
   /* background-image: linear-gradient(white, white, yellow, yellow, white, white); */
   /* border: black dotted 2px; */
@@ -19,36 +11,20 @@
 }
 
 header {
-  /* border: blue dashed 2pt; */
-  position: relative;
   height: 400px;
-  overflow: hidden;
 }
 
 footer {
-  /* border: blue dashed 2pt; */
-  position: relative;
   height: 300px;
-  overflow: hidden;
 }
 
-.skewedDivider {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  right: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-}
-
-.header__bg {
+.bgHeader {
   background-image: linear-gradient(white, yellow);
   transform: skewY(-6deg);
   transform-origin: top left;
 }
 
-.footer__bg {
+.bgFooter {
   background-image: linear-gradient(yellow, white);
   transform: skewY(-6deg);
   transform-origin: bottom right;
