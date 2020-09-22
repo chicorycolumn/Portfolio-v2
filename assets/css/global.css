@@ -1,0 +1,35 @@
+.border-0 {
+  border: black solid 0.5px;
+}
+
+.border-1 {
+  border: black solid 2.5px;
+}
+
+.border-2 {
+  border: black solid 5px;
+}
+
+.border-b0 {
+  border: blue solid 0.5px;
+}
+
+.border-b1 {
+  border: blue solid 2.5px;
+}
+
+.border-b2 {
+  border: blue solid 5px;
+}
+
+.border-f0 {
+  border: fuchsia solid 0.5px;
+}
+
+.border-f1 {
+  border: fuchsia solid 2.5px;
+}
+
+.border-f2 {
+  border: fuchsia solid 5px;
+}
