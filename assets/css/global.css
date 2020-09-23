@@ -58,6 +58,30 @@
   border: red solid 5px;
 }
 
+.border-y0 {
+  border: yellow solid 0.5px;
+}
+
+.border-y1 {
+  border: yellow solid 2.5px;
+}
+
+.border-y2 {
+  border: yellow solid 5px;
+}
+
+.border-w0 {
+  border: white solid 0.5px;
+}
+
+.border-w1 {
+  border: white solid 2.5px;
+}
+
+.border-w2 {
+  border: white solid 5px;
+}
+
 .z0 {
   z-index: 0;
 }

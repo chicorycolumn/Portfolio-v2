@@ -26,6 +26,7 @@
   height: 45px;
   transition-delay: 0s;
   text-align: center;
+  margin-bottom: 0px;
 }
 
 .nav-item:hover {
@@ -56,11 +57,13 @@
   -ms-animation-duration: 1s;
   -ms-animation-iteration-count: 1;
   -ms-animation-timing-function: ease-in-out;
-  -o-transition: rotate(3600deg);
+  -o-transition: rotate(7200deg);
 }
 
-#collapsibleNavbar {
-  height: 48px;
+@media only screen and (min-width: 768px) {
+  .collapsibleNavbarHeight {
+    height: 48px;
+  }
 }
 
 .navbar {
