@@ -7,38 +7,58 @@
     <link rel="stylesheet" href="assets/css/global.css" />
     <link rel="stylesheet" href="assets/css/aboutMe.css" />
     <title>C Matus Portfolio</title>
+    <script>
+      let previousVisibility = false;
+      $(function () {
+        $(this).on("scroll", function () {
+          $(window).scroll(function () {
+            var top_of_element = $(".aboutMeCard").offset().top;
+            var bottom_of_element =
+              $(".aboutMeCard").offset().top + $(".aboutMeCard").outerHeight();
+            var bottom_of_screen =
+              $(window).scrollTop() + $(window).innerHeight();
+            var top_of_screen = $(window).scrollTop();
+
+            if (
+              bottom_of_screen > top_of_element + 200 &&
+              !previousVisibility
+            ) {
+              console.log("show it!");
+              $(".aboutMeCard").addClass("appearAnimation");
+            }
+            if (bottom_of_screen <= top_of_element) {
+              console.log("hide it!");
+              previousVisibility = false;
+              $(".aboutMeCard").removeClass("appearAnimation");
+            }
+          });
+        });
+      });
+    </script>
   </head>
 
   <body>
     <div class="container d-flex justify-content-center">
-      <div class="card bg-primary shadow w-25">
-        <div class="card-body">
-          <h4 class="card-title text-center">What I like</h4>
-          <p class="card-text">
-            I love learning and languages and I speak Polish and Spanish bla bla
-            bla.
-          </p>
-          <a href="#" class="card-link">Card link</a>
-          <a href="#" class="card-link">Another link</a>
-        </div>
-      </div>
-
-      <div class="card bg-warning shadow mx-5 w-25">
-        <div class="card-body">
-          <h4 class="card-title text-center">Who I am</h4>
-          <p class="card-text">I am a fast-learning yadda yadda yadda</p>
-          <a href="#" class="card-link">Card link</a>
-          <a href="#" class="card-link">Another link</a>
-        </div>
-      </div>
-
-      <div class="card shadow w-25 p-rel overflow-h z1">
+      <div class="card shadow z1 aboutMeCard">
+        <img src="../assets/images/csun-logo-2b.png" class="cardMinipic" />
         <div class="absoluteSpread bgCard"></div>
+        <div class="absoluteSpread bgCard2"></div>
         <div class="card-body z2">
-          <h4 class="card-title text-center mb-5">What I do</h4>
-          <p class="card-text">
-            Languages<br />Front End<br />Back End<br />Additional<br />
-          </p>
+          <h4 class="card-title text-center mb-5 mt-n1">What I do</h4>
+          <div class="card-text text-black">
+            <h2 class="cardHeading">Languages</h2>
+            <p class="cardText">JavaScript, Python, PHP</p>
+            <h2 class="cardHeading">Back-end</h2>
+            <p class="cardText">
+              Node.js, Axios, Express, Knex, SQL, Socket.io, Flask
+            </p>
+            <h2 class="cardHeading">Front-end</h2>
+            <p class="cardText">HTML, CSS, React, Angular, Bootstrap</p>
+            <h2 class="cardHeading">Testing</h2>
+            <p class="cardText">Chai, Sinon, Mocha, Jest</p>
+            <h2 class="cardHeading">Additional experience</h2>
+            <p class="cardText">Adobe Premiere Pro, Audacity</p>
+          </div>
           <a href="#" class="card-link">Card link</a>
           <a href="#" class="card-link">Another link</a>
         </div>
