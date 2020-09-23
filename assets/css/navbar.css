@@ -11,6 +11,91 @@
   height: 50px;
 }
 
-.nav-link:hover {
+.nav-item {
+  /* display: table-cell;
+  vertical-align: middle; */
+  width: 130px;
+  transition-duration: 1s;
+  /* margin-left: 50px; */
+  /* border: white dotted 1pt; */
+}
+
+.nav-link {
+  transition: 0.75s;
+  margin-left: -10px;
+  height: 45px;
+  transition-delay: 0s;
+  text-align: center;
+}
+
+.nav-item:hover {
+  /* background-color: grey; */
+}
+
+.nav-item:hover .nav-link {
   font-size: 24px;
+  margin-left: 5px;
+}
+
+.nav-item:not(:hover) .nav-link {
+  transition-delay: 0.5s;
+}
+
+.nav-item:hover .navIcon {
+  transition-delay: 0.25s;
+  opacity: 1;
+  -webkit-animation-name: spin;
+  -webkit-animation-duration: 1s;
+  -webkit-animation-iteration-count: 1;
+  -webkit-animation-timing-function: ease-in-out;
+  -moz-animation-name: spin;
+  -moz-animation-duration: 1s;
+  -moz-animation-iteration-count: 1;
+  -moz-animation-timing-function: ease-in-out;
+  -ms-animation-name: spin;
+  -ms-animation-duration: 1s;
+  -ms-animation-iteration-count: 1;
+  -ms-animation-timing-function: ease-in-out;
+  -o-transition: rotate(3600deg);
+}
+
+#collapsibleNavbar {
+  height: 48px;
+}
+
+.navbar {
+}
+
+.navIcon {
+  transition: 1s;
+  transition-delay: 0;
+  height: 20px;
+  width: 20px;
+  opacity: 0;
+  margin-left: 5px;
+}
+
+@-moz-keyframes spin {
+  from {
+    -moz-transform: rotate(0deg);
+  }
+  to {
+    -moz-transform: rotate(720deg);
+  }
+}
+@-webkit-keyframes spin {
+  from {
+    -webkit-transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(720deg);
+  }
+}
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(720deg);
+  }
 }
