@@ -1,3 +1,18 @@
+.aboutMeCard {
+  box-sizing: border-box;
+  opacity: 0;
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+  width: 300px;
+  min-width: 300px;
+  /* background-color: cyan; */
+  background-image: linear-gradient(var(--yellowLight6), var(--yellowLight5));
+  transition: opacity 0.1s step-start;
+  height: fit-content;
+  padding-right: 30px;
+}
+
 .bgCard {
   background-color: var(--yellow);
   /* background-image: linear-gradient(var(--yellowDark2), var(--yellowLight2)); */
@@ -13,21 +28,10 @@
   /* background-image: linear-gradient(var(--yellowDark2), var(--yellowLight2)); */
   transform: skewY(-96deg);
   transform-origin: bottom right;
-  height: 100%;
+  height: 550px;
   /* opacity: 1; */
   left: 1px;
   opacity: 0.25;
-}
-
-.aboutMeCard {
-  opacity: 0;
-  position: relative;
-  overflow: hidden;
-  border-radius: 10px;
-  width: 400px;
-  /* background-color: cyan; */
-  background-image: linear-gradient(var(--yellowLight6), var(--yellowLight5));
-  transition: opacity 0.5s;
 }
 
 .cardHeading {
@@ -40,8 +44,8 @@
 
 .cardMinipic {
   position: absolute;
-  top: 1px;
-  right: 5px;
+  top: 5px;
+  right: 6.5px;
   height: 40px;
   width: 40px;
   opacity: 0.1;
@@ -56,6 +60,7 @@
   animation-fill-mode: forwards;
   -webkit-animation-name: bounce;
   animation-name: bounce;
+  transition: opacity 0.1s linear;
 }
 
 @-webkit-keyframes bounce {

@@ -8,6 +8,13 @@
     <link rel="stylesheet" href="assets/css/aboutMe.css" />
     <title>C Matus Portfolio</title>
     <script>
+      function classAfterTimeout(selector, timeout, classToAdd) {
+        setTimeout(() => {
+          console.log("show it!");
+          $(selector).addClass(classToAdd);
+        }, timeout);
+      }
+
       let previousVisibility = false;
       $(function () {
         $(this).on("scroll", function () {
@@ -20,11 +27,12 @@
             var top_of_screen = $(window).scrollTop();
 
             if (
-              bottom_of_screen > top_of_element + 200 &&
+              bottom_of_screen > top_of_element + 500 &&
               !previousVisibility
             ) {
-              console.log("show it!");
-              $(".aboutMeCard").addClass("appearAnimation");
+              classAfterTimeout("#aboutMeCard1", 0, "appearAnimation");
+              classAfterTimeout("#aboutMeCard2", 100, "appearAnimation");
+              classAfterTimeout("#aboutMeCard3", 200, "appearAnimation");
             }
             if (bottom_of_screen <= top_of_element) {
               console.log("hide it!");
@@ -38,8 +46,12 @@
   </head>
 
   <body>
-    <div class="container d-flex justify-content-center">
-      <div class="card shadow z1 aboutMeCard">
+    <div
+      class="container-fluid d-flex p-0 justify-content-lg-between justify-content-xl-around border-g2 pt-0 pt-lg-5"
+    >
+      <!-- //// -->
+      <!-- //// -->
+      <div class="card shadow z1 aboutMeCard" id="aboutMeCard1">
         <img src="../assets/images/csun-logo-2b.png" class="cardMinipic" />
         <div class="absoluteSpread bgCard"></div>
         <div class="absoluteSpread bgCard2"></div>
@@ -58,6 +70,42 @@
             <p class="cardText">Chai, Sinon, Mocha, Jest</p>
             <h2 class="cardHeading">Additional experience</h2>
             <p class="cardText">Adobe Premiere Pro, Audacity</p>
+          </div>
+          <a href="#" class="card-link">Card link</a>
+          <a href="#" class="card-link">Another link</a>
+        </div>
+      </div>
+      <!-- //// -->
+      <!-- //// -->
+      <div class="card shadow z1 aboutMeCard" id="aboutMeCard2">
+        <img src="../assets/images/csun-logo-2b.png" class="cardMinipic" />
+        <div class="absoluteSpread bgCard"></div>
+        <div class="absoluteSpread bgCard2"></div>
+        <div class="card-body z2">
+          <h4 class="card-title text-center mb-5 mt-n1">Who I am</h4>
+          <div class="card-text text-black">
+            <h2 class="cardHeading">Training</h2>
+            <p class="cardText">Northcoders was totally rad et cetera et al</p>
+            <h2 class="cardHeading">Strengths</h2>
+            <p class="cardText">I'm a fast learner and so on and so forth</p>
+            <h2 class="cardHeading">Work</h2>
+            <p class="cardText">I've been an English teacher for bla bla</p>
+          </div>
+          <a href="#" class="card-link">Card link</a>
+          <a href="#" class="card-link">Another link</a>
+        </div>
+      </div>
+      <!-- //// -->
+      <!-- //// -->
+      <div class="card shadow z1 aboutMeCard" id="aboutMeCard3">
+        <img src="../assets/images/csun-logo-2b.png" class="cardMinipic" />
+        <div class="absoluteSpread bgCard"></div>
+        <div class="absoluteSpread bgCard2"></div>
+        <div class="card-body z2">
+          <h4 class="card-title text-center mb-5 mt-n1">What I like</h4>
+          <div class="card-text text-black">
+            <h2 class="cardHeading">Languages</h2>
+            <p class="cardText">English, Spanish, Polish</p>
           </div>
           <a href="#" class="card-link">Card link</a>
           <a href="#" class="card-link">Another link</a>
