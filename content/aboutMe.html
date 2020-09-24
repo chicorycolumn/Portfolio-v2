@@ -20,38 +20,68 @@
       $(function () {
         $("#myCarousel").carousel();
 
-        $("#carouselItem1").replaceWith(
-          $("#aboutMeCard1").css({
-            opacity: "1",
-            marginLeft: "auto",
-            marginRight: "auto",
-            marginTop: "10px"
-          })
-        );
-        $("#carouselItem2").replaceWith(
-          $("#aboutMeCard2").css({
-            opacity: "1",
-            marginLeft: "auto",
-            marginRight: "auto",
-            marginTop: "10px"
-          })
-        );
-        $("#carouselItem3").replaceWith(
-          $("#aboutMeCard3").css({
-            opacity: "1",
-            marginLeft: "auto",
-            marginRight: "auto",
-            marginTop: "10px"
-          })
-        );
+        // $("#basket").append( $("#apple") )
 
-        let windowWidth = $(window).width();
+        let areCardsInCarousel = false;
 
-        return; //screwpoint
+        function moveCardsToCarousel() {
+          console.log("moving TO carousel")
+          for (let i = 1; i <= 3; i++){
+            $("#carouselItem"+i).append(
+              $("#aboutMeCard"+i).css({
+                opacity: "1",
+                marginLeft: "auto",
+                marginRight: "auto",
+                marginTop: "10px",
+              })
+            );
+          }
+          areCardsInCarousel = true;
+
+          if($("#myCarouselHolder").css("display") == "none"){
+            console.log("carousel is not displayed yet")
+            // $("#myCarouselHolder").css({"display": "block"})
+          }
+          //if carousel has display none, then display it.
+        }
+
+        function moveCardsFromCarousel() {
+          console.log("moving FROM carousel")
+          for (let i = 0; i <= 3; i++){
+            $("#aboutMeCardHolder").append(
+              $("#aboutMeCard"+i).css({
+                // opacity: "0",
+                marginLeft: "0",
+                marginRight: "0",
+                marginTop: "0",
+              })
+            );
+          }
+          areCardsInCarousel = false;
+          if($("#myCarouselHolder").css("display") == "block"){
+            console.log("carousel is still displayed")
+            // $("#myCarouselHolder").css({"display": "block"})
+          }
+          //if carousel has display block, then none it.
+        }
+
+        function moveCardsToAppropriatePlace() {
+          if ($(window).width() >= 992 && areCardsInCarousel) { //This is triggering at 1005 not 992.
+            moveCardsFromCarousel();
+          } else if (($(window).width()< 992) && !areCardsInCarousel) { //This is triggering at 1005 not 992.
+            moveCardsToCarousel();
+          }
+        }
+
+        moveCardsToAppropriatePlace();
+
+        $(window).on("resize", function () {
+          moveCardsToAppropriatePlace();
+        });
+
 
         $(window).scroll(function () {
-          windowWidth = $(window).width();
-          if (windowWidth >= 992) {
+          if ($(window).width() >= 992) {
             var top_of_element = $(".aboutMeCard").offset().top;
             var bottom_of_element =
               $(".aboutMeCard").offset().top + $(".aboutMeCard").outerHeight();
@@ -87,6 +117,7 @@
     <div class="container bg-warning"><p id="basket">cesta vacia</p></div>
 
     <div
+    id="aboutMeCardHolder"
       class="container-fluid p-0 justify-content-lg-between justify-content-xl-around border-g2 pt-0 d-none d-lg-flex"
     >
       <!-- //// -->
@@ -157,7 +188,7 @@
     <!-- / -->
     <!-- / -->
     <!-- / -->
-    <div class="container d-block d-lg-none">
+    <div class="container d-block d-lg-none" id="myCarouselHolder">
       <div
         id="myCarousel"
         class="carousel slide border-b1"
@@ -177,15 +208,15 @@
         </ol> -->
 
         <!-- The slideshow -->
-        <div class="carousel-inner">
-          <div class="carousel-item active">
-            <div id="carouselItem1"></div>
+        <div class="carousel-inner" >
+          <div class="carousel-item active" id="carouselItem1">
+            <div id="carouselItemInner1"></div>
           </div>
-          <div class="carousel-item">
-            <div id="carouselItem2"></div>
+          <div class="carousel-item" id="carouselItem2">
+            <div id="carouselItemInner2"></div>
           </div>
-          <div class="carousel-item">
-            <div id="carouselItem3"></div>
+          <div class="carousel-item" id="carouselItem3">
+            <div id="carouselItemInner3"></div>
           </div>
         </div>
 
