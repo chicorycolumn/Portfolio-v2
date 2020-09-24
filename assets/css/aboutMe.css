@@ -100,3 +100,8 @@
     transform: translateY(-5px);
   }
 }
+
+.carousel-inner img {
+  width: 100%;
+  height: 100%;
+}
