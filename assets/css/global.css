@@ -36,6 +36,18 @@
   border: black solid 5px;
 }
 
+.border-k0 {
+  border: black solid 0.5px;
+}
+
+.border-k1 {
+  border: black solid 2.5px;
+}
+
+.border-k2 {
+  border: black solid 5px;
+}
+
 .border-b0 {
   border: blue solid 0.5px;
 }

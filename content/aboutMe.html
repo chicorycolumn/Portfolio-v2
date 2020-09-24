@@ -19,10 +19,39 @@
 
       $(function () {
         $("#myCarousel").carousel();
-        console.log($(window).width());
+
+        $("#carouselItem1").replaceWith(
+          $("#aboutMeCard1").css({
+            opacity: "1",
+            marginLeft: "auto",
+            marginRight: "auto",
+            marginTop: "10px"
+          })
+        );
+        $("#carouselItem2").replaceWith(
+          $("#aboutMeCard2").css({
+            opacity: "1",
+            marginLeft: "auto",
+            marginRight: "auto",
+            marginTop: "10px"
+          })
+        );
+        $("#carouselItem3").replaceWith(
+          $("#aboutMeCard3").css({
+            opacity: "1",
+            marginLeft: "auto",
+            marginRight: "auto",
+            marginTop: "10px"
+          })
+        );
+
+        let windowWidth = $(window).width();
+
+        return; //screwpoint
 
         $(window).scroll(function () {
-          if ($(window).width() >= 992) {
+          windowWidth = $(window).width();
+          if (windowWidth >= 992) {
             var top_of_element = $(".aboutMeCard").offset().top;
             var bottom_of_element =
               $(".aboutMeCard").offset().top + $(".aboutMeCard").outerHeight();
@@ -50,6 +79,13 @@
   </head>
 
   <body>
+    <div class="container bg-success">
+      <p>here ypu go:</p>
+      <p id="apple">APPLE</p>
+    </div>
+    <p>Put the apple in the yellow basket.</p>
+    <div class="container bg-warning"><p id="basket">cesta vacia</p></div>
+
     <div
       class="container-fluid p-0 justify-content-lg-between justify-content-xl-around border-g2 pt-0 d-none d-lg-flex"
     >
@@ -122,48 +158,43 @@
     <!-- / -->
     <!-- / -->
     <div class="container d-block d-lg-none">
-      <div id="myCarousel" class="carousel slide" data-ride="carousel">
+      <div
+        id="myCarousel"
+        class="carousel slide border-b1"
+        data-ride="carousel"
+        data-interval="false"
+      >
+        <!-- screwpoint above, data interval false -->
         <!-- Indicators -->
-        <ol class="carousel-indicators">
-          <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-          <li data-target="#myCarousel" data-slide-to="1"></li>
-          <li data-target="#myCarousel" data-slide-to="2"></li>
-        </ol>
+        <!-- <ol class="carousel-indicators">
+          <li
+            data-target="#myCarousel"
+            data-slide-to="0"
+            class="active bg-dark"
+          ></li>
+          <li data-target="#myCarousel" data-slide-to="1" class="bg-dark"></li>
+          <li data-target="#myCarousel" data-slide-to="2" class="bg-dark"></li>
+        </ol> -->
 
         <!-- The slideshow -->
         <div class="carousel-inner">
           <div class="carousel-item active">
-            <img
-              src="./assets/images/la.jpg"
-              alt="Los Angeles"
-              width="1100"
-              height="500"
-            />
+            <div id="carouselItem1"></div>
           </div>
           <div class="carousel-item">
-            <img
-              src="./assets/images/chi.jpg"
-              alt="Chicago"
-              width="1100"
-              height="500"
-            />
+            <div id="carouselItem2"></div>
           </div>
           <div class="carousel-item">
-            <img
-              src="./assets/images/ny.jpg"
-              alt="New York"
-              width="1100"
-              height="500"
-            />
+            <div id="carouselItem3"></div>
           </div>
         </div>
 
         <!-- Left and right controls -->
-        <a class="carousel-control-prev" href="#myCarousel" data-slide="prev">
-          <span class="carousel-control-prev-icon"></span>
+        <a class="carousel-control-prev border-f1" href="#myCarousel" data-slide="prev">
+          <img class="carouselControlIcon carouselControlIconPrev" src="../assets/images/csun-arrowR.png" style="-webkit-transform: scaleX(-1); transform: scaleX(-1);"></img>
         </a>
-        <a class="carousel-control-next" href="#myCarousel" data-slide="next">
-          <span class="carousel-control-next-icon"></span>
+        <a class="carousel-control-next border-f1" href="#myCarousel" data-slide="next">
+          <img class="carouselControlIcon carouselControlIconNext" src="../assets/images/csun-arrowR.png"></img>
         </a>
       </div>
     </div>
