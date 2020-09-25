@@ -177,3 +177,7 @@
 .p-abs {
   position: absolute;
 }
+
+.visibility-h {
+  visibility: hidden;
+}

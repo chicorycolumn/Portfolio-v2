@@ -55,90 +55,14 @@
   filter: brightness(0.5);
 }
 
-.appearAnimation {
-  opacity: 1;
-  -webkit-animation-duration: 1s;
-  animation-duration: 1s;
-  -webkit-animation-fill-mode: forwards;
-  animation-fill-mode: forwards;
-  -webkit-animation-name: bounce;
-  animation-name: bounce;
-  transition: opacity 0.1s linear;
+#aboutMeCarouselHolder {
+  position: relative;
+  margin-bottom: -450px;
+  z-index: 2;
 }
 
-@-webkit-keyframes bounce {
-  0%,
-  20%,
-  50%,
-  80%,
-  100% {
-    -webkit-transform: translateY(0);
-  }
-  10% {
-    -webkit-transform: translateY(-30px);
-  }
-  40% {
-    -webkit-transform: translateY(-15px);
-  }
-}
-
-@keyframes bounce {
-  0%,
-  20%,
-  50%,
-  80%,
-  100% {
-    transform: translateY(0);
-  }
-  10% {
-    transform: translateY(-50px);
-  }
-  40% {
-    transform: translateY(-20px);
-  }
-  60% {
-    transform: translateY(-15px);
-  }
-  70% {
-    transform: translateY(-5px);
-  }
-}
-
-.carousel-inner img {
-  width: 100%;
-  height: 100%;
-}
-
-#myCarousel {
-  background-color: none;
-  height: 600px;
-  min-width: fit-content;
-}
-
-#myCarousel .carousel-inner {
-  height: 100%;
-}
-
-#myCarousel .carousel-item {
-  height: 100%;
-}
-
-.carousel-control-next {
-  background-image: none;
-  background-color: none;
-}
-
-.carousel-control-prev {
-  background-image: none;
-  background-color: none;
-}
-
-.carouselControlIcon {
-  height: 60px;
-  width: 60px;
-  margin-top: -200px;
-}
-
-.visibilityHidden {
-  visibility: hidden;
+#aboutMeCardHolder {
+  position: relative;
+  margin-bottom: -450px;
+  z-index: 2;
 }
