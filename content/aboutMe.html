@@ -20,8 +20,6 @@
       $(function () {
         $("#myCarousel").carousel();
 
-        // $("#basket").append( $("#apple") )
-
         let areCardsInCarousel = false;
 
         function moveCardsToCarousel() {
@@ -66,9 +64,13 @@
         }
 
         function moveCardsToAppropriatePlace() {
-          if ($(window).width() >= 992 && areCardsInCarousel) { //This is triggering at 1005 not 992.
+
+          // if ($(window).width() >= 992 
+          if (!window.matchMedia('(max-width: 991px)').matches && areCardsInCarousel) {
             moveCardsFromCarousel();
-          } else if (($(window).width()< 992) && !areCardsInCarousel) { //This is triggering at 1005 not 992.
+          } else 
+          // if (($(window).width()< 992)
+          if (window.matchMedia('(max-width: 991px)').matches && !areCardsInCarousel) {
             moveCardsToCarousel();
           }
         }
@@ -81,7 +83,9 @@
 
 
         $(window).scroll(function () {
-          if ($(window).width() >= 992) {
+
+          // if ($(window).width() >= 992
+          if (!window.matchMedia('(max-width: 991px)').matches) {
             var top_of_element = $(".aboutMeCard").offset().top;
             var bottom_of_element =
               $(".aboutMeCard").offset().top + $(".aboutMeCard").outerHeight();
@@ -109,12 +113,6 @@
   </head>
 
   <body>
-    <div class="container bg-success">
-      <p>here ypu go:</p>
-      <p id="apple">APPLE</p>
-    </div>
-    <p>Put the apple in the yellow basket.</p>
-    <div class="container bg-warning"><p id="basket">cesta vacia</p></div>
 
     <div
     id="aboutMeCardHolder"

@@ -109,6 +109,7 @@
 #myCarousel {
   background-color: none;
   height: 600px;
+  min-width: fit-content;
 }
 
 #myCarousel .carousel-inner {
