@@ -39,21 +39,20 @@
 }
 
 .carouselControlIcon {
-  height: 70px;
-  width: 70px;
-  /* margin-top: -200px; */
+  height: 30px;
+  width: 30px;
 }
 
-@media screen and (max-width: 576px) {
+@media screen and (min-width: 360px) {
   .carouselControlIcon {
     height: 50px;
     width: 50px;
   }
 }
 
-@media screen and (max-width: 360px) {
+@media screen and (min-width: 576px) {
   .carouselControlIcon {
-    height: 30px;
-    width: 30px;
+    height: 70px;
+    width: 70px;
   }
 }

@@ -1,5 +1,6 @@
 :root {
   --yellow: rgb(255, 255, 0);
+
   --yellowLight1: rgb(255, 255, 43);
   --yellowLight2: rgb(255, 255, 86);
   --yellowLight3: rgb(255, 255, 129);
@@ -7,6 +8,7 @@
   --yellowLight5: rgb(255, 255, 215);
   --yellowLight6: rgb(255, 255, 237);
   --yellowLight7: rgb(255, 255, 247);
+
   --yellowDark1: rgb(255, 255, 0);
   --yellowDark2: rgb(230, 230, 0);
   --yellowDark3: rgb(205, 205, 0);
@@ -14,6 +16,15 @@
   --yellowDark5: rgb(155, 155, 0);
   --yellowDark6: rgb(130, 130, 0);
   --yellowDark7: rgb(105, 105, 0);
+
+  --cardWidthLarge: 400px;
+  --cardHeightLarge: 250px;
+
+  --cardWidthSmall: 300px;
+  --cardHeightSmall: 187.5px;
+
+  --cardHolderWidthLarge: 415px;
+  --cardHolderWidthSmall: 100%;
 }
 
 .text-black {
