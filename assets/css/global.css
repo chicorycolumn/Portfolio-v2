@@ -166,6 +166,25 @@
   overflow: hidden;
 }
 
+.overflow-xh {
+  overflow-x: hidden;
+}
+
+.overflow-yh {
+  overflow-y: hidden;
+}
+
+.overflow-a {
+  overflow: auto;
+}
+
+.overflow-xa {
+  overflow-x: auto;
+}
+
+.overflow-ya {
+  overflow-y: auto;
+}
 .p-rel {
   position: relative;
 }
@@ -180,4 +199,14 @@
 
 .visibility-h {
   visibility: hidden;
+}
+
+.flipHorizontal {
+  -webkit-transform: scaleX(-1);
+  transform: scaleX(-1);
+}
+
+.flipVertical {
+  -webkit-transform: scaleY(-1);
+  transform: scaleY(-1);
 }

@@ -205,7 +205,7 @@
     <div class="container-fluid p-0 d-block d-lg-none border-g11" id="aboutMeCarouselHolder">
       <div
         id="aboutMeCarousel"
-        class="carousel slide"
+        class="carousel slide border-r11"
         data-ride="carousel"
       >
 
@@ -221,10 +221,10 @@
           </div>
         </div>
 
-        <a class="carousel-control-prev" href="#aboutMeCarousel" data-slide="prev" onClick="{$('#aboutMeCarousel').carousel('pause')}">
-          <img class="carouselControlIcon carouselControlIconPrev" src="../assets/images/csun-arrowR.png" style="-webkit-transform: scaleX(-1); transform: scaleX(-1);"></img>
+        <a class="carousel-control-prev carouselControl flipHorizontal d-flex justify-content-end" href="#aboutMeCarousel" data-slide="prev" onClick="{$('#aboutMeCarousel').carousel('pause')}">
+          <img class="carouselControlIcon carouselControlIconPrev " src="../assets/images/csun-arrowR.png"></img>
         </a>
-        <a class="carousel-control-next" href="#aboutMeCarousel" data-slide="next" onClick="{$('#aboutMeCarousel').carousel('pause')}">
+        <a class="carousel-control-next carouselControl d-flex justify-content-end" href="#aboutMeCarousel" data-slide="next" onClick="{$('#aboutMeCarousel').carousel('pause')}">
           <img class="carouselControlIcon carouselControlIconNext" src="../assets/images/csun-arrowR.png"></img>
         </a>
 
