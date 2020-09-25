@@ -9,6 +9,22 @@
   transition: opacity 0.1s linear;
 }
 
+.spinOnce {
+  -webkit-animation-name: spin-once;
+  -webkit-animation-duration: 1s;
+  -webkit-animation-iteration-count: 1;
+  -webkit-animation-timing-function: ease-in-out;
+  -moz-animation-name: spin-once;
+  -moz-animation-duration: 1s;
+  -moz-animation-iteration-count: 1;
+  -moz-animation-timing-function: ease-in-out;
+  -ms-animation-name: spin-once;
+  -ms-animation-duration: 1s;
+  -ms-animation-iteration-count: 1;
+  -ms-animation-timing-function: ease-in-out;
+  -o-transition: rotate(3600deg);
+}
+
 @-webkit-keyframes bounce {
   0%,
   20%,

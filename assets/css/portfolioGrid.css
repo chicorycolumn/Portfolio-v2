@@ -1,0 +1,71 @@
+.portfolioCardHolder {
+  min-width: 400px;
+}
+
+.portfolioCard {
+  width: 400px;
+  min-width: 400px;
+  max-width: 400px;
+  height: 250px;
+  min-height: 250px;
+  max-height: 250px;
+
+  margin-left: auto !important;
+  margin-right: auto !important;
+
+  margin-bottom: 10px !important;
+
+  overflow: hidden;
+
+  border-radius: 10px;
+}
+
+.portfolioCardImage {
+  width: 100%;
+  transition: width 0.75s ease-out;
+}
+
+.portfolioCardOverlay {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+  opacity: 0;
+  transition: opacity 1s ease-out;
+  /* transition-delay: 0.25s; */
+  color: white;
+  text-align: center;
+  padding-left: 20%;
+  padding-right: 20%;
+}
+
+.portfolioCard:hover .portfolioCardOverlay {
+  opacity: 1;
+}
+
+.portfolioCard:hover .portfolioCardImage {
+  width: 125%;
+}
+
+/* .portfolioCard .portfolioCardOverlay {
+  opacity: 1;
+}
+
+.portfolioCard .portfolioCardImage {
+  width: 125%;
+} */
+
+.portfolioCardLogo {
+  height: 40px;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+.tooltip {
+  color: white;
+  font-weight: bold;
+  -webkit-filter: invert(100%);
+  filter: invert(100%);
+}
