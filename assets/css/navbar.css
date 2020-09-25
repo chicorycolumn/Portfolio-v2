@@ -29,13 +29,10 @@
   margin-bottom: 0px;
 }
 
-.nav-item:hover {
-  /* background-color: grey; */
-}
-
 .nav-item:hover .nav-link {
   font-size: 24px;
   margin-left: 5px;
+  color: white !important;
 }
 
 .nav-item:not(:hover) .nav-link {
@@ -45,19 +42,35 @@
 .nav-item:hover .navIcon {
   transition-delay: 0.25s;
   opacity: 1;
-  -webkit-animation-name: spin;
+  -webkit-animation-name: spin-twice;
   -webkit-animation-duration: 1s;
   -webkit-animation-iteration-count: 1;
   -webkit-animation-timing-function: ease-in-out;
-  -moz-animation-name: spin;
+  -moz-animation-name: spin-twice;
   -moz-animation-duration: 1s;
   -moz-animation-iteration-count: 1;
   -moz-animation-timing-function: ease-in-out;
-  -ms-animation-name: spin;
+  -ms-animation-name: spin-twice;
   -ms-animation-duration: 1s;
   -ms-animation-iteration-count: 1;
   -ms-animation-timing-function: ease-in-out;
   -o-transition: rotate(7200deg);
+}
+
+.navbar-brand-image:hover {
+  -webkit-animation-name: spin-once;
+  -webkit-animation-duration: 1s;
+  -webkit-animation-iteration-count: 1;
+  -webkit-animation-timing-function: ease-in-out;
+  -moz-animation-name: spin-once;
+  -moz-animation-duration: 1s;
+  -moz-animation-iteration-count: 1;
+  -moz-animation-timing-function: ease-in-out;
+  -ms-animation-name: spin-once;
+  -ms-animation-duration: 1s;
+  -ms-animation-iteration-count: 1;
+  -ms-animation-timing-function: ease-in-out;
+  -o-transition: rotate(3600deg);
 }
 
 @media only screen and (min-width: 768px) {
@@ -78,7 +91,7 @@
   margin-left: 5px;
 }
 
-@-moz-keyframes spin {
+@-moz-keyframes spin-twice {
   from {
     -moz-transform: rotate(0deg);
   }
@@ -86,7 +99,7 @@
     -moz-transform: rotate(720deg);
   }
 }
-@-webkit-keyframes spin {
+@-webkit-keyframes spin-twice {
   from {
     -webkit-transform: rotate(0deg);
   }
@@ -94,11 +107,36 @@
     -webkit-transform: rotate(720deg);
   }
 }
-@keyframes spin {
+@keyframes spin-twice {
   from {
     transform: rotate(0deg);
   }
   to {
     transform: rotate(720deg);
+  }
+}
+
+@-moz-keyframes spin-once {
+  from {
+    -moz-transform: rotate(0deg);
+  }
+  to {
+    -moz-transform: rotate(360deg);
+  }
+}
+@-webkit-keyframes spin-once {
+  from {
+    -webkit-transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+  }
+}
+@keyframes spin-once {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
   }
 }

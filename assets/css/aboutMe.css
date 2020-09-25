@@ -8,7 +8,8 @@
   min-width: 300px;
   /* background-color: cyan; */
   background-image: linear-gradient(var(--yellowLight6), var(--yellowLight5));
-  transition: opacity 0.1s step-start;
+  /* transition: opacity 0.05s; */
+  /* transition: visibility 0.05s; */
   height: fit-content;
   padding-right: 30px;
 }
@@ -48,6 +49,8 @@
   right: 6.5px;
   height: 40px;
   width: 40px;
+  max-height: 40px;
+  max-width: 40px;
   opacity: 0.1;
   filter: brightness(0.5);
 }
@@ -134,4 +137,8 @@
   height: 60px;
   width: 60px;
   margin-top: -200px;
+}
+
+.visibilityHidden {
+  visibility: hidden;
 }

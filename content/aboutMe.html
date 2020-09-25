@@ -8,72 +8,108 @@
     <link rel="stylesheet" href="assets/css/aboutMe.css" />
     <title>C Matus Portfolio</title>
     <script>
-      function classAfterTimeout(selector, timeout, classToAdd) {
+      function classAfterTimeout(selector, timeout, classToAdd, classToRemove) {
         setTimeout(() => {
-          console.log("show it!");
           $(selector).addClass(classToAdd);
+          $(selector).removeClass(classToRemove);
         }, timeout);
       }
 
-      let previousVisibility = false;
-
-      $(function () {
-        $("#myCarousel").carousel();
-
-        let areCardsInCarousel = false;
-
-        function moveCardsToCarousel() {
-          console.log("moving TO carousel")
-          for (let i = 1; i <= 3; i++){
-            $("#carouselItem"+i).append(
-              $("#aboutMeCard"+i).css({
-                opacity: "1",
-                marginLeft: "auto",
-                marginRight: "auto",
-                marginTop: "10px",
-              })
-            );
-          }
-          areCardsInCarousel = true;
-
-          if($("#myCarouselHolder").css("display") == "none"){
-            console.log("carousel is not displayed yet")
-            // $("#myCarouselHolder").css({"display": "block"})
-          }
-          //if carousel has display none, then display it.
-        }
-
-        function moveCardsFromCarousel() {
-          console.log("moving FROM carousel")
-          for (let i = 0; i <= 3; i++){
-            $("#aboutMeCardHolder").append(
-              $("#aboutMeCard"+i).css({
-                // opacity: "0",
+      function moveCardsFromCarousel() {
+        for (let i = 0; i <= 3; i++) {
+          $("#aboutMeCardHolder").append(
+            $("#aboutMeCard" + i)
+              .css({
                 marginLeft: "0",
                 marginRight: "0",
                 marginTop: "0",
               })
+              .addClass("visibilityHidden")
+          );
+        }
+        areCardsInCarousel = false;
+
+        showOrHideAboutMeCards();
+      }
+
+      function moveCardsToCarousel() {
+        for (let i = 1; i <= 3; i++) {
+          $("#carouselItem" + i).append(
+            $("#aboutMeCard" + i).css({
+              opacity: "1",
+              marginLeft: "auto",
+              marginRight: "auto",
+              marginTop: "10px",
+            }).removeClass("appearAnimation")
+          );
+        }
+
+        $("#myCarousel").carousel(0)
+
+        if (areCardsInCarousel === null) {
+          $(".aboutMeCard").css({
+            opacity: "1",
+          })
+        }
+        areCardsInCarousel = true;
+      }
+
+      function moveCardsToAppropriatePlace() {
+        if (!window.matchMedia("(max-width: 991px)").matches) {
+          if (areCardsInCarousel) {
+            moveCardsFromCarousel();
+          } else {
+            areCardsInCarousel = false;
+          }
+        } else if (
+          window.matchMedia("(max-width: 991px)").matches &&
+          !areCardsInCarousel
+        ) {
+          moveCardsToCarousel();
+        }
+      }
+
+      function showOrHideAboutMeCards() {
+        if (!window.matchMedia("(max-width: 991px)").matches) {
+          let top_of_element = $(".aboutMeCard").offset().top;
+          let bottom_of_element =
+            $(".aboutMeCard").offset().top + $(".aboutMeCard").outerHeight();
+          let bottom_of_screen = $(window).scrollTop() + $(window).innerHeight();
+          let top_of_screen = $(window).scrollTop();
+
+          if (bottom_of_screen > top_of_element + 250 && !previousVisibility) {
+            classAfterTimeout(
+              "#aboutMeCard1",
+              0,
+              "appearAnimation",
+              "visibilityHidden"
+            );
+            classAfterTimeout(
+              "#aboutMeCard2",
+              150,
+              "appearAnimation",
+              "visibilityHidden"
+            );
+            classAfterTimeout(
+              "#aboutMeCard3",
+              250,
+              "appearAnimation",
+              "visibilityHidden"
             );
           }
-          areCardsInCarousel = false;
-          if($("#myCarouselHolder").css("display") == "block"){
-            console.log("carousel is still displayed")
-            // $("#myCarouselHolder").css({"display": "block"})
-          }
-          //if carousel has display block, then none it.
-        }
-
-        function moveCardsToAppropriatePlace() {
-
-          // if ($(window).width() >= 992 
-          if (!window.matchMedia('(max-width: 991px)').matches && areCardsInCarousel) {
-            moveCardsFromCarousel();
-          } else 
-          // if (($(window).width()< 992)
-          if (window.matchMedia('(max-width: 991px)').matches && !areCardsInCarousel) {
-            moveCardsToCarousel();
+          if (bottom_of_screen <= top_of_element) {
+            previousVisibility = false;
+            $(".aboutMeCard").removeClass("appearAnimation");
+            $(".aboutMeCard").addClass("visibilityHidden");
           }
         }
+      }
+
+      let previousVisibility = false;
+      let areCardsInCarousel = null; //important
+
+      $(function () {
+        $("#myCarousel").carousel();
 
         moveCardsToAppropriatePlace();
 
@@ -81,32 +117,8 @@
           moveCardsToAppropriatePlace();
         });
 
-
         $(window).scroll(function () {
-
-          // if ($(window).width() >= 992
-          if (!window.matchMedia('(max-width: 991px)').matches) {
-            var top_of_element = $(".aboutMeCard").offset().top;
-            var bottom_of_element =
-              $(".aboutMeCard").offset().top + $(".aboutMeCard").outerHeight();
-            var bottom_of_screen =
-              $(window).scrollTop() + $(window).innerHeight();
-            var top_of_screen = $(window).scrollTop();
-
-            if (
-              bottom_of_screen > top_of_element + 500 &&
-              !previousVisibility
-            ) {
-              classAfterTimeout("#aboutMeCard1", 0, "appearAnimation");
-              classAfterTimeout("#aboutMeCard2", 100, "appearAnimation");
-              classAfterTimeout("#aboutMeCard3", 200, "appearAnimation");
-            }
-            if (bottom_of_screen <= top_of_element) {
-              console.log("hide it!");
-              previousVisibility = false;
-              $(".aboutMeCard").removeClass("appearAnimation");
-            }
-          }
+          showOrHideAboutMeCards();
         });
       });
     </script>
@@ -116,12 +128,12 @@
 
     <div
     id="aboutMeCardHolder"
-      class="container-fluid p-0 justify-content-lg-between justify-content-xl-around border-g2 pt-0 d-none d-lg-flex"
+      class="container-fluid p-0 justify-content-lg-between justify-content-xl-around pt-0 d-none d-lg-flex border-k1"
     >
       <!-- //// -->
       <!-- //// -->
       <div class="card shadow z1 aboutMeCard" id="aboutMeCard1">
-        <img src="../assets/images/csun-logo-2b.png" class="cardMinipic" />
+        <img src="../assets/images/csun-logo-2b.png" class="cardMinipic" id="cardMinipic1" />
         <div class="absoluteSpread bgCard"></div>
         <div class="absoluteSpread bgCard2"></div>
         <div class="card-body z2">
@@ -186,26 +198,13 @@
     <!-- / -->
     <!-- / -->
     <!-- / -->
-    <div class="container d-block d-lg-none" id="myCarouselHolder">
+    <div class="container-fluid p-0 d-block d-lg-none border-g1" id="myCarouselHolder">
       <div
         id="myCarousel"
-        class="carousel slide border-b1"
+        class="carousel slide"
         data-ride="carousel"
-        data-interval="false"
       >
-        <!-- screwpoint above, data interval false -->
-        <!-- Indicators -->
-        <!-- <ol class="carousel-indicators">
-          <li
-            data-target="#myCarousel"
-            data-slide-to="0"
-            class="active bg-dark"
-          ></li>
-          <li data-target="#myCarousel" data-slide-to="1" class="bg-dark"></li>
-          <li data-target="#myCarousel" data-slide-to="2" class="bg-dark"></li>
-        </ol> -->
 
-        <!-- The slideshow -->
         <div class="carousel-inner" >
           <div class="carousel-item active" id="carouselItem1">
             <div id="carouselItemInner1"></div>
@@ -218,13 +217,13 @@
           </div>
         </div>
 
-        <!-- Left and right controls -->
-        <a class="carousel-control-prev border-f1" href="#myCarousel" data-slide="prev">
+        <a class="carousel-control-prev" href="#myCarousel" data-slide="prev" onClick="{$('#myCarousel').carousel('pause')}">
           <img class="carouselControlIcon carouselControlIconPrev" src="../assets/images/csun-arrowR.png" style="-webkit-transform: scaleX(-1); transform: scaleX(-1);"></img>
         </a>
-        <a class="carousel-control-next border-f1" href="#myCarousel" data-slide="next">
+        <a class="carousel-control-next" href="#myCarousel" data-slide="next" onClick="{$('#myCarousel').carousel('pause')}">
           <img class="carouselControlIcon carouselControlIconNext" src="../assets/images/csun-arrowR.png"></img>
         </a>
+
       </div>
     </div>
     <!-- / -->
