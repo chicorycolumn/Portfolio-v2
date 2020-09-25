@@ -1,19 +1,23 @@
 .portfolioCardHolder {
   min-width: 400px;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 100px;
 }
 
 .portfolioCard {
-  width: 400px;
-  min-width: 400px;
-  max-width: 400px;
-  height: 250px;
-  min-height: 250px;
-  max-height: 250px;
+  width: 400px !important;
+  min-width: 400px !important;
+  max-width: 400px !important;
+  height: 250px !important;
+  min-height: 250px !important;
+  max-height: 250px !important;
 
-  margin-left: auto !important;
-  margin-right: auto !important;
+  margin-left: 15px !important;
+  margin-right: 15px !important;
 
-  margin-bottom: 10px !important;
+  margin-bottom: 15px !important;
+  margin-top: 15px !important;
 
   overflow: hidden;
 
@@ -23,6 +27,7 @@
 .portfolioCardImage {
   width: 100%;
   transition: width 0.75s ease-out;
+  transition-delay: 0.15s;
 }
 
 .portfolioCardOverlay {
@@ -34,7 +39,7 @@
   background-color: rgba(0, 0, 0, 0.4);
   opacity: 0;
   transition: opacity 1s ease-out;
-  /* transition-delay: 0.25s; */
+  transition-delay: 0.15s;
   color: white;
   text-align: center;
   padding-left: 20%;
@@ -68,4 +73,10 @@
   font-weight: bold;
   -webkit-filter: invert(100%);
   filter: invert(100%);
+}
+
+.portfolioCardHeader {
+  padding: 0px;
+  margin: 0px;
+  margin-bottom: 8px;
 }
