@@ -7,6 +7,18 @@
     <link rel="stylesheet" href="assets/css/global.css" />
     <link rel="stylesheet" href="assets/css/navbar.css" />
     <title>C Matus Portfolio</title>
+    <script>
+      $(function () {
+        $(".navbar-brand-image").hover(function () {
+          if (!$(this).hasClass("spinOnce")) {
+            $(this).addClass("spinOnce");
+            setTimeout(() => {
+              $(this).removeClass("spinOnce");
+            }, 1000);
+          }
+        });
+      });
+    </script>
   </head>
 
   <body>

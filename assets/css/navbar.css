@@ -57,7 +57,7 @@
   -o-transition: rotate(7200deg);
 }
 
-.navbar-brand-image:hover {
+.spinOnce {
   -webkit-animation-name: spin-once;
   -webkit-animation-duration: 1s;
   -webkit-animation-iteration-count: 1;
