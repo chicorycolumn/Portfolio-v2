@@ -221,3 +221,7 @@
   -webkit-transform: scaleY(-1);
   transform: scaleY(-1);
 }
+
+.cardio {
+  font-style: italic;
+}

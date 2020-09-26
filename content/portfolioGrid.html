@@ -14,221 +14,175 @@
     <title>C Matus Portfolio</title>
     <script>
       $(document).ready(function () {
+        let techIcons = {
+          JavaScript: {
+            title: "JavaScript",
+            src: "../assets/images/logo-js.png",
+          },
+          React: {
+            title: "React",
+            src: "../assets/images/logo-react.png",
+          },
+          Phaser: {
+            title: "Phaser",
+            src: "../assets/images/logo-phaser.png",
+          },
+          "Socket.IO": {
+            title: "Socket.IO",
+            src: "../assets/images/logo-socket.png",
+          },
+          "Express.js": {
+            title: "Express.js",
+            src: "../assets/images/logo-express.png",
+          },
+          MySQL: {
+            title: "MySQL",
+            src: "../assets/images/logo-mysql.png",
+          },
+          PHP: {
+            title: "PHP",
+            src: "../assets/images/logo-php.png",
+          },
+          Python: {
+            title: "Python",
+            src: "../assets/images/logo-python.png",
+          },
+          Bootstrap: {
+            title: "Bootstrap",
+            src: "../assets/images/logo-bootstrap.png",
+          },
+          Angular: {
+            title: "Angular",
+            src: "../assets/images/logo-angular.png",
+          },
+          Flask: {
+            title: "Flask",
+            src: "../assets/images/logo-flask.png",
+          },
+        };
+
+        let portfolioCardData = [
+          {
+            portfolioCardHeader: "NC News",
+            portfolioCardDesc:
+              "A fullstack Reddit style news aggregation board.",
+            tech: ["JavaScript", "Express.js", "MySQL", "React"],
+            bgColor: "yellow",
+            portfolioCardImage: "assets/images/screenA-large.png",
+            url: "/portfolio/nc_news",
+          },
+          {
+            portfolioCardHeader: "Wormplay",
+            portfolioCardDesc:
+              "An online two-player game using webcam and facial recognition.",
+            tech: ["JavaScript", "Socket.IO", "React", "Phaser"],
+            bgColor: "green",
+            portfolioCardImage: "assets/images/screenA-large.png",
+            url: "/portfolio/wormplay",
+          },
+          {
+            portfolioCardHeader: "Portfolio",
+            portfolioCardDesc: "A responsive and elegant portfolio website.",
+            tech: ["JavaScript", "Bootstrap"],
+            bgColor: "purple",
+            portfolioCardImage: "assets/images/screenA-large.png",
+            url: "/portfolio/portfolio",
+          },
+          {
+            portfolioCardHeader: "SortCut",
+            portfolioCardDesc: "A sorting tool as a single-page-app.",
+            tech: ["JavaScript", "React"],
+            bgColor: "cyan",
+            portfolioCardImage: "assets/images/screenA-large.png",
+            url: "/portfolio/sortcut",
+          },
+          {
+            portfolioCardHeader: "Crossword Crocodile",
+            portfolioCardDesc:
+              "A Python-based calculator to generate crosswords from user-chosen words.",
+            tech: ["Python", "Flask", "Angular"],
+            bgColor: "crimson",
+            portfolioCardImage: "assets/images/screenA-large.png",
+            url: "/portfolio/crossword_crocodile",
+          },
+          {
+            portfolioCardHeader: "Fruit Makhzan",
+            portfolioCardDesc: "A fruit-selling database game, built in PHP.",
+            tech: ["PHP", "MySQL"],
+            bgColor: "orange",
+            portfolioCardImage: "assets/images/screenA-large.png",
+            url: "/portfolio/fruit_makhzan",
+          },
+        ];
+
+        portfolioCardData.forEach((data, index) => {
+          let card =
+            index === 0
+              ? $("#portfolioCard0")
+              : $("#portfolioCard0")
+                  .clone()
+                  .attr("id", "fruitCard" + index)
+                  .appendTo("#portfolioCardHolder");
+
+          card.css({ "background-color": data.bgColor });
+
+          card.find(".portfolioCardImage").attr("src", data.portfolioCardImage);
+          card.find(".portfolioCardHeader").text(data.portfolioCardHeader);
+          card.find(".portfolioCardDesc").text(data.portfolioCardDesc);
+          card.find(".projectLink").attr("href", data.url);
+
+          card.find(".techIcon:not(#techIconUr)").remove();
+
+          data.tech.forEach((techIconName, techIconIndex) => {
+            card
+              .find("#techIconUr")
+              .clone()
+              .attr("id", "techIcon" + index + "-" + techIconIndex)
+              .attr("src", techIcons[techIconName].src)
+              .attr("title", techIcons[techIconName].title)
+              .appendTo(card.find(".techIconHolder"));
+          });
+        });
+
+        portfolioCardData.forEach((data, index) => {
+          $("#techIconUr").remove();
+        });
+
         $('[data-toggle="tooltip"]').tooltip();
       });
     </script>
   </head>
 
   <body>
-    <div class="card-deck portfolioCardHolder">
+    <div
+      class="card-deck portfolioCardHolder border-k1"
+      id="portfolioCardHolder"
+    >
       <!--  -->
       <!--  -->
-      <div class="card portfolioCard bg-primary p-0 shadow-lg">
+      <div class="card portfolioCard p-0 shadow-lg" id="portfolioCard0">
         <div
           class="card-body text-center p-0 d-flex align-items-center justify-content-center p-rel"
         >
-          <img
-            src="assets/images/screenA-large.png"
-            class="portfolioCardImage"
-          />
+          <img src="" class="portfolioCardImage" />
         </div>
         <div
           class="p-abs portfolioCardOverlay d-flex flex-column justify-content-center align-items-center"
         >
-          <h1 class="portfolioCardHeader">Wormplay</h1>
-          <p>An online two-player game using webcam and facial recognition.</p>
-          <a href="#" class="z1"><span class="absoluteSpread"></span></a>
-          <div class="d-flex justify-content-center z2">
+          <h1 class="portfolioCardHeader"></h1>
+          <p class="portfolioCardDesc"></p>
+          <a href="#" class="z1 projectLink"
+            ><span class="absoluteSpread"></span
+          ></a>
+          <div class="d-flex justify-content-center z2 techIconHolder">
             <img
               data-toggle="tooltip"
               data-placement="bottom"
-              title="JavaScript"
-              src="../assets/images/logo-js.png"
-              alt="JS logo"
-              class="portfolioCardLogo"
-            />
-            <img
-              data-toggle="tooltip"
-              data-placement="bottom"
-              title="React"
-              src="../assets/images/logo-react.png"
-              alt="React logo"
-              class="portfolioCardLogo"
-            />
-            <img
-              data-toggle="tooltip"
-              data-placement="bottom"
-              title="Phaser"
-              src="../assets/images/logo-phaser.png"
-              alt="Phaser logo"
-              class="portfolioCardLogo"
-            />
-            <img
-              data-toggle="tooltip"
-              data-placement="bottom"
-              title="Socket.IO"
-              src="../assets/images/logo-socket.png"
-              alt="Socket.IO logo"
-              class="portfolioCardLogo"
-            />
-          </div>
-        </div>
-      </div>
-      <!--  -->
-      <!--  -->
-      <div class="card portfolioCard bg-primary p-0 shadow-lg">
-        <div
-          class="card-body text-center p-0 d-flex align-items-center justify-content-center p-rel"
-        >
-          <img
-            src="assets/images/screenA-large.png"
-            class="portfolioCardImage"
-          />
-        </div>
-        <div
-          class="p-abs portfolioCardOverlay d-flex flex-column justify-content-center align-items-center"
-        >
-          <h1 class="portfolioCardHeader">Wormplay</h1>
-          <p>An online two-player game using webcam and facial recognition.</p>
-          <a href="#" class="z1"><span class="absoluteSpread"></span></a>
-          <div class="d-flex justify-content-center z2">
-            <img
-              data-toggle="tooltip"
-              data-placement="bottom"
-              title="JavaScript"
-              src="../assets/images/logo-js.png"
-              alt="JS logo"
-              class="portfolioCardLogo"
-            />
-            <img
-              data-toggle="tooltip"
-              data-placement="bottom"
-              title="React"
-              src="../assets/images/logo-react.png"
-              alt="React logo"
-              class="portfolioCardLogo"
-            />
-            <img
-              data-toggle="tooltip"
-              data-placement="bottom"
-              title="Phaser"
-              src="../assets/images/logo-phaser.png"
-              alt="Phaser logo"
-              class="portfolioCardLogo"
-            />
-            <img
-              data-toggle="tooltip"
-              data-placement="bottom"
-              title="Socket.IO"
-              src="../assets/images/logo-socket.png"
-              alt="Socket.IO logo"
-              class="portfolioCardLogo"
-            />
-          </div>
-        </div>
-      </div>
-      <!--  -->
-      <!--  -->
-      <div class="card portfolioCard bg-primary p-0 shadow-lg">
-        <div
-          class="card-body text-center p-0 d-flex align-items-center justify-content-center p-rel"
-        >
-          <img
-            src="assets/images/screenA-large.png"
-            class="portfolioCardImage"
-          />
-        </div>
-        <div
-          class="p-abs portfolioCardOverlay d-flex flex-column justify-content-center align-items-center"
-        >
-          <h1 class="portfolioCardHeader">Wormplay</h1>
-          <p>An online two-player game using webcam and facial recognition.</p>
-          <a href="#" class="z1"><span class="absoluteSpread"></span></a>
-          <div class="d-flex justify-content-center z2">
-            <img
-              data-toggle="tooltip"
-              data-placement="bottom"
-              title="JavaScript"
-              src="../assets/images/logo-js.png"
-              alt="JS logo"
-              class="portfolioCardLogo"
-            />
-            <img
-              data-toggle="tooltip"
-              data-placement="bottom"
-              title="React"
-              src="../assets/images/logo-react.png"
-              alt="React logo"
-              class="portfolioCardLogo"
-            />
-            <img
-              data-toggle="tooltip"
-              data-placement="bottom"
-              title="Phaser"
-              src="../assets/images/logo-phaser.png"
-              alt="Phaser logo"
-              class="portfolioCardLogo"
-            />
-            <img
-              data-toggle="tooltip"
-              data-placement="bottom"
-              title="Socket.IO"
-              src="../assets/images/logo-socket.png"
-              alt="Socket.IO logo"
-              class="portfolioCardLogo"
-            />
-          </div>
-        </div>
-      </div>
-      <!--  -->
-      <!--  -->
-      <div class="card portfolioCard bg-primary p-0 shadow-lg">
-        <div
-          class="card-body text-center p-0 d-flex align-items-center justify-content-center p-rel"
-        >
-          <img
-            src="assets/images/screenA-large.png"
-            class="portfolioCardImage"
-          />
-        </div>
-        <div
-          class="p-abs portfolioCardOverlay d-flex flex-column justify-content-center align-items-center"
-        >
-          <h1 class="portfolioCardHeader">Wormplay</h1>
-          <p>An online two-player game using webcam and facial recognition.</p>
-          <a href="#" class="z1"><span class="absoluteSpread"></span></a>
-          <div class="d-flex justify-content-center z2">
-            <img
-              data-toggle="tooltip"
-              data-placement="bottom"
-              title="JavaScript"
-              src="../assets/images/logo-js.png"
-              alt="JS logo"
-              class="portfolioCardLogo"
-            />
-            <img
-              data-toggle="tooltip"
-              data-placement="bottom"
-              title="React"
-              src="../assets/images/logo-react.png"
-              alt="React logo"
-              class="portfolioCardLogo"
-            />
-            <img
-              data-toggle="tooltip"
-              data-placement="bottom"
-              title="Phaser"
-              src="../assets/images/logo-phaser.png"
-              alt="Phaser logo"
-              class="portfolioCardLogo"
-            />
-            <img
-              data-toggle="tooltip"
-              data-placement="bottom"
-              title="Socket.IO"
-              src="../assets/images/logo-socket.png"
-              alt="Socket.IO logo"
-              class="portfolioCardLogo"
+              title=""
+              src=""
+              alt=""
+              class="techIcon"
+              id="techIconUr"
             />
           </div>
         </div>
