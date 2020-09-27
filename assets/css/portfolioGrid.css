@@ -1,6 +1,6 @@
 .portfolioHolder {
   min-width: var(--cardHolderWidthSmall);
-  margin: 50px 0px;
+  margin: 10px 0px;
 }
 
 .portfolioCardHolder {
@@ -101,4 +101,8 @@
   padding: 0px;
   margin: 0px;
   margin-bottom: 8px;
+}
+
+.portfolioBackButton {
+  /* visibility: hidden; */
 }

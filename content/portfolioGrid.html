@@ -13,36 +13,38 @@
     <script type="module" src="assets/js/starter.js"></script> -->
     <title>C Matus Portfolio</title>
     <script>
-      $(document).ready(function () {
-        function routeThePage() {
-          let hash = window.location.hash.slice(1);
-          if (
-            hash &&
-            [
-              "nc_news",
-              "wormplay",
-              "portfolio",
-              "sortcut",
-              "crossword_crocodile",
-              "fruit_makhzan",
-            ].indexOf(hash) === -1
-          ) {
-            hash = "";
-            window.location = window.location.href.substr(
-              0,
-              window.location.href.indexOf("#")
-            );
-          }
-
-          if (!hash && !$(".portfolioCardHolder").length) {
-            $(".portfolioPageHolder").remove();
-            $(".portfolioHolder").load("/content/portfolioCardHolder.html");
-          } else {
-            $(".portfolioCardHolder").remove();
-            $(".portfolioHolder").load("/content/portfolio/" + hash + ".html");
-          }
+      function routeThePage(hash = window.location.hash.slice(1)) {
+        if (
+          hash &&
+          [
+            "home",
+            "nc_news",
+            "wormplay",
+            "portfolio",
+            "sortcut",
+            "crossword_crocodile",
+            "fruit_makhzan",
+          ].indexOf(hash) === -1
+        ) {
+          hash = "";
+          window.location = window.location.href.substr(
+            0,
+            window.location.href.indexOf("#")
+          );
         }
 
+        if (hash === "home" || (!hash && !$(".portfolioCardHolder").length)) {
+          $(".portfolioPageHolder").remove();
+          $(".portfolioHolder").load("/content/portfolioCardHolder.html");
+          $("#portfolioBackButton").addClass("visibility-h");
+        } else {
+          $(".portfolioCardHolder").remove();
+          $(".portfolioHolder").load("/content/portfolio/" + hash + ".html");
+          $("#portfolioBackButton").removeClass("visibility-h");
+        }
+      }
+
+      $(document).ready(function () {
         routeThePage();
 
         $(window).on("hashchange", function (e) {
@@ -53,6 +55,13 @@
   </head>
 
   <body>
+    <a
+      class="button bg-warning portfolioBackButton visibility-h border-g2"
+      id="portfolioBackButton"
+      href="#"
+    >
+      Back to Portfolio
+    </a>
     <div class="portfolioHolder border-k1"></div>
   </body>
 </html>
