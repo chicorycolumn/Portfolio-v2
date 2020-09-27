@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="../assets/css/starter.css" />
+    <link rel="stylesheet" href="../assets/css/global.css" />
+    <link rel="stylesheet" href="../assets/css/animations.css" />
+    <link rel="stylesheet" href="../assets/css/portfolioGrid.css" />
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script type="module" src="assets/js/starter.js"></script> -->
+    <title>C Matus Portfolio</title>
+
+    <script>
+      $(function () {
+        let techIcons = {
+          JavaScript: {
+            title: "JavaScript",
+            src: "../assets/images/logo-js.png",
+          },
+          React: {
+            title: "React",
+            src: "../assets/images/logo-react.png",
+          },
+          Phaser: {
+            title: "Phaser",
+            src: "../assets/images/logo-phaser.png",
+          },
+          "Socket.IO": {
+            title: "Socket.IO",
+            src: "../assets/images/logo-socket.png",
+          },
+          "Express.js": {
+            title: "Express.js",
+            src: "../assets/images/logo-express.png",
+          },
+          MySQL: {
+            title: "MySQL",
+            src: "../assets/images/logo-mysql.png",
+          },
+          PHP: {
+            title: "PHP",
+            src: "../assets/images/logo-php.png",
+          },
+          Python: {
+            title: "Python",
+            src: "../assets/images/logo-python.png",
+          },
+          Bootstrap: {
+            title: "Bootstrap",
+            src: "../assets/images/logo-bootstrap.png",
+          },
+          Angular: {
+            title: "Angular",
+            src: "../assets/images/logo-angular.png",
+          },
+          Flask: {
+            title: "Flask",
+            src: "../assets/images/logo-flask.png",
+          },
+        };
+        let portfolioCardData = [
+          {
+            portfolioCardHeader: "NC News",
+            portfolioCardDesc:
+              "A fullstack Reddit style news aggregation board.",
+            tech: ["JavaScript", "React", "Express.js", "MySQL"],
+            bgColor: "yellow",
+            portfolioCardImage: "assets/images/screenA-large.png",
+            url: "#nc_news",
+            // url: "#",
+          },
+          {
+            portfolioCardHeader: "Wormplay",
+            portfolioCardDesc:
+              "An online two-player game using webcam and facial recognition.",
+            tech: ["JavaScript", "React", "Socket.IO", "Phaser"],
+            bgColor: "green",
+            portfolioCardImage: "assets/images/screenA-large.png",
+            url: "#wormplay",
+          },
+          {
+            portfolioCardHeader: "Portfolio",
+            portfolioCardDesc: "A responsive and elegant portfolio website.",
+            tech: ["JavaScript", "Bootstrap"],
+            bgColor: "purple",
+            portfolioCardImage: "assets/images/screenA-large.png",
+            url: "#portfolio",
+          },
+          {
+            portfolioCardHeader: "SortCut",
+            portfolioCardDesc: "A sorting tool as a single-page-app.",
+            tech: ["JavaScript", "React"],
+            bgColor: "cyan",
+            portfolioCardImage: "assets/images/screenA-large.png",
+            url: "#sortcut",
+          },
+          {
+            portfolioCardHeader: "Crossword Crocodile",
+            portfolioCardDesc:
+              "A Python-based calculator to generate crosswords from user-chosen words.",
+            tech: ["Python", "Flask", "Angular"],
+            bgColor: "crimson",
+            portfolioCardImage: "assets/images/screenA-large.png",
+            url: "#crossword_crocodile",
+          },
+          {
+            portfolioCardHeader: "Fruit Makhzan",
+            portfolioCardDesc: "A fruit-selling database game, built in PHP.",
+            tech: ["PHP", "MySQL"],
+            bgColor: "orange",
+            portfolioCardImage: "assets/images/screenA-large.png",
+            url: "#fruit_makhzan",
+          },
+        ];
+
+        portfolioCardData.forEach((data, index) => {
+          let card =
+            index === 0
+              ? $("#portfolioCard0")
+              : $("#portfolioCard0")
+                  .clone()
+                  .attr("id", "fruitCard" + index)
+                  .appendTo(".portfolioCardHolder");
+
+          card.css({ "background-color": data.bgColor });
+
+          card.find(".portfolioCardImage").attr("src", data.portfolioCardImage);
+          card.find(".portfolioCardHeader").text(data.portfolioCardHeader);
+          card.find(".portfolioCardDesc").text(data.portfolioCardDesc);
+          card.find(".projectLink").attr("href", data.url);
+
+          card.find(".techIcon:not(#techIconUr)").remove();
+
+          data.tech.forEach((techIconName, techIconIndex) => {
+            card
+              .find("#techIconUr")
+              .clone()
+              .attr("id", "techIcon" + index + "-" + techIconIndex)
+              .attr("src", techIcons[techIconName].src)
+              .attr("title", techIcons[techIconName].title)
+              .appendTo(card.find(".techIconHolder"));
+          });
+        });
+
+        portfolioCardData.forEach((data, index) => {
+          $("#techIconUr").remove();
+        });
+
+        $('[data-toggle="tooltip"]').tooltip();
+      });
+    </script>
+  </head>
+
+  <body>
+    <div class="card-deck portfolioCardHolder m-0 border-r1">
+      <!--  -->
+      <!--  -->
+      <div class="card portfolioCard p-0 shadow-lg" id="portfolioCard0">
+        <div
+          class="card-body text-center p-0 d-flex align-items-center justify-content-center p-rel"
+        >
+          <img src="" class="portfolioCardImage" />
+        </div>
+        <div
+          class="p-abs portfolioCardOverlay d-flex flex-column justify-content-center align-items-center"
+        >
+          <h1 class="portfolioCardHeader"></h1>
+          <p class="portfolioCardDesc"></p>
+          <a href="#" class="z1 projectLink"
+            ><span class="absoluteSpread"></span
+          ></a>
+          <div class="d-flex justify-content-center z2 techIconHolder">
+            <img
+              data-toggle="tooltip"
+              data-placement="bottom"
+              title=""
+              src=""
+              alt=""
+              class="techIcon"
+              id="techIconUr"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
