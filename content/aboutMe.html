@@ -26,7 +26,7 @@
                 marginRight: "0",
                 marginTop: "0",
               })
-              .addClass("visibility-h")
+              .addClass("visibility-h").removeClass("verticallyCenterCarouselItems")
           );
         }
         areCardsInCarousel = false;
@@ -43,7 +43,7 @@
               marginLeft: "auto",
               marginRight: "auto",
               marginTop: "10px",
-            }).removeClass("appearAnimation visibility-h")
+            }).removeClass("appearAnimation visibility-h").addClass("verticallyCenterCarouselItems")
           );
         }
 
@@ -54,6 +54,13 @@
             opacity: "1",
           })
         }
+
+        setTimeout(() => {
+          if (areCardsInCarousel){
+            console.log("gonna sort it")
+            $(".aboutMeCard").removeClass("appearAnimation")
+          }
+        }, 250);
 
         areCardsInCarousel = true;
       }
@@ -209,15 +216,15 @@
         data-ride="carousel"
       >
 
-        <div class="carousel-inner" >
+        <div class="carousel-inner border-g11" >
           <div class="carousel-item active" id="carouselItem1">
-            <div id="carouselItemInner1"></div>
+            <!-- <div class="carouseItemInner" id="carouselItemInner1"></div> -->
           </div>
           <div class="carousel-item" id="carouselItem2">
-            <div id="carouselItemInner2"></div>
+            <!-- <div class="carouseItemInner" id="carouselItemInner2"></div> -->
           </div>
           <div class="carousel-item" id="carouselItem3">
-            <div id="carouselItemInner3"></div>
+            <!-- <div class="carouseItemInner" id="carouselItemInner3"></div> -->
           </div>
         </div>
 

@@ -17,12 +17,17 @@
   height: 100%;
 }
 
+#aboutMeCarousel .carouseItemInner {
+}
+
 .carouselControl {
   background-image: none;
   background-color: none;
   width: 15vw;
-  height: 400px;
+  height: 90%;
   border-radius: 0px 500px 500px 0px;
+  margin-top: auto;
+  margin-bottom: auto;
   /* background-image: linear-gradient(
     to left,
     rgba(100, 100, 100, 0.1),

@@ -45,9 +45,11 @@ h1 {
   position: relative;
   color: white;
   font-size: calc(24px + 1.5vw);
+  margin-top: 60px;
 }
 
 #portfolioSection {
+  background-color: rgba(0, 0, 0, 0);
   height: fit-content;
   min-height: 560px;
   padding-top: 75px;
@@ -57,6 +59,7 @@ h1 {
 }
 
 #aboutMeSection {
+  background-color: rgba(0, 0, 0, 0);
   height: fit-content;
   padding-top: 75px;
 }
