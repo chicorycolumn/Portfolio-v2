@@ -10,6 +10,8 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  opacity: 0;
+  transition: opacity 0.25s ease;
 }
 
 .portfolioCard {
@@ -115,4 +117,9 @@
   .portfolioCardDesc {
     font-size: 16px;
   }
+}
+
+.portfolioPageHolder {
+  opacity: 0;
+  transition: opacity 0.25s ease;
 }

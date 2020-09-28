@@ -14,7 +14,7 @@
     <title>C Matus Portfolio</title>
     <script>
       function routeThePage(hash = window.location.hash.slice(1)) {
-        // console.log("The hash is ", hash);
+        console.log("routeThePage fxn says the hash is ", hash);
 
         if (
           hash &&
@@ -41,58 +41,23 @@
           ["portfolioSection", "aboutMeSection"].indexOf(hash) !== -1 ||
           (!hash && !$(".portfolioCardHolder").length)
         ) {
-          console.log("show home!");
-          $(".portfolioPageHolder").remove();
-          $(".portfolioHolder").load("/content/portfolioCardHolder.html");
-          $("#portfolioBackButton").addClass("visibility-h");
-        } else if (hash === "home") {
-          setTimeout(() => {
-            console.log("show the grid!");
-            $(".portfolioPageHolder").remove();
-            $(".portfolioHolder").load("/content/portfolioCardHolder.html");
-            $("#portfolioBackButton").addClass("visibility-h");
-            let section = $("#portfolioSection")[0];
-            section.scrollIntoView({ behavior: "smooth" });
-          }, 100);
+          fadeAndShowHome(hash);
+        } else if (!hash || hash === "home") {
+          fadeAndShow(
+            hash,
+            ".portfolioCardHolder",
+            ".portfolioPageHolder",
+            false,
+            "/content/portfolioCardHolder.html"
+          );
         } else {
-          console.log("show a project!");
-
-          console.log("fading in the overlay");
-          $(".portfolioSectionOverlay").css({
-            visibility: "visible",
-            opacity: "1",
-          });
-
-          setTimeout(() => {
-            console.log("loading the project");
-            $(".portfolioHolder").css({
-              height: $(".portfolioHolder").css("height"),
-            });
-            $(".portfolioCardHolder").remove();
-            $(".portfolioHolder").load("/content/portfolio/" + hash + ".html");
-            $("#portfolioBackButton").removeClass("visibility-h");
-
-            setTimeout(() => {
-              console.log("fading out the overlay");
-              $(".portfolioHolder").css({
-                height: "fit-content",
-              });
-
-              $(".portfolioSectionOverlay").css({
-                opacity: "0",
-              });
-
-              console.log("scrolling to place");
-              let section = $("#portfolioSection")[0];
-              section.scrollIntoView({ behavior: "smooth" });
-
-              setTimeout(() => {
-                $(".portfolioSectionOverlay").css({
-                  visibility: "hidden",
-                });
-              }, 200);
-            }, 200);
-          }, 200);
+          fadeAndShow(
+            hash,
+            ".portfolioPageHolder",
+            ".portfolioCardHolder",
+            true,
+            "/content/portfolio/" + hash + ".html"
+          );
         }
       }
 

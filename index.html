@@ -19,6 +19,64 @@
     /> -->
 
     <script>
+      function fadeAndShowHome(hash) {
+        console.log("show home!");
+        $(".portfolioPageHolder").remove();
+        $(".portfolioHolder").load("/content/portfolioCardHolder.html");
+        $("#portfolioBackButton").addClass("visibility-h");
+        setTimeout(() => {
+          $(".portfolioCardHolder").css({ opacity: "1" });
+        }, 250);
+      }
+      function fadeAndShow(
+        hash,
+        incomingSelector,
+        outgoingSelector,
+        showButton,
+        incomingPath
+      ) {
+        console.log(
+          "I will hide " +
+            outgoingSelector +
+            " and show" +
+            incomingSelector +
+            " now."
+        );
+
+        $(outgoingSelector).css({
+          opacity: "0",
+        });
+
+        setTimeout(() => {
+          console.log("loading the grid");
+          $(".portfolioHolder").css({
+            height: $(".portfolioHolder").css("height"),
+          });
+          $(outgoingSelector).remove();
+          $(".portfolioHolder").load(incomingPath);
+          if (showButton) {
+            $("#portfolioBackButton").removeClass("visibility-h");
+          } else {
+            $("#portfolioBackButton").addClass("visibility-h");
+          }
+
+          setTimeout(() => {
+            console.log("fading in the grid");
+            $(".portfolioHolder").css({
+              height: "fit-content",
+            });
+
+            $(incomingSelector).css({
+              opacity: "1",
+            });
+
+            console.log("scrolling to place");
+            let section = $("#portfolioSection")[0];
+            section.scrollIntoView({ behavior: "smooth" });
+          }, 200);
+        }, 200);
+      }
+
       $(function () {
         $("#portfolioSection").load("content/portfolioGrid.html");
         $("#aboutMeSection").load("content/aboutMe.html");
@@ -40,10 +98,7 @@
       </div>
     </header>
     <div class="innerBody">
-      <div id="portfolioSectionContainer" class="p-rel border-r22">
-        <div class="absoluteSpread portfolioSectionOverlay z3"></div>
-        <div id="portfolioSection" class="border-f11"></div>
-      </div>
+      <div id="portfolioSection" class="border-f11"></div>
       <div id="aboutMeSection" class="border-b11"></div>
     </div>
     <footer class="p-rel overflow-h">

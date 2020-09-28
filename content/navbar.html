@@ -11,7 +11,20 @@
       $(function () {
         $(".nav-item").on("click", function (e) {
           e.preventDefault();
-          let section = $($(this).attr("href"));
+          let href = $(this).attr("href");
+          let section = $(href);
+
+          console.log("nav-item was clicked, and href is " + href);
+
+          console.log("opacity", $(".portfolioCardHolder").css("opacity"));
+
+          if (
+            href === "#portfolioSection" &&
+            $(".portfolioCardHolder").css("opacity") != 1
+          ) {
+            window.location.hash = "#home";
+          }
+
           section[0].scrollIntoView({
             behavior: "smooth",
           });
