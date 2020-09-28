@@ -1,6 +1,6 @@
 .portfolioHolder {
   min-width: var(--cardHolderWidthSmall);
-  margin: 10px 0px;
+  margin: 10px 0px 0px 0px;
 }
 
 .portfolioCardHolder {
@@ -27,25 +27,6 @@
   border-radius: 10px;
 }
 
-@media screen and (min-width: 576px) {
-  .portfolioHolder {
-    min-width: var(--cardHolderWidthLarge);
-    margin-bottom: 100px;
-  }
-
-  .portfolioCard {
-    width: var(--cardWidthLarge) !important;
-    min-width: var(--cardWidthLarge) !important;
-    max-width: var(--cardWidthLarge) !important;
-
-    height: var(--cardHeightLarge) !important;
-    min-height: var(--cardHeightLarge) !important;
-    max-height: var(--cardHeightLarge) !important;
-
-    margin: 15px 20px !important;
-  }
-}
-
 .portfolioCardImage {
   width: 100%;
   transition: width 0.75s ease-out;
@@ -58,14 +39,15 @@
   position: absolute;
   top: 0;
   left: 0;
-  background-color: rgba(0, 0, 0, 0.4);
+  background-color: rgba(0, 0, 0, 0.75);
   opacity: 0;
-  transition: opacity 1s ease-out;
+  transition: opacity 0.75s ease-out;
   transition-delay: 0.15s;
   color: white;
   text-align: center;
-  padding-left: 15%;
-  padding-right: 15%;
+  padding-left: 10%;
+  padding-right: 10%;
+  /* opacity: 1; */
 }
 
 .portfolioCard:hover .portfolioCardOverlay {
@@ -75,14 +57,6 @@
 .portfolioCard:hover .portfolioCardImage {
   width: 125%;
 }
-
-/* .portfolioCard .portfolioCardOverlay {
-  opacity: 1;
-}
-
-.portfolioCard .portfolioCardImage {
-  width: 125%;
-} */
 
 .techIcon {
   height: 40px;
@@ -98,11 +72,47 @@
 }
 
 .portfolioCardHeader {
+  font-size: 22px;
   padding: 0px;
   margin: 0px;
   margin-bottom: 8px;
 }
 
+.portfolioCardDesc {
+  font-size: 14px;
+  /* border: yellow dotted 2pt; */
+  height: 25%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
 .portfolioBackButton {
-  /* visibility: hidden; */
+}
+
+@media screen and (min-width: 576px) {
+  .portfolioHolder {
+    min-width: var(--cardHolderWidthLarge);
+    /* margin-bottom: 100px; */
+  }
+
+  .portfolioCard {
+    width: var(--cardWidthLarge) !important;
+    min-width: var(--cardWidthLarge) !important;
+    max-width: var(--cardWidthLarge) !important;
+
+    height: var(--cardHeightLarge) !important;
+    min-height: var(--cardHeightLarge) !important;
+    max-height: var(--cardHeightLarge) !important;
+
+    margin: 15px 20px !important;
+  }
+
+  .portfolioCardHeader {
+    font-size: 26px;
+  }
+
+  .portfolioCardDesc {
+    font-size: 16px;
+  }
 }

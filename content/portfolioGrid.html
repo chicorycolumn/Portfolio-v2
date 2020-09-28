@@ -14,6 +14,8 @@
     <title>C Matus Portfolio</title>
     <script>
       function routeThePage(hash = window.location.hash.slice(1)) {
+        console.log("The hash is ", hash);
+
         if (
           hash &&
           [
@@ -24,23 +26,44 @@
             "sortcut",
             "crossword_crocodile",
             "fruit_makhzan",
+            "portfolioSection",
+            "aboutMeSection",
           ].indexOf(hash) === -1
         ) {
+          console.log("--1");
           hash = "";
           window.location = window.location.href.substr(
             0,
             window.location.href.indexOf("#")
           );
         }
-
-        if (hash === "home" || (!hash && !$(".portfolioCardHolder").length)) {
+        if (hash === "home") {
+          setTimeout(() => {
+            console.log("gonna scroll to portfolio grid");
+            $(".portfolioPageHolder").remove();
+            $(".portfolioHolder").load("/content/portfolioCardHolder.html");
+            $("#portfolioBackButton").addClass("visibility-h");
+            let section = $("#portfolioSection")[0];
+            section.scrollIntoView({ behavior: "smooth" });
+          }, 1);
+        } else if (
+          ["portfolioSection", "aboutMeSection"].indexOf(hash) !== -1 ||
+          (!hash && !$(".portfolioCardHolder").length)
+        ) {
+          console.log(111);
           $(".portfolioPageHolder").remove();
           $(".portfolioHolder").load("/content/portfolioCardHolder.html");
           $("#portfolioBackButton").addClass("visibility-h");
         } else {
+          console.log(222);
           $(".portfolioCardHolder").remove();
           $(".portfolioHolder").load("/content/portfolio/" + hash + ".html");
           $("#portfolioBackButton").removeClass("visibility-h");
+          setTimeout(() => {
+            console.log("gonna scroll to portfolio project");
+            let section = $("#portfolioSection")[0];
+            section.scrollIntoView({ behavior: "smooth" });
+          }, 1);
         }
       }
 
@@ -58,10 +81,10 @@
     <a
       class="button bg-warning portfolioBackButton visibility-h border-g2"
       id="portfolioBackButton"
-      href="#"
+      href="#home"
     >
       Back to Portfolio
     </a>
-    <div class="portfolioHolder border-k1"></div>
+    <div class="portfolioHolder border-k11"></div>
   </body>
 </html>

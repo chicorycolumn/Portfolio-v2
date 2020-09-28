@@ -9,6 +9,14 @@
     <title>C Matus Portfolio</title>
     <script>
       $(function () {
+        $(".nav-item").on("click", function (e) {
+          e.preventDefault();
+          let section = $($(this).attr("href"));
+          section[0].scrollIntoView({
+            behavior: "smooth",
+          });
+        });
+
         $(".navbar-brand-image").hover(function () {
           if (!$(this).hasClass("spinOnce")) {
             $(this).addClass("spinOnce");
@@ -21,9 +29,11 @@
     </script>
   </head>
 
-  <body>
-    <nav class="navbar navbar-fixed-top navbar-expand-md bg-dark navbar-dark">
-      <!-- Brand -->
+  <body class="p-rel" style="scroll-padding: 150px 0 0 0">
+    <nav
+      id="navbar"
+      class="navbar fixed-top navbar-expand-md bg-dark navbar-dark"
+    >
       <a class="navbar-brand" href="#">
         <img
           class="navbar-brand-image"
@@ -32,7 +42,6 @@
         />
       </a>
 
-      <!-- Toggler/collapsibe Button -->
       <button
         class="navbar-toggler"
         type="button"
@@ -42,20 +51,28 @@
         <span class="navbar-toggler-icon"></span>
       </button>
 
-      <!-- Navbar links -->
       <div
         class="collapse navbar-collapse collapsibleNavbarHeight"
         id="collapsibleNavbar"
       >
-        <ul class="navbar-nav ml-3" style="height: 100%">
-          <a class="nav-item d-flex" href="#" style="text-decoration: none">
+        <ul class="nav navbar-nav ml-3" style="height: 100%">
+          <a
+            class="nav-item d-flex"
+            href="#portfolioSection"
+            style="text-decoration: none"
+          >
             <img
               src="../assets/images/icon-shapes.png"
               class="navIcon my-auto"
             />
             <p class="nav-link p-0 d-flex align-items-center">Portfolio</p>
           </a>
-          <a class="nav-item d-flex" href="#" style="text-decoration: none">
+
+          <a
+            class="nav-item d-flex"
+            href="#aboutMeSection"
+            style="text-decoration: none"
+          >
             <img
               src="../assets/images/icon-person.png"
               class="navIcon my-auto"
@@ -69,6 +86,7 @@
             />
             <p class="nav-link p-0 d-flex align-items-center">Contact</p>
           </a>
+
           <a class="nav-item d-flex" href="#" style="text-decoration: none">
             <img src="../assets/images/icon-star.png" class="navIcon my-auto" />
             <p class="nav-link p-0 d-flex align-items-center">Github</p>

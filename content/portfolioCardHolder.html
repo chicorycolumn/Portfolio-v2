@@ -115,6 +115,14 @@
             url: "#fruit_makhzan",
           },
         ];
+        function isTouchscreen() {
+          try {
+            document.createEvent("TouchEvent");
+            return true;
+          } catch (e) {
+            return false;
+          }
+        }
 
         portfolioCardData.forEach((data, index) => {
           let card =
@@ -150,12 +158,25 @@
         });
 
         $('[data-toggle="tooltip"]').tooltip();
+
+        $(".projectLink").on("click", function (e) {
+          if (
+            isTouchscreen() &&
+            $(this).parents(".portfolioCardOverlay").css("opacity") != 1
+          ) {
+            e.preventDefault();
+          } else {
+            // console.log("gonna scroll to portfolio project");
+            // let section = $("#portfolioSection")[0];
+            // section.scrollIntoView({ behaviour: "smooth" });
+          }
+        });
       });
     </script>
   </head>
 
   <body>
-    <div class="card-deck portfolioCardHolder m-0 border-r1">
+    <div class="card-deck portfolioCardHolder m-0 border-r11">
       <!--  -->
       <!--  -->
       <div class="card portfolioCard p-0 shadow-lg" id="portfolioCard0">

@@ -16,6 +16,7 @@
   vertical-align: middle; */
   width: 130px;
   transition-duration: 1s;
+  cursor: pointer;
   /* margin-left: 50px; */
   /* border: white dotted 1pt; */
 }
