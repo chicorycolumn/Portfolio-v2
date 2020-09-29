@@ -73,6 +73,13 @@
           bgColor: "yellow",
           portfolioCardImage: "assets/images/screenA-large.png",
           hash: "#nc_news",
+          imagePath: "/assets/images/",
+          images: [
+            "screenA-large.png",
+            "screenB-large.png",
+            "phoneA-large.png",
+            "phoneB-large.png",
+          ],
           // hash: "#",
         },
         {
@@ -140,7 +147,7 @@
         hash,
         incomingSelector,
         outgoingSelector,
-        showButton,
+        willShowProject,
         incomingPath
       ) {
         //////////// Dev shortcut
@@ -174,13 +181,28 @@
           });
           $(outgoingSelector).remove();
           $(".portfolioHolder").load(incomingPath);
-          if (showButton) {
-            $(".projectTitle").text(
-              portfolioCardData.filter((card) => card.hash === "#" + hash)[0]
-                .projectName
-            );
+          if (willShowProject) {
+            let card = portfolioCardData.filter(
+              (card) => card.hash === "#" + hash
+            )[0];
+
+            $(".projectTitle").text(card.projectName);
             $(".projectHeader").removeClass("o-0");
+
             setTimeout(() => {
+              console.log(card.imagePath);
+              console.log(card.images[0]);
+
+              for (let i = 0; i < 4; i++) {
+                $("#projectSquareMinipic" + i).attr(
+                  "src",
+                  card.imagePath + card.images[i]
+                );
+                $("#modal" + i)
+                  .find("img")
+                  .attr("src", card.imagePath + card.images[i]);
+              }
+
               $(".projectHeader").removeClass("visibility-h");
             }, 250);
           } else {
