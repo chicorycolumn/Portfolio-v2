@@ -19,11 +19,119 @@
     /> -->
 
     <script>
+      let techIcons = {
+        JavaScript: {
+          title: "JavaScript",
+          src: "../assets/images/logo-js.png",
+        },
+        React: {
+          title: "React",
+          src: "../assets/images/logo-react.png",
+        },
+        Phaser: {
+          title: "Phaser",
+          src: "../assets/images/logo-phaser.png",
+        },
+        "Socket.IO": {
+          title: "Socket.IO",
+          src: "../assets/images/logo-socket.png",
+        },
+        "Express.js": {
+          title: "Express.js",
+          src: "../assets/images/logo-express.png",
+        },
+        MySQL: {
+          title: "MySQL",
+          src: "../assets/images/logo-mysql.png",
+        },
+        PHP: {
+          title: "PHP",
+          src: "../assets/images/logo-php.png",
+        },
+        Python: {
+          title: "Python",
+          src: "../assets/images/logo-python.png",
+        },
+        Bootstrap: {
+          title: "Bootstrap",
+          src: "../assets/images/logo-bootstrap.png",
+        },
+        Angular: {
+          title: "Angular",
+          src: "../assets/images/logo-angular.png",
+        },
+        Flask: {
+          title: "Flask",
+          src: "../assets/images/logo-flask.png",
+        },
+      };
+      let portfolioCardData = [
+        {
+          projectName: "NC News",
+          portfolioCardDesc: "A fullstack Reddit style news aggregation board.",
+          tech: ["JavaScript", "React", "Express.js", "MySQL"],
+          bgColor: "yellow",
+          portfolioCardImage: "assets/images/screenA-large.png",
+          hash: "#nc_news",
+          // hash: "#",
+        },
+        {
+          projectName: "Wormplay",
+          portfolioCardDesc:
+            "An online two-player game using webcam and facial recognition.",
+          tech: ["JavaScript", "React", "Socket.IO", "Phaser"],
+          bgColor: "green",
+          portfolioCardImage: "assets/images/screenA-large.png",
+          hash: "#wormplay",
+        },
+        {
+          projectName: "Portfolio",
+          portfolioCardDesc: "A responsive and elegant portfolio website.",
+          tech: ["JavaScript", "Bootstrap"],
+          bgColor: "purple",
+          portfolioCardImage: "assets/images/screenA-large.png",
+          hash: "#portfolio_site",
+        },
+        {
+          projectName: "SortCut",
+          portfolioCardDesc: "A sorting tool as a single-page-app.",
+          tech: ["JavaScript", "React"],
+          bgColor: "cyan",
+          portfolioCardImage: "assets/images/screenA-large.png",
+          hash: "#sortcut",
+        },
+        {
+          projectName: "Crossword Crocodile",
+          portfolioCardDesc:
+            "A Python-based calculator to generate crosswords from user-chosen words.",
+          tech: ["Python", "Flask", "Angular"],
+          bgColor: "crimson",
+          portfolioCardImage: "assets/images/screenA-large.png",
+          hash: "#crossword_crocodile",
+        },
+        {
+          projectName: "Fruit Makhzan",
+          portfolioCardDesc: "A fruit-selling database game, built in PHP.",
+          tech: ["PHP", "MySQL"],
+          bgColor: "orange",
+          portfolioCardImage: "assets/images/screenA-large.png",
+          hash: "#fruit_makhzan",
+        },
+      ];
+      function isTouchscreen() {
+        try {
+          document.createEvent("TouchEvent");
+          return true;
+        } catch (e) {
+          return false;
+        }
+      }
+
       function fadeAndShowHome(hash) {
         console.log("show home!");
         $(".portfolioPageHolder").remove();
         $(".portfolioHolder").load("/content/portfolioCardHolder.html");
-        $("#portfolioBackButton").addClass("visibility-h");
+        $(".projectHeader").addClass("visibility-h");
         setTimeout(() => {
           $(".portfolioCardHolder").css({ opacity: "1" });
         }, 250);
@@ -35,6 +143,18 @@
         showButton,
         incomingPath
       ) {
+        //////////// Dev shortcut
+        // $(".portfolioHolder").load(incomingPath);
+        // setTimeout(() => {
+        //   $(incomingSelector).css({
+        //     opacity: "1",
+        //   });
+        //   $('[data-toggle="tooltip"]').tooltip();
+        // }, 100);
+
+        // return;
+        ////////////
+
         console.log(
           "I will hide " +
             outgoingSelector +
@@ -55,9 +175,19 @@
           $(outgoingSelector).remove();
           $(".portfolioHolder").load(incomingPath);
           if (showButton) {
-            $("#portfolioBackButton").removeClass("visibility-h");
+            $(".projectTitle").text(
+              portfolioCardData.filter((card) => card.hash === "#" + hash)[0]
+                .projectName
+            );
+            $(".projectHeader").removeClass("o-0");
+            setTimeout(() => {
+              $(".projectHeader").removeClass("visibility-h");
+            }, 250);
           } else {
-            $("#portfolioBackButton").addClass("visibility-h");
+            $(".projectHeader").addClass("o-0");
+            setTimeout(() => {
+              $(".projectHeader").addClass("visibility-h");
+            }, 250);
           }
 
           setTimeout(() => {
@@ -73,6 +203,7 @@
             console.log("scrolling to place");
             let section = $("#portfolioSection")[0];
             section.scrollIntoView({ behavior: "smooth" });
+            $('[data-toggle="tooltip"]').tooltip();
           }, 200);
         }, 200);
       }
@@ -98,8 +229,8 @@
       </div>
     </header>
     <div class="innerBody">
-      <div id="portfolioSection" class="border-f11"></div>
-      <div id="aboutMeSection" class="border-b11"></div>
+      <div id="portfolioSection" class=""></div>
+      <div id="aboutMeSection" class=""></div>
     </div>
     <footer class="p-rel overflow-h">
       <div class="absoluteSpread bgFooter"></div>

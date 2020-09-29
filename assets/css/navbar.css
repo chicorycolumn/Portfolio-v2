@@ -65,10 +65,10 @@
 }
 
 .navIcon {
+  opacity: 0;
   transition: 1s;
   transition-delay: 0;
   height: 20px;
   width: 20px;
-  opacity: 0;
   margin-left: 5px;
 }
