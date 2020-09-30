@@ -14,7 +14,7 @@
 header {
   height: fit-content;
   padding-top: 0px;
-  padding-bottom: 4vw;
+  padding-bottom: 0px;
 }
 
 footer {
@@ -49,10 +49,13 @@ h1 {
 }
 
 #portfolioSection {
+  /* border: orange dotted 2px; */
+  position: relative;
+  top: -75px;
   background-color: rgba(0, 0, 0, 0);
   height: fit-content;
   min-height: 560px;
-  padding-top: 75px;
+  padding-top: 100px;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
@@ -62,6 +65,8 @@ h1 {
   background-color: rgba(0, 0, 0, 0);
   height: fit-content;
   padding-top: 75px;
+  position: relative;
+  top: -75px;
 }
 
 .portfolioSectionOverlay {
@@ -74,19 +79,22 @@ h1 {
 @media screen and (min-width: 576px) {
   .innerBody {
     padding: 24px;
-  }
-
-  #portfolioSection {
-    padding-top: 100px;
+    padding-top: 0px;
   }
 
   #aboutMeSection {
     padding-top: 150px;
+    top: -150px;
   }
 }
 
 @media screen and (min-width: 768px) {
   .innerBody {
     padding: 48px;
+    padding-top: 0px;
+  }
+  .headerText {
+    margin-top: 60px;
+    padding-bottom: 175px;
   }
 }

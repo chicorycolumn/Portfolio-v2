@@ -97,10 +97,26 @@
           projectSquareTextProse_Frontend: "React",
           externalLink: "http://www.google.co.uk",
           sourceLinks: [
-            { title: "Back end", name: "Netlify", link: "www.netlify.com" },
-            { title: "Back end code", name: "Github", link: "www.github.com" },
-            { title: "Front end", name: "Heroku", link: "www.heroku.com" },
-            { title: "Front end code", name: "Github", link: "www.github.com" },
+            {
+              title: "Back end",
+              name: "Netlify",
+              link: "http://www.netlify.com",
+            },
+            {
+              title: "Back end code",
+              name: "Github",
+              link: "http://www.github.com",
+            },
+            {
+              title: "Front end",
+              name: "Heroku",
+              link: "http://www.heroku.com",
+            },
+            {
+              title: "Front end code",
+              name: "Github",
+              link: "http://www.github.com",
+            },
           ],
         },
         {
@@ -123,10 +139,26 @@
           projectSquareTextProse_Frontend: "Socket.io, React, Phaser",
           externalLink: "http://www.google.co.uk",
           sourceLinks: [
-            { title: "Back end", name: "Netlify", link: "www.netlify.com" },
-            { title: "Back end code", name: "Github", link: "www.github.com" },
-            { title: "Front end", name: "Heroku", link: "www.heroku.com" },
-            { title: "Front end code", name: "Github", link: "www.github.com" },
+            {
+              title: "Back end",
+              name: "Netlify",
+              link: "http://www.netlify.com",
+            },
+            {
+              title: "Back end code",
+              name: "Github",
+              link: "http://www.github.com",
+            },
+            {
+              title: "Front end",
+              name: "Heroku",
+              link: "http://www.heroku.com",
+            },
+            {
+              title: "Front end code",
+              name: "Github",
+              link: "http://www.github.com",
+            },
           ],
         },
         {
@@ -148,8 +180,16 @@
           projectSquareTextProse_Frontend: "Socket.io, React",
           externalLink: "http://www.ask.com",
           sourceLinks: [
-            { title: "Front end", name: "Heroku", link: "www.heroku.com" },
-            { title: "Front end code", name: "Github", link: "www.github.com" },
+            {
+              title: "Front end",
+              name: "Heroku",
+              link: "http://www.heroku.com",
+            },
+            {
+              title: "Front end code",
+              name: "Github",
+              link: "http://www.github.com",
+            },
           ],
         },
         {
@@ -218,6 +258,9 @@
           $(".portfolioHolder").load(incomingPath);
           if (projectPath) {
             console.log(projectPath);
+
+            $("#portfolioSection").removeClass("flex-column-reverse");
+
             let card = portfolioCardData.filter(
               (card) => card.hash === "#" + hash
             )[0];
@@ -299,6 +342,7 @@
               }, 200);
             }, 100);
           } else {
+            $("#portfolioSection").addClass("flex-column-reverse");
             $(".projectHeader").addClass("o-0");
             setTimeout(() => {
               $(".projectHeader").addClass("visibility-h");
@@ -350,12 +394,11 @@
       </div>
     </header>
     <div class="innerBody">
-      <div id="portfolioSection" class=""></div>
+      <div id="portfolioSection" class="d-flex flex-column"></div>
       <div id="aboutMeSection" class=""></div>
     </div>
     <footer class="p-rel overflow-h">
       <div class="absoluteSpread bgFooter"></div>
-      <h1 class="headerText">Footer Content</h1>
     </footer>
   </body>
 </html>
