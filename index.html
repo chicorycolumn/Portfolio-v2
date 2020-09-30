@@ -248,7 +248,7 @@
         );
 
         $(outgoingSelector).addClass("o-0");
-        $(".projectHeader").addClass("o-0");
+        $(".portfolioHeader").addClass("o-0");
 
         setTimeout(() => {
           $(".portfolioHolder").css({
@@ -260,13 +260,14 @@
             console.log(projectPath);
 
             $("#portfolioSection").removeClass("flex-column-reverse");
+            $(".portfolioHeader").removeClass("noHeight");
 
             let card = portfolioCardData.filter(
               (card) => card.hash === "#" + hash
             )[0];
 
             $(".projectTitle").text(card.projectName);
-            $(".projectHeader").removeClass("visibility-h");
+            $(".portfolioHeader").removeClass("visibility-h");
             $(".portfolioVisitButton").attr("href", card.externalLink);
 
             setTimeout(() => {
@@ -338,14 +339,15 @@
 
               setTimeout(() => {
                 $(".portfolioPageHolder").removeClass("o-0");
-                $(".projectHeader").removeClass("o-0");
+                $(".portfolioHeader").removeClass("o-0");
               }, 200);
             }, 100);
           } else {
             $("#portfolioSection").addClass("flex-column-reverse");
-            $(".projectHeader").addClass("o-0");
+            $(".portfolioHeader").addClass("o-0");
             setTimeout(() => {
-              $(".projectHeader").addClass("visibility-h");
+              $(".portfolioHeader").addClass("visibility-h");
+              $(".portfolioHeader").addClass("noHeight");
             }, 250);
           }
 
@@ -367,8 +369,10 @@
         console.log("show home!");
         $(".portfolioPageHolder").remove();
         $(".portfolioHolder").load("/content/portfolioCardHolder.html");
-        $(".projectHeader").addClass("visibility-h");
+        $(".portfolioHeader").addClass("visibility-h");
         setTimeout(() => {
+          $("#portfolioSection").addClass("flex-column-reverse");
+          $(".portfolioHeader").addClass("noHeight");
           $(".portfolioCardHolder").removeClass("o-0");
         }, 250);
       }

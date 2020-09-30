@@ -543,3 +543,7 @@ a.disabled {
     padding-right: 6rem !important;
   }
 }
+
+.noHeight {
+  height: 0px !important;
+}
