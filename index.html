@@ -207,9 +207,8 @@
             incomingPath
         );
 
-        $(outgoingSelector).css({
-          opacity: "0",
-        });
+        $(outgoingSelector).addClass("o-0");
+        $(".projectHeader").addClass("o-0");
 
         setTimeout(() => {
           $(".portfolioHolder").css({
@@ -218,6 +217,7 @@
           $(outgoingSelector).remove();
           $(".portfolioHolder").load(incomingPath);
           if (projectPath) {
+            console.log(projectPath);
             let card = portfolioCardData.filter(
               (card) => card.hash === "#" + hash
             )[0];
@@ -310,9 +310,7 @@
               height: "fit-content",
             });
 
-            $(incomingSelector).css({
-              opacity: "1",
-            });
+            $(incomingSelector).removeClass("o-0");
 
             let section = $("#portfolioSection")[0];
             section.scrollIntoView({ behavior: "smooth" });
@@ -327,7 +325,7 @@
         $(".portfolioHolder").load("/content/portfolioCardHolder.html");
         $(".projectHeader").addClass("visibility-h");
         setTimeout(() => {
-          $(".portfolioCardHolder").css({ opacity: "1" });
+          $(".portfolioCardHolder").removeClass("o-0");
         }, 250);
       }
 
