@@ -81,11 +81,6 @@ h1 {
     padding: 24px;
     padding-top: 0px;
   }
-
-  #aboutMeSection {
-    /* padding-top: 150px;
-    top: -150px; */
-  }
 }
 
 @media screen and (min-width: 768px) {
@@ -96,6 +91,11 @@ h1 {
   .headerText {
     margin-top: 60px;
     padding-bottom: 175px;
+  }
+
+  #aboutMeSection {
+    padding-top: 125px;
+    /* top: -150px; */
   }
 }
 

@@ -10,8 +10,13 @@
     <script>
       $(function () {
         $(".nav-item").on("click", function (e) {
-          e.preventDefault();
           let href = $(this).attr("href");
+
+          if (href[0] !== "#") {
+            return;
+          }
+
+          e.preventDefault();
           let section = $(href);
 
           console.log("nav-item was clicked, and href is " + href);
@@ -74,7 +79,7 @@
             style="text-decoration: none"
           >
             <img
-              src="../assets/images/icon-shapes.png"
+              src="../assets/images/icon-star.png"
               class="navIcon my-auto o-0"
             />
             <p class="nav-link p-0 d-flex align-items-center">Portfolio</p>
@@ -87,24 +92,45 @@
           >
             <img
               src="../assets/images/icon-person.png"
-              class="navIcon my-auto"
+              class="navIcon my-auto o-0"
             />
             <p class="nav-link p-0 d-flex align-items-center">About</p>
           </a>
-          <a class="nav-item d-flex" href="#" style="text-decoration: none">
+          <a
+            class="nav-item d-flex"
+            style="text-decoration: none"
+            target="_blank"
+            href="mailto:c.matus.contact@gmail.com"
+          >
             <img
               src="../assets/images/icon-envelope.png"
-              class="navIcon my-auto"
+              class="navIcon my-auto o-0"
             />
             <p class="nav-link p-0 d-flex align-items-center">Contact</p>
           </a>
 
-          <a class="nav-item d-flex" href="#" style="text-decoration: none">
-            <img src="../assets/images/icon-star.png" class="navIcon my-auto" />
+          <a
+            class="nav-item d-flex"
+            style="text-decoration: none"
+            target="_blank"
+            href="http://www.github.com/chicorycolumn"
+          >
+            <img
+              src="../assets/images/logo-github-bw.png"
+              class="navIcon my-auto o-0"
+            />
             <p class="nav-link p-0 d-flex align-items-center">Github</p>
           </a>
-          <a class="nav-item d-flex" href="#" style="text-decoration: none">
-            <img src="../assets/images/icon-bulb.png" class="navIcon my-auto" />
+          <a
+            class="nav-item d-flex"
+            style="text-decoration: none"
+            target="_blank"
+            href="http://www.linkedin.com"
+          >
+            <img
+              src="../assets/images/logo-linkedin-bw.png"
+              class="navIcon my-auto o-0"
+            />
             <p class="nav-link p-0 d-flex align-items-center">LinkedIn</p>
           </a>
         </ul>
