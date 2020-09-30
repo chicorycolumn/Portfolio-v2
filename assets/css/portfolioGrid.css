@@ -98,13 +98,12 @@
   font-weight: bold;
 }
 
-.portfolioBackButtonImage {
+.portfolioHeaderButtonImage {
   width: 50px;
   max-width: 50px;
 }
 
 .portfolioPageHolder {
-  opacity: 0;
   transition: opacity 0.25s ease;
 }
 
@@ -128,17 +127,20 @@
 }
 
 .sourceLinkSubholder {
-  /* border: white solid 0.5px; */
+  text-decoration: none !important;
+  color: black !important;
   width: 22.5%;
 }
 
 .sourceLinkIcon {
   width: 100%;
   max-width: 40px;
+  margin-bottom: 10px;
 }
 
 .sourceLinkText {
   font-size: 75%;
+  line-height: 125%;
 }
 
 .projectSquareMinipic {
@@ -175,7 +177,7 @@
 }
 
 @media screen and (min-width: 576px) {
-  .portfolioBackButtonImage {
+  .portfolioHeaderButtonImage {
     width: 100px;
     max-width: 100px;
   }
@@ -191,4 +193,9 @@
 
 .projectSquareTextProse {
   font-size: 14px;
+}
+
+.sourceLinkHolder {
+  background-color: rgba(0, 0, 0, 0.05);
+  border-radius: 20px 20px 0px 0px;
 }

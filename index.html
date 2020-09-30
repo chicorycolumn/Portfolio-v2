@@ -64,6 +64,18 @@
           title: "Flask",
           src: "../assets/images/logo-flask.png",
         },
+        Netlify: {
+          title: "Netlify",
+          src: "../assets/images/logo-netlify.png",
+        },
+        Heroku: {
+          title: "Heroku",
+          src: "../assets/images/logo-heroku.png",
+        },
+        Github: {
+          title: "Github",
+          src: "../assets/images/logo-github.png",
+        },
       };
       let portfolioCardData = [
         {
@@ -80,7 +92,16 @@
             "phoneA-large.png",
             "phoneB-large.png",
           ],
-          // hash: "#",
+          projectSquareTextProse_Language: "JavaScript",
+          projectSquareTextProse_Backend: "Node.js, Axios, Express",
+          projectSquareTextProse_Frontend: "React",
+          externalLink: "http://www.google.co.uk",
+          sourceLinks: [
+            { title: "Back end", name: "Netlify", link: "www.netlify.com" },
+            { title: "Back end code", name: "Github", link: "www.github.com" },
+            { title: "Front end", name: "Heroku", link: "www.heroku.com" },
+            { title: "Front end code", name: "Github", link: "www.github.com" },
+          ],
         },
         {
           projectName: "Wormplay",
@@ -90,6 +111,23 @@
           bgColor: "green",
           portfolioCardImage: "assets/images/screenA-large.png",
           hash: "#wormplay",
+          imagePath: "/assets/images/",
+          images: [
+            "screenA-large.png",
+            "screenB-large.png",
+            "phoneA-large.png",
+            "phoneB-large.png",
+          ],
+          projectSquareTextProse_Language: "JavaScript",
+          projectSquareTextProse_Backend: "Node.js, Axios, Express, Socket.io",
+          projectSquareTextProse_Frontend: "Socket.io, React, Phaser",
+          externalLink: "http://www.google.co.uk",
+          sourceLinks: [
+            { title: "Back end", name: "Netlify", link: "www.netlify.com" },
+            { title: "Back end code", name: "Github", link: "www.github.com" },
+            { title: "Front end", name: "Heroku", link: "www.heroku.com" },
+            { title: "Front end code", name: "Github", link: "www.github.com" },
+          ],
         },
         {
           projectName: "Portfolio",
@@ -147,27 +185,20 @@
         hash,
         incomingSelector,
         outgoingSelector,
-        willShowProject,
-        incomingPath
+        incomingPath,
+        projectPath
       ) {
-        //////////// Dev shortcut
-        // $(".portfolioHolder").load(incomingPath);
-        // setTimeout(() => {
-        //   $(incomingSelector).css({
-        //     opacity: "1",
-        //   });
-        //   $('[data-toggle="tooltip"]').tooltip();
-        // }, 100);
-
-        // return;
-        ////////////
+        if (!incomingPath) {
+          incomingPath = "/content/portfolio/project.html";
+        }
 
         console.log(
           "I will hide " +
             outgoingSelector +
             " and show" +
             incomingSelector +
-            " now."
+            " at path " +
+            incomingPath
         );
 
         $(outgoingSelector).css({
@@ -175,24 +206,21 @@
         });
 
         setTimeout(() => {
-          console.log("loading the grid");
           $(".portfolioHolder").css({
             height: $(".portfolioHolder").css("height"),
           });
           $(outgoingSelector).remove();
           $(".portfolioHolder").load(incomingPath);
-          if (willShowProject) {
+          if (projectPath) {
             let card = portfolioCardData.filter(
               (card) => card.hash === "#" + hash
             )[0];
 
             $(".projectTitle").text(card.projectName);
-            $(".projectHeader").removeClass("o-0");
+            $(".projectHeader").removeClass("visibility-h");
+            $(".portfolioVisitButton").attr("href", card.externalLink);
 
             setTimeout(() => {
-              console.log(card.imagePath);
-              console.log(card.images[0]);
-
               for (let i = 0; i < 4; i++) {
                 $("#projectSquareMinipic" + i).attr(
                   "src",
@@ -203,8 +231,40 @@
                   .attr("src", card.imagePath + card.images[i]);
               }
 
-              $(".projectHeader").removeClass("visibility-h");
-            }, 250);
+              for (let i = 0; i < card.sourceLinks.length; i++) {
+                $("#sourceLinkSubholder" + i).attr(
+                  "title",
+                  card.sourceLinks[i].name
+                );
+                $("#sourceLinkSubholder" + i).attr(
+                  "href",
+                  card.sourceLinks[i].link
+                );
+                $("#sourceLinkSubholder" + i)
+                  .find(".sourceLinkText")
+                  .text(card.sourceLinks[i].title);
+                $("#sourceLinkSubholder" + i)
+                  .find(".sourceLinkIcon")
+                  .attr("src", techIcons[card.sourceLinks[i].name].src);
+              }
+
+              $(".projectSquareTextProse_Language").text(
+                card.projectSquareTextProse_Language
+              );
+              $(".projectSquareTextProse_Frontend").text(
+                card.projectSquareTextProse_Frontend
+              );
+              $(".projectSquareTextProse_Backend").text(
+                card.projectSquareTextProse_Backend
+              );
+
+              $(".projectSquareLeftText").load(projectPath);
+
+              setTimeout(() => {
+                $(".portfolioPageHolder").removeClass("o-0");
+                $(".projectHeader").removeClass("o-0");
+              }, 200);
+            }, 100);
           } else {
             $(".projectHeader").addClass("o-0");
             setTimeout(() => {
@@ -213,7 +273,6 @@
           }
 
           setTimeout(() => {
-            console.log("fading in the grid");
             $(".portfolioHolder").css({
               height: "fit-content",
             });
@@ -222,7 +281,6 @@
               opacity: "1",
             });
 
-            console.log("scrolling to place");
             let section = $("#portfolioSection")[0];
             section.scrollIntoView({ behavior: "smooth" });
             $('[data-toggle="tooltip"]').tooltip();
