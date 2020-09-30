@@ -143,6 +143,7 @@
 .projectSquareMinipic {
   border-radius: 10%;
   box-shadow: var(--myShadow1);
+  cursor: pointer;
   /* box-shadow: 0 0 5px black; */
 }
 

@@ -10,6 +10,10 @@
     <link rel="stylesheet" href="assets/css/aboutMeCarousel.css" />
     <title>C Matus Portfolio</title>
     <script>
+      function pauseCarousel(){
+        $("#aboutMeCarousel").carousel("pause")
+      }
+
       function classAfterTimeout(selector, timeout, classToAdd, classToRemove) {
         setTimeout(() => {
           $(selector).addClass(classToAdd);
@@ -46,8 +50,8 @@
             }).removeClass("appearAnimation visibility-h").addClass("verticallyCenterCarouselItems")
           );
         }
-
-        $("#aboutMeCarousel").carousel(0)
+        console.log(111)
+        $("#aboutMeCarousel").carousel({interval: isTouchscreen() ? false : 2000});
 
         if (areCardsInCarousel === null) {
           $(".aboutMeCard").css({
@@ -120,7 +124,8 @@
       let areCardsInCarousel = null; //important
 
       $(function () {
-        $("#aboutMeCarousel").carousel();
+        // console.log(222)
+        // $("#aboutMeCarousel").carousel({interval: false});
 
         moveCardsToAppropriatePlace();
 
@@ -213,7 +218,7 @@
       <div
         id="aboutMeCarousel"
         class="carousel slide"
-        data-ride="carousel"
+        onClick="pauseCarousel()"
       >
 
         <div class="carousel-inner" >
@@ -228,10 +233,10 @@
           </div>
         </div>
 
-        <a class="carousel-control-prev carouselControl flipHorizontal d-flex justify-content-end" href="#aboutMeCarousel" data-slide="prev" onClick="{$('#aboutMeCarousel').carousel('pause')}">
+        <a class="carousel-control-prev carouselControl flipHorizontal d-flex justify-content-end" href="#aboutMeCarousel" data-slide="prev" onClick="pauseCarousel()">
           <img class="carouselControlIcon carouselControlIconPrev " src="../assets/images/csun-arrowR.png"></img>
         </a>
-        <a class="carousel-control-next carouselControl d-flex justify-content-end" href="#aboutMeCarousel" data-slide="next" onClick="{$('#aboutMeCarousel').carousel('pause')}">
+        <a class="carousel-control-next carouselControl d-flex justify-content-end" href="#aboutMeCarousel" data-slide="next" onClick="pauseCarousel()">
           <img class="carouselControlIcon carouselControlIconNext" src="../assets/images/csun-arrowR.png"></img>
         </a>
 
