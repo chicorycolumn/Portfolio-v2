@@ -12,39 +12,43 @@
 }
 
 .nav-item {
-  /* display: table-cell;
-  vertical-align: middle; */
   width: 130px;
-  transition-duration: 1s;
   cursor: pointer;
-  /* margin-left: 50px; */
-  /* border: white dotted 1pt; */
 }
 
 .nav-link {
-  transition: 0.5s ease-in-out;
   margin-left: -10px;
+  /* margin-left: -100px !important; */
+  /* font-size: 100px !important; */
   height: 45px;
-  transition-delay: 0s;
   text-align: center;
   margin-bottom: 0px;
 }
 
+.nav-link_transition {
+  transition: 0.5s ease-in-out;
+}
+
+.nav-item:not(:hover) .nav-icon_transition {
+  transition: 0.25s ease-in-out !important;
+}
+
+.nav-item_transition {
+  transition-duration: 0s;
+  transition-duration: 1s;
+}
+
+.nav-item:not(:hover) .nav-link_transition {
+  transition-delay: 0s;
+}
+
 .nav-item:hover .nav-link {
-  font-size: 24px;
+  font-size: 20px;
   margin-left: 5px;
   color: white !important;
 }
 
-.nav-item:not(:hover) .nav-link {
-  transition-delay: 0.1s;
-}
-
-.nav-item:not(:hover) .navIcon {
-  transition: 0.5s ease-in-out !important;
-}
-
-.nav-item:hover .navIcon {
+.nav-item:hover .nav-icon_transition {
   transition-delay: 0s;
   opacity: 1;
   -webkit-animation-name: spin-once;
@@ -68,13 +72,18 @@
   }
 }
 
-.navIcon {
+.nav-icon {
   opacity: 0;
-  transition: 0.75s ease-in-out;
-  transition-delay: 0;
+
   height: 20px;
   width: 20px;
   margin-left: 5px;
   position: relative;
   top: -3.5px;
+}
+
+.nav-icon_transition {
+  transition: 0s ease-in-out;
+  transition: 0.75s ease-in-out;
+  transition-delay: 0s;
 }
