@@ -1,4 +1,9 @@
 :root {
+  --mainFont1: "Varela Round", sans-serif;
+  --mainFont2: "Baloo Paaji 2", cursive;
+  --decorFont2: "Racing Sans One", cursive;
+  --decorFont1: "Rowdies", cursive;
+
   --yellow: rgb(255, 255, 0);
 
   --yellowLight1: rgb(255, 255, 43);
@@ -45,6 +50,19 @@
   --cardHolderWidthSmall: 100%;
 
   --myShadow1: 2px 2px 4px rgba(0, 0, 0, 0.25);
+}
+
+body {
+  font-family: var(--mainFont1);
+  color: var(--purpleDark5);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-family: var(--mainFont2);
 }
 
 .color-y {
