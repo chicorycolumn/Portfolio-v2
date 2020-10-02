@@ -8,24 +8,8 @@
     <link rel="stylesheet" href="assets/css/index.css" />
     <link rel="stylesheet" href="assets/css/animations.css" />
     <link rel="stylesheet" href="assets/css/global.css" />
-
-    <!--  -->
-    <!--  -->
-
-    <link
-      href="https://fonts.googleapis.com/css2?family=Anton&display=swap"
-      rel="stylesheet"
-    />
     <link
       href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Lalezar&display=swap"
       rel="stylesheet"
     />
     <link
@@ -40,8 +24,6 @@
       href="https://fonts.googleapis.com/css2?family=Rowdies:wght@300&display=swap"
       rel="stylesheet"
     />
-    <!--  -->
-    <!--  -->
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
@@ -55,6 +37,34 @@
 
     <script>
       let techIcons = {
+        "Node.js": {
+          title: "Node.js",
+          src: "../assets/images/logo-nodejs.png",
+        },
+        TypeScript: {
+          title: "TypeScript",
+          src: "../assets/images/logo-typescript.png",
+        },
+        Chai: {
+          title: "Chai",
+          src: "../assets/images/logo-chai.png",
+        },
+        Mocha: {
+          title: "Mocha",
+          src: "../assets/images/logo-mocha.png",
+        },
+        Axios: {
+          title: "Axios",
+          src: "../assets/images/logo-axios.png",
+        },
+        Knex: {
+          title: "Knex",
+          src: "../assets/images/logo-knex.png",
+        },
+        "CSS Modules": {
+          title: "CSS Modules",
+          src: "../assets/images/logo-cssmodules.png",
+        },
         JavaScript: {
           title: "JavaScript",
           src: "../assets/images/logo-js.png",
@@ -71,8 +81,8 @@
           title: "Socket.IO",
           src: "../assets/images/logo-socket.png",
         },
-        "Express.js": {
-          title: "Express.js",
+        Express: {
+          title: "Express",
           src: "../assets/images/logo-express.png",
         },
         MySQL: {
@@ -115,8 +125,17 @@
       let portfolioCardData = [
         {
           projectName: "NC News",
-          portfolioCardDesc: "A fullstack Reddit style news aggregation board.",
-          tech: ["JavaScript", "React", "Express.js", "MySQL"],
+          portfolioCardDesc: "A fullstack Reddit-style news aggregation board.",
+          tech: [
+            "JavaScript",
+            "React",
+            "Axios",
+            "Express",
+            "MySQL",
+            "CSS Modules",
+            "Chai",
+            "Mocha",
+          ],
           bgColor: "yellow",
           portfolioCardImage: "assets/images/screenA-large.png",
           hash: "#nc_news",
@@ -127,8 +146,9 @@
             "phoneB-large.png",
           ],
           projectSquareTextProse_Language: "JavaScript",
-          projectSquareTextProse_Backend: "Node.js, Axios, Express",
-          projectSquareTextProse_Frontend: "React",
+          projectSquareTextProse_Backend: "MySQL, Axios, Express, Knex",
+          projectSquareTextProse_Frontend: "React, Reach Router, CSS Modules",
+          projectSquareTextProse_Testing: "Chai, Mocha",
           sourceLinks: [
             {
               title: "Back end code",
@@ -157,7 +177,15 @@
           projectName: "Wormplay",
           portfolioCardDesc:
             "An online two-player game using webcam and facial recognition.",
-          tech: ["JavaScript", "React", "Socket.IO", "Phaser"],
+          tech: [
+            "JavaScript",
+            "React",
+            "Socket.IO",
+            "Phaser",
+            "Axios",
+            "Express",
+            "CSS Modules",
+          ],
           bgColor: "green",
           portfolioCardImage: "assets/images/screenA-large.png",
           hash: "#wormplay",
@@ -168,8 +196,9 @@
             "phoneB-large.png",
           ],
           projectSquareTextProse_Language: "JavaScript",
-          projectSquareTextProse_Backend: "Node.js, Axios, Express, Socket.io",
-          projectSquareTextProse_Frontend: "Socket.io, React, Phaser",
+          projectSquareTextProse_Backend: "Axios, Express, Socket.IO",
+          projectSquareTextProse_Frontend:
+            "Socket.IO, React, Phaser, CSS Modules",
           sourceLinks: [
             {
               title: "Back end code",
@@ -208,8 +237,7 @@
             "phoneB-large.png",
           ],
           projectSquareTextProse_Language: "JavaScript",
-          projectSquareTextProse_Backend: "Node.js, Axios, Express, Socket.io",
-          projectSquareTextProse_Frontend: "Socket.io, React",
+          projectSquareTextProse_Frontend: "Bootstrap",
           sourceLinks: [
             {
               title: "Code",
@@ -227,7 +255,7 @@
         {
           projectName: "SortCut",
           portfolioCardDesc: "A sorting tool as a single-page-app.",
-          tech: ["JavaScript", "React"],
+          tech: ["JavaScript", "React", "CSS Modules"],
           bgColor: "cyan",
           portfolioCardImage: "assets/images/screenA-large.png",
           hash: "#sortcut",
@@ -238,8 +266,7 @@
             "phoneB-large.png",
           ],
           projectSquareTextProse_Language: "JavaScript",
-          projectSquareTextProse_Backend: "Node.js, Axios, Express, Socket.io",
-          projectSquareTextProse_Frontend: "Socket.io, React",
+          projectSquareTextProse_Frontend: "CSS Modules, React",
           sourceLinks: [
             {
               title: "Code",
@@ -258,7 +285,7 @@
           projectName: "Crossword Crocodile",
           portfolioCardDesc:
             "A Python-based calculator to generate crosswords from user-chosen words.",
-          tech: ["Python", "Flask", "Angular"],
+          tech: ["Python", "Flask", "Angular", "TypeScript", "Socket.IO"],
           bgColor: "crimson",
           portfolioCardImage: "assets/images/screenA-large.png",
           hash: "#crossword_crocodile",
@@ -268,9 +295,9 @@
             "phoneA-large.png",
             "phoneB-large.png",
           ],
-          projectSquareTextProse_Language: "JavaScript",
-          projectSquareTextProse_Backend: "Node.js, Axios, Express, Socket.io",
-          projectSquareTextProse_Frontend: "Socket.io, React",
+          projectSquareTextProse_Language: "Python, TypeScript",
+          projectSquareTextProse_Backend: "Flask, Socket.IO",
+          projectSquareTextProse_Frontend: "Angular",
           sourceLinks: [
             {
               title: "Back end code",
@@ -308,9 +335,8 @@
             "phoneA-large.png",
             "phoneB-large.png",
           ],
-          projectSquareTextProse_Language: "JavaScript",
-          projectSquareTextProse_Backend: "Node.js, Axios, Express, Socket.io",
-          projectSquareTextProse_Frontend: "Socket.io, React",
+          projectSquareTextProse_Language: "PHP",
+          projectSquareTextProse_Backend: "MySQL",
           sourceLinks: [
             {
               title: "Code",
@@ -429,14 +455,20 @@
                 makeSourceLinkSet(i);
               }
 
-              $(".projectSquareTextProse_Language").text(
-                card.projectSquareTextProse_Language
-              );
-              $(".projectSquareTextProse_Frontend").text(
-                card.projectSquareTextProse_Frontend
-              );
-              $(".projectSquareTextProse_Backend").text(
-                card.projectSquareTextProse_Backend
+              ["Language", "Frontend", "Backend", "Testing"].forEach(
+                (label) => {
+                  console.log(label);
+                  let fullLabel = "projectSquareTextProse_" + label;
+                  if (card[fullLabel]) {
+                    console.log("Yes", label);
+                    $("." + fullLabel).text(card[fullLabel]);
+                  } else {
+                    console.log("No", label);
+                    $("." + fullLabel)
+                      .parent()
+                      .remove();
+                  }
+                }
               );
 
               $(".projectSquareLeftText").load(projectPath);

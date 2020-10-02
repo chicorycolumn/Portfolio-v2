@@ -1,71 +1,56 @@
-<p align="center">
-  <img src="https://user-images.githubusercontent.com/98681/84929378-99291700-b084-11ea-89db-8b5ad75d9258.png" width="300" height="175" alt="Bootstrap npm logo">
-</p>
+# Portfolio Site
 
-<h3 align="center">Bootstrap npm starter template</h3>
+## Instructions
 
-<p align="center">Create new Bootstrap-powered npm projects in no time.</p>
+This application is live on [Netlify](https://c-m-portfolio.netlify.app/), but you can also download this repository and run the project locally by following these steps:
 
-## About
+1. Fork this repository by clicking the button labelled 'Fork' on the [project page](https://github.com/chicorycolumn/Portfolio-v2).
+   <br/>
+   Copy the url of your forked copy of the repository, and run `git clone the_url_of_your_forked_copy` in a Terminal window on your computer, replacing the long underscored word with your url.
+   <br/>
+   If you are unsure, instructions on forking can be found [here](https://guides.github.com/activities/forking/) or [here](https://www.toolsqa.com/git/git-fork/), and cloning [here](https://www.wikihow.com/Clone-a-Repository-on-Github) or [here](https://www.howtogeek.com/451360/how-to-clone-a-github-repository/).
 
-`bootstrap-npm-starter` is a GitHub template repository for creating new Bootstrap-powered npm projects, maintained by Bootstrap co-author @mdo. You can also use it as your own Bootstrap prototyping sandbox. It's built with Bootstrap v4.5.0 with plans to update for v5.
+2. Open the project in a code editor, and run `npm install` to install necessary packages. You may also need to install [Node.js](https://nodejs.org/en/) by running `npm install node.js`.
 
-[![Build Status](https://github.com/twbs/bootstrap-npm-starter/workflows/CI/badge.svg)](https://github.com/twbs/bootstrap-npm-starter/actions)
+3. Run these three commands:
 
-## Repo template
+- `npm run css-compile` to compile the Sass.
+- `npm run w` to watch Sass for changes.
+- `npm run s` to start the local server.
+  <br/>
+  It is most useful to open two Terminal tabs to run have the last two commands running simultaneously.
+  <br/>
+  Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-Setup as a starter template, you can easily generate a new GitHub repository. From the repository homepage, click the `Use this template` button.
+This project was bootstrapped with [Bootstrap NPM Starter](https://github.com/twbs/bootstrap-npm-starter).
+<br/>
+&copy; @mdo 2020 and licensed MIT.
 
-## What's included
+## Deploy
+
+General instructions for taking a **Bootstrap project** and hosting it on **Netlify** for **automatic deployment** are as follows:
+
+0. Ensure the project is initialised in a Git repository. If you are unsure what this means, instructions can be found [here](https://medium.com/@JinnaBalu/initialize-local-git-repository-push-to-the-remote-repository-787f83ff999) and [here](https://www.theserverside.com/video/How-to-create-a-local-repository-with-the-git-init-command).
+
+1. Login to Netlify and click _New Site from Git_, then select _Github_ and then the project in question. Set the command as `npm run build`.
+
+Now when you commit and push to Github, Netlify will deploy the latest version of the project automatically.
+
+## Description
+
+## Challenges
+
+## What I learned
+
+## Advanced usage
+
+Take this starter repository to another level with some built-in addons that you can enable and customize.
 
 - Single HTML page (`index.html`) to demonstrate how to include Bootstrap.
 - Includes Bootstrap (currently using v4.5.0) source files via npm.
 - npm scripts (see `package.json`) for compiling and autoprefixing Sass, watching for changes, and starting a basic local server.
 - Example stylesheet (`scss/starter.scss`) highlighting two ways to include and customize Bootstrap.
 - Example JavaScript file (`assets/js/starter.js`) showing how to import all of Bootstrap, or just the parts you need.
-
-## Usage
-
-Be sure to have [Node.js](https://nodejs.org/) installed before proceeding.
-
-```shell
-# Clone the repo
-git clone https://github.com/twbs/bootstrap-npm-starter
-cd bootstrap-npm-starter
-
-# Install dependencies
-npm i
-
-# Compile Sass
-npm run css-compile
-
-# Watch Sass for changes (uses nodemon)
-npm run watch
-
-# Start local server (uses serve)
-npm run server
-```
-
-For the most straightforward development, open two Terminal tabs to execute `npm run server` and `npm run watch` at the same time.
-
-Open <http://localhost:3000> to see the page in action.
-
-## Scripts
-
-The following npm scripts are available to you in this starter repo. With the exception of `npm start`, the remaining scripts can be run from your command line with `npm run scriptName`.
-
-| Script | Description |
-| --- | --- |
-| `server` | Starts a local server (<http://localhost:3000>) for development |
-| `watch` | Automatically recompiles CSS as it watches the `scss` directory for changes |
-| `css` | Runs `css-compile` and `css-prefix` |
-| `css-compile` | Compiles source Sass into CSS |
-| `css-prefix` | Runs Autoprefixer on the compiled CSS |
-| `css-purge` | Runs PurgeCSS to remove CSS that is unused by `index.html` |
-
-## Advanced usage
-
-Take this starter repository to another level with some built-in addons that you can enable and customize.
 
 ### Optimizing CSS
 
@@ -106,7 +91,3 @@ We've included some simple GitHub Actions in this template repo. When you genera
 When your repository is generated, you won't see anything in the Actions tab until you create a new pull request. You can customize these Actions, add new ones, or remove them outright if you wish.
 
 [Learn more about GitHub Actions](https://github.com/features/actions), [read the Actions docs](https://help.github.com/en/actions), or [browse the Actions Marketplace](https://github.com/marketplace/actions).
-
-## Copyright
-
-&copy; @mdo 2020 and licensed MIT.
