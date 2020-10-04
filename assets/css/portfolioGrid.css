@@ -59,10 +59,24 @@
   width: 125%;
 }
 
+.techIconHolder {
+  display: flex;
+  justify-content: center;
+  border: yellow solid 1px;
+  flex-wrap: nowrap;
+  width: 100%;
+  height: 60px;
+}
+
 .techIcon {
-  height: 40px;
   margin-left: 5px;
   margin-right: 5px;
+}
+
+.techIcon img {
+  width: 100%;
+  min-width: 20px;
+  /* max-width: 60px; */
 }
 
 .tooltip {

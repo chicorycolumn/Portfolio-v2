@@ -24,7 +24,7 @@
                   .attr("id", "fruitCard" + index)
                   .appendTo(".portfolioCardHolder");
 
-          card.css({ "background-color": data.bgColor });
+          card.css({ "background-color": "indigo" });
 
           card.find(".portfolioCardImage").attr("src", data.portfolioCardImage);
           card.find(".portfolioCardHeader").text(data.projectName);
@@ -38,7 +38,9 @@
               .find("#techIconUr")
               .clone()
               .attr("id", "techIcon" + index + "-" + techIconIndex)
+              .find("img")
               .attr("src", techIcons[techIconName].src)
+              .parent()
               .attr("title", techIcons[techIconName].title)
               .appendTo(card.find(".techIconHolder"));
           });
@@ -84,8 +86,8 @@
           <a href="#" class="z1 projectLink"
             ><span class="absoluteSpread"></span
           ></a>
-          <div class="d-flex justify-content-center z2 techIconHolder">
-            <img
+          <div class="z2 techIconHolder">
+            <div
               data-toggle="tooltip"
               data-placement="bottom"
               title=""
@@ -93,7 +95,9 @@
               alt=""
               class="techIcon"
               id="techIconUr"
-            />
+            >
+              <img class="src" ="" />
+            </div>
           </div>
         </div>
       </div>

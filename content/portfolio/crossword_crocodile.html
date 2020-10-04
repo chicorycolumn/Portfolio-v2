@@ -1,0 +1,39 @@
+<h5>Description</h5>
+<p>
+  A custom crossword maker. Enter your word into an elegant and verdant
+  interface, and millions of calculations will check against a word bank of
+  thousands to create complete crossword grids to your specifications.
+  <br />
+  I took this opportunity to learn a new programming language - Python - and a
+  new frontend framework - Angular. I chose Python for being one of the most
+  widely used languages in data science, as well as further diversification of
+  my coding knowledge. Its extensive range of modules and libraries would also
+  come in useful.
+</p>
+<h5>Challenges</h5>
+<p>
+  The first was the wonderful puzzle of the most time-efficient method for the
+  app to crunch millions of permutations. I experimented with varied approaches,
+  based around 'for loops', 'recursion', and 'yield'. I finally rewrote the
+  backend from scratch to use a Python module called 'itertools', and made the
+  app switch dynamically between two itertoools methods ('permutations' and
+  'product'), which my testing revealed to ultimately yield the fastest response
+  times.
+  <br />
+  I wanted the user to receive results in real-time, instead of waiting a set
+  interval then receiving them all at once. After many setbacks and spikes, it
+  was certain that the easier path was to just accept the less optimal user
+  experience, but through determined research and testing, I succeeded in
+  creating a RESTful backend server that would deliver real-time results, which
+  I accomplished with Flask (a web framework used by sites such as Pinterest and
+  LinkedIn) and Flask-SocketIO.
+</p>
+<h5>What I learned</h5>
+<p>
+  I really enjoyed learning Angular and working within a different project
+  structure to what I was familiar with in React. As a first impression, it
+  seems more fiddly in Angular to connect up the Components, Services, and
+  Modules, though I see how this has more expandable modularity with regard to
+  different people working on different sections of the project, suggesting that
+  Angular is better suited to heavyweight applications than are React and Vue.
+</p>

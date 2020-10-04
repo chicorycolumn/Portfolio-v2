@@ -37,6 +37,38 @@
 
     <script>
       let techIcons = {
+        ClearDB: {
+          title: "ClearDB",
+          src: "../assets/images/logo-cleardb.png",
+        },
+        Gunicorn: {
+          title: "Gunicorn",
+          src: "../assets/images/logo-gunicorn.png",
+        },
+        Lodash: {
+          title: "Lodash",
+          src: "../assets/images/logo-lodash.png",
+        },
+        TensorFlow: {
+          title: "TensorFlow",
+          src: "../assets/images/logo-tensorflow.png",
+        },
+        "Reach Router": {
+          title: "Reach Router",
+          src: "../assets/images/logo-reachrouter.png",
+        },
+        PSQL: {
+          title: "PSQL",
+          src: "../assets/images/logo-psql.png",
+        },
+        Apache: {
+          title: "Apache",
+          src: "../assets/images/logo-apache.png",
+        },
+        jQuery: {
+          title: "jQuery",
+          src: "../assets/images/logo-jquery.png",
+        },
         "Node.js": {
           title: "Node.js",
           src: "../assets/images/logo-nodejs.png",
@@ -131,22 +163,25 @@
             "React",
             "Axios",
             "Express",
+            "Knex",
             "MySQL",
+            "PSQL",
+            "Reach Router",
             "CSS Modules",
             "Chai",
             "Mocha",
           ],
           bgColor: "yellow",
-          portfolioCardImage: "assets/images/screenA-large.png",
+          portfolioCardImage: "assets/images/screenshots/screen-ncnews-1.png",
           hash: "#nc_news",
           images: [
-            "screenA-large.png",
-            "screenB-large.png",
-            "phoneA-large.png",
-            "phoneB-large.png",
+            "screen-ncnews-1.png",
+            "screen-ncnews-2.png",
+            "phone-ncnews-1.png",
+            "phone-ncnews-2.png",
           ],
           projectSquareTextProse_Language: "JavaScript",
-          projectSquareTextProse_Backend: "MySQL, Axios, Express, Knex",
+          projectSquareTextProse_Backend: "MySQL, PSQL, Axios, Express, Knex",
           projectSquareTextProse_Frontend: "React, Reach Router, CSS Modules",
           projectSquareTextProse_Testing: "Chai, Mocha",
           sourceLinks: [
@@ -181,24 +216,21 @@
             "JavaScript",
             "React",
             "Socket.IO",
+            "TensorFlow",
             "Phaser",
             "Axios",
             "Express",
+            "Lodash",
             "CSS Modules",
           ],
           bgColor: "green",
-          portfolioCardImage: "assets/images/screenA-large.png",
+          portfolioCardImage: "assets/images/screenshots/screen-wormplay-1.png",
           hash: "#wormplay",
-          images: [
-            "screenA-large.png",
-            "screenB-large.png",
-            "phoneA-large.png",
-            "phoneB-large.png",
-          ],
+          images: ["screen-wormplay-1.png", "screen-wormplay-2.png"],
           projectSquareTextProse_Language: "JavaScript",
-          projectSquareTextProse_Backend: "Axios, Express, Socket.IO",
+          projectSquareTextProse_Backend: "Axios, Express, Socket.IO, Lodash",
           projectSquareTextProse_Frontend:
-            "Socket.IO, React, Phaser, CSS Modules",
+            "Socket.IO, Axios, Express, React, Phaser, TensorFlow, CSS Modules",
           sourceLinks: [
             {
               title: "Back end code",
@@ -226,9 +258,9 @@
         {
           projectName: "Portfolio Site",
           portfolioCardDesc: "A responsive and elegant portfolio website.",
-          tech: ["JavaScript", "Bootstrap"],
+          tech: ["JavaScript", "Bootstrap", "jQuery"],
           bgColor: "purple",
-          portfolioCardImage: "assets/images/screenA-large.png",
+          portfolioCardImage: "assets/images/screenshots/screenA-large.png",
           hash: "#portfolio_site",
           images: [
             "screenA-large.png",
@@ -237,7 +269,7 @@
             "phoneB-large.png",
           ],
           projectSquareTextProse_Language: "JavaScript",
-          projectSquareTextProse_Frontend: "Bootstrap",
+          projectSquareTextProse_Frontend: "Bootstrap, jQuery",
           sourceLinks: [
             {
               title: "Code",
@@ -257,13 +289,13 @@
           portfolioCardDesc: "A sorting tool as a single-page-app.",
           tech: ["JavaScript", "React", "CSS Modules"],
           bgColor: "cyan",
-          portfolioCardImage: "assets/images/screenA-large.png",
+          portfolioCardImage: "assets/images/screenshots/phone-sortcut-1.png",
           hash: "#sortcut",
           images: [
-            "screenA-large.png",
-            "screenB-large.png",
-            "phoneA-large.png",
-            "phoneB-large.png",
+            "screen-sortcut-1.png",
+            "screen-sortcut-2.png",
+            "phone-sortcut-1.png",
+            "phone-sortcut-2.png",
           ],
           projectSquareTextProse_Language: "JavaScript",
           projectSquareTextProse_Frontend: "CSS Modules, React",
@@ -285,19 +317,28 @@
           projectName: "Crossword Crocodile",
           portfolioCardDesc:
             "A Python-based calculator to generate crosswords from user-chosen words.",
-          tech: ["Python", "Flask", "Angular", "TypeScript", "Socket.IO"],
+          tech: [
+            "Python",
+            "Flask",
+            "Gunicorn",
+            "Angular",
+            "TypeScript",
+            "Socket.IO",
+          ],
           bgColor: "crimson",
-          portfolioCardImage: "assets/images/screenA-large.png",
+          portfolioCardImage:
+            "assets/images/screenshots/screen-crosscroc-1.png",
           hash: "#crossword_crocodile",
           images: [
-            "screenA-large.png",
-            "screenB-large.png",
-            "phoneA-large.png",
-            "phoneB-large.png",
+            "screen-crosscroc-1.png",
+            "screen-crosscroc-2.png",
+            "phone-crosscroc-1.png",
+            "phone-crosscroc-2.png",
           ],
           projectSquareTextProse_Language: "Python, TypeScript",
-          projectSquareTextProse_Backend: "Flask, Socket.IO",
-          projectSquareTextProse_Frontend: "Angular",
+          projectSquareTextProse_Backend:
+            "Flask, Flask-SocketIO, Gunicorn, Eventlet",
+          projectSquareTextProse_Frontend: "Angular, Socket.IO",
           sourceLinks: [
             {
               title: "Back end code",
@@ -325,18 +366,14 @@
         {
           projectName: "Fruit Makhzan",
           portfolioCardDesc: "A fruit-selling database game, built in PHP.",
-          tech: ["PHP", "MySQL"],
+          tech: ["PHP", "Apache", "MySQL", "jQuery"],
           bgColor: "orange",
-          portfolioCardImage: "assets/images/screenA-large.png",
+          portfolioCardImage: "assets/images/screenshots/screen-makhzan-1.png",
           hash: "#fruit_makhzan",
-          images: [
-            "screenA-large.png",
-            "screenB-large.png",
-            "phoneA-large.png",
-            "phoneB-large.png",
-          ],
+          images: ["screen-makhzan-1.png", "screen-makhzan-2.png"],
           projectSquareTextProse_Language: "PHP",
-          projectSquareTextProse_Backend: "MySQL",
+          projectSquareTextProse_Backend: "Apache, MySQL",
+          projectSquareTextProse_Frontend: "jQuery",
           sourceLinks: [
             {
               title: "Code",
@@ -372,7 +409,7 @@
           incomingPath = "/content/projectTemplate.html";
         }
 
-        let imagePath = "/assets/images/";
+        let imagePath = "/assets/images/screenshots/";
 
         $(outgoingSelector).addClass("o-0");
         $(".portfolioHeader").addClass("o-0");

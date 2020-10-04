@@ -1,14 +1,40 @@
 <h5>Description</h5>
-<p>A fullstack Reddit style news aggregation board.</p>
+<p>
+  An online news aggregation forum where users can write and share articles as
+  well as commenting and voting on each other's articles and comments. Have you
+  used Reddit? It's Reddit.
+  <br />
+  This project is a fullstack RESTful API, with a PSQL database where Knex was
+  used as a query builder, and a Frontend of React and CSS Modules. It was a
+  solo project during the last week of the Backend and Frontend blocks of the
+  Northcoders coding bootcamp.
+</p>
 <h5>Challenges</h5>
 <p>
-  Articles can be created, voted on, and sorted by date or popularity. Users can
-  register and log in, then create and comment on articles, with comments being
-  voted on.
+  There many user stories, with each distinct route branching off into many more
+  CRUD operations, between commenting, writing, voting, editing, and deleting
+  articles and comments. While it could have felt overwhelming as my first solo
+  project of this kind, I made sure to keep detailed and precise notes and
+  diagrams of all the paths, how they connected, and which endpoints would be
+  used. Taking the time to update my planning documents at every stage made the
+  process enjoyable and productive, and I found the process of data management
+  throughout the app especially enjoyable.
 </p>
 <h5>What I learned</h5>
 <p>
-  Articles can be created, voted on, and sorted by date or popularity. Users can
-  register and log in, then create and comment on articles, with comments being
-  voted on.
+  On the Frontend, I researched tools to improve project organisation, and
+  decided on CSS Modules to separate out the different CSS styles for each
+  section. Upon returning to this project many months later to improve it, I
+  noticed that the use of CSS Modules had led to code that tended to repeat
+  itself and was not very DRY, so I went through and implemented a global CSS
+  module to improve concision.
+  <br />
+  On the Backed, the importance of Test Driven Development was clear, and I
+  really enjoyed meticulously sketching out every user story I could, and
+  creating a specialised test for each unhappy path that a user could take. I
+  took the initiative to create an extensive series of customised error messages
+  to augment the existing HTTP response status codes (400, 404, etc), the aim of
+  which was to make the later job of creating the frontend as smooth as
+  possible, with clear and precise feedback to future devs (which in this case
+  was myself). This ensured a clear division of tasks, and efficient workflow.
 </p>

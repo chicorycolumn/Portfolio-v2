@@ -36,11 +36,15 @@ General instructions for taking a **Bootstrap project** and hosting it on **Netl
 
 Now when you commit and push to Github, Netlify will deploy the latest version of the project automatically.
 
-## Description
+## Built with
 
-## Challenges
+- [JavaScript](https://www.javascript.com/) - The primary coding language
+- [VisualStudioCode](https://code.visualstudio.com/) - The code editor
 
-## What I learned
+- [Netlify](https://www.netlify.com/) - The hosting service
+
+- [Bootstrap](https://getbootstrap.com/) - The CSS library and framework
+- [jQuery](https://jquery.com/) - The JavaScript library used for design and display
 
 ## Advanced usage
 
