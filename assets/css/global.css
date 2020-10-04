@@ -57,6 +57,10 @@ body {
   color: var(--purpleDark5);
 }
 
+.tooltip.show {
+  opacity: 1 !important;
+}
+
 h1,
 h2,
 h3,

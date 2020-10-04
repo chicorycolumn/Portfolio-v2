@@ -48,7 +48,7 @@
   text-align: center;
   padding-left: 10%;
   padding-right: 10%;
-  /* opacity: 1; */
+  /* opacity: 1 !important; */
 }
 
 .portfolioCard:hover .portfolioCardOverlay {
@@ -62,21 +62,22 @@
 .techIconHolder {
   display: flex;
   justify-content: center;
-  border: yellow solid 1px;
-  flex-wrap: nowrap;
-  width: 100%;
+  /* border: yellow solid 1px; */
+  flex-wrap: wrap;
+  width: 120%;
   height: 60px;
+  align-items: center;
+  align-content: center;
 }
 
 .techIcon {
-  margin-left: 5px;
-  margin-right: 5px;
+  margin: 5px;
+  margin-bottom: 0px;
+  height: 60%;
 }
 
-.techIcon img {
-  width: 100%;
-  min-width: 20px;
-  /* max-width: 60px; */
+.techIconImage {
+  height: 100%;
 }
 
 .tooltip {
