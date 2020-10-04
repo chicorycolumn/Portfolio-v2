@@ -39,7 +39,6 @@
       }
 
       function moveCardsToCarousel() {
-        console.log("moveCardsToCarousel")
         for (let i = 1; i <= 3; i++) {
           $("#carouselItem" + i).append(
             $("#aboutMeCard" + i).css({
@@ -50,7 +49,6 @@
             }).removeClass("appearAnimation visibility-h").addClass("verticallyCenterCarouselItems")
           );
         }
-        console.log(111)
         $("#aboutMeCarousel").carousel({interval: isTouchscreen() ? false : 2000});
 
         if (areCardsInCarousel === null) {
@@ -61,7 +59,6 @@
 
         setTimeout(() => {
           if (areCardsInCarousel){
-            console.log("gonna sort it")
             $(".aboutMeCard").removeClass("appearAnimation")
           }
         }, 250);
@@ -124,8 +121,6 @@
       let areCardsInCarousel = null; //important
 
       $(function () {
-        // console.log(222)
-        // $("#aboutMeCarousel").carousel({interval: false});
 
         moveCardsToAppropriatePlace();
 

@@ -400,6 +400,8 @@
         incomingPath,
         projectPath
       ) {
+        console.log(hash, incomingSelector);
+
         if (!incomingPath) {
           incomingPath = "/content/projectTemplate.html";
         }
@@ -416,8 +418,6 @@
           $(outgoingSelector).remove();
           $(".portfolioHolder").load(incomingPath);
           if (projectPath) {
-            console.log(projectPath);
-
             $("#portfolioSection").removeClass("flex-column-reverse");
             $(".portfolioHeader").removeClass("noHeight p-0");
 
@@ -489,13 +489,10 @@
 
               ["Language", "Frontend", "Backend", "Testing"].forEach(
                 (label) => {
-                  console.log(label);
                   let fullLabel = "projectSquareTextProse_" + label;
                   if (card[fullLabel]) {
-                    console.log("Yes", label);
                     $("." + fullLabel).text(card[fullLabel]);
                   } else {
-                    console.log("No", label);
                     $("." + fullLabel)
                       .parent()
                       .remove();
