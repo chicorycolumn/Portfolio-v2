@@ -156,8 +156,8 @@
           tech: [
             "JavaScript",
             "React",
-            "Axios",
-            "Express",
+            // "Axios",
+            // "Express",
             "Knex",
             "MySQL",
             "PSQL",
@@ -167,13 +167,13 @@
             "Mocha",
           ],
           bgColor: "yellow",
-          portfolioCardImage: "assets/images/screenshots/screen-ncnews-1.png",
+          portfolioCardImage: "assets/images/screenshots/screen75-ncnews-1.jpg",
           hash: "#nc_news",
           images: [
-            "screen-ncnews-1.png",
-            "screen-ncnews-2.png",
-            "phone-ncnews-1.png",
-            "phone-ncnews-2.png",
+            "screen75-ncnews-1.jpg",
+            "screen75-ncnews-2.jpg",
+            "phone75-ncnews-1.jpg",
+            "phone75-ncnews-2.jpg",
           ],
           projectSquareTextProse_Language: "JavaScript",
           projectSquareTextProse_Backend: "MySQL, PSQL, Axios, Express, Knex",
@@ -211,17 +211,18 @@
             "JavaScript",
             "React",
             "Socket.IO",
-            "TensorFlow",
-            "Phaser",
             "Axios",
             "Express",
             "Lodash",
             "CSS Modules",
+            "TensorFlow",
+            "Phaser",
           ],
           bgColor: "green",
-          portfolioCardImage: "assets/images/screenshots/screen-wormplay-1.png",
+          portfolioCardImage:
+            "assets/images/screenshots/screen75-wormplay-1.jpg",
           hash: "#wormplay",
-          images: ["screen-wormplay-1.png", "screen-wormplay-2.png"],
+          images: ["screen75-wormplay-1.jpg", "screen75-wormplay-2.jpg"],
           projectSquareTextProse_Language: "JavaScript",
           projectSquareTextProse_Backend: "Axios, Express, Socket.IO, Lodash",
           projectSquareTextProse_Frontend:
@@ -284,13 +285,13 @@
           portfolioCardDesc: "A sorting tool as a single-page-app.",
           tech: ["JavaScript", "React", "CSS Modules"],
           bgColor: "cyan",
-          portfolioCardImage: "assets/images/screenshots/phone-sortcut-1.png",
+          portfolioCardImage: "assets/images/screenshots/phone75-sortcut-1.jpg",
           hash: "#sortcut",
           images: [
-            "screen-sortcut-1.png",
-            "screen-sortcut-2.png",
-            "phone-sortcut-1.png",
-            "phone-sortcut-2.png",
+            "screen75-sortcut-1.jpg",
+            "screen75-sortcut-2.jpg",
+            "phone75-sortcut-1.jpg",
+            "phone75-sortcut-2.jpg",
           ],
           projectSquareTextProse_Language: "JavaScript",
           projectSquareTextProse_Frontend: "CSS Modules, React",
@@ -322,13 +323,13 @@
           ],
           bgColor: "crimson",
           portfolioCardImage:
-            "assets/images/screenshots/screen-crosscroc-1.png",
+            "assets/images/screenshots/screen75-crosscroc-1.jpg",
           hash: "#crossword_crocodile",
           images: [
-            "screen-crosscroc-1.png",
-            "screen-crosscroc-2.png",
-            "phone-crosscroc-1.png",
-            "phone-crosscroc-2.png",
+            "screen75-crosscroc-1.jpg",
+            "screen75-crosscroc-2.jpg",
+            "phone75-crosscroc-1.jpg",
+            "phone75-crosscroc-2.jpg",
           ],
           projectSquareTextProse_Language: "Python, TypeScript",
           projectSquareTextProse_Backend:
@@ -363,9 +364,10 @@
           portfolioCardDesc: "A fruit-selling database game, built in PHP.",
           tech: ["PHP", "Apache", "MySQL", "jQuery"],
           bgColor: "orange",
-          portfolioCardImage: "assets/images/screenshots/screen-makhzan-1.png",
+          portfolioCardImage:
+            "assets/images/screenshots/screen75-makhzan-1.jpg",
           hash: "#fruit_makhzan",
-          images: ["screen-makhzan-1.png", "screen-makhzan-2.png"],
+          images: ["screen75-makhzan-1.jpg", "screen75-makhzan-2.jpg"],
           projectSquareTextProse_Language: "PHP",
           projectSquareTextProse_Backend: "Apache, MySQL",
           projectSquareTextProse_Frontend: "jQuery",
@@ -428,6 +430,18 @@
           .attr("src", techIcons[card.sourceLinks[i].name].src);
       }
 
+      function showAndScrollTo(incomingSelector) {
+        setTimeout(() => {
+          $(".portfolioHolder").css({
+            height: "fit-content",
+          });
+          // $("incomingSelector").removeClass("o-0");
+          $("#portfolioSection").removeClass("o-0");
+          $("#portfolioSection")[0].scrollIntoView({ behavior: "smooth" });
+          $('[data-toggle="tooltip"]').tooltip();
+        }, 250);
+      }
+
       function fadeAndShow(
         hash,
         incomingSelector,
@@ -449,8 +463,9 @@
 
         let imagePath = "/assets/images/screenshots/";
 
-        $(outgoingSelector).addClass("o-0");
-        $(".portfolioHeader").addClass("o-0");
+        $("#portfolioSection").addClass("o-0");
+        // $(outgoingSelector).addClass("o-0");
+        // $(".portfolioHeader").addClass("o-0");
 
         setTimeout(() => {
           $(".portfolioHolder").css({
@@ -458,16 +473,18 @@
           });
           $(outgoingSelector).remove();
           $("#portfolioSection").removeClass("flex-column-reverse");
-          $(".portfolioHeader").removeClass("noHeight p-0");
+          $(".portfolioHeader").removeClass("noHeight");
 
           //pCardHolder , pGridHolder
           $(".portfolioHolder").load(incomingPath, function () {
             if (projectPath) {
-              $(".portfolioHeader").removeClass("visibility-h");
-
               let card = portfolioCardData.filter(
                 (card) => card.hash === "#" + hash
               )[0];
+
+              for (let i = 0; i < card.images.length; i++) {
+                setMinipicAndModal(i, card, imagePath);
+              }
 
               $(".projectTitle").text(card.projectName);
 
@@ -475,10 +492,6 @@
                 "href",
                 card.sourceLinks.filter((linkSet) => linkSet.isMain)[0].link
               );
-
-              for (let i = 0; i < card.images.length; i++) {
-                setMinipicAndModal(i, card, imagePath);
-              }
 
               for (let i = 0; i < card.sourceLinks.length; i++) {
                 makeSourceLinkSet(i, card);
@@ -498,29 +511,16 @@
               );
 
               $(".projectSquareLeftText").load(projectPath, function () {
-                $(".portfolioPageHolder").removeClass("o-0");
-                $(".portfolioHeader").removeClass("o-0");
+                // $(".portfolioHeader").removeClass("visibility-h o-0");
+                $(".portfolioHeader").removeClass("visibility-h");
+                showAndScrollTo(incomingSelector);
               });
             } else {
               $("#portfolioSection").addClass("flex-column-reverse");
-              $(".portfolioHeader").addClass("o-0");
-              setTimeout(() => {
-                $(".portfolioHeader").addClass("visibility-h noHeight p-0");
-              }, 250); //To wait for after opacity transition. No break, only aesthetic.
+              // $(".portfolioHeader").addClass("o-0");
+              $(".portfolioHeader").addClass("visibility-h noHeight");
+              showAndScrollTo(incomingSelector);
             }
-
-            setTimeout(() => {
-              //5
-              $(".portfolioHolder").css({
-                height: "fit-content",
-              });
-
-              $(incomingSelector).removeClass("o-0");
-
-              let section = $("#portfolioSection")[0];
-              section.scrollIntoView({ behavior: "smooth" });
-              $('[data-toggle="tooltip"]').tooltip();
-            }, 3000); //5
           });
         }, 250); //To wait for after opacity transition. No break, only aesthetic.
       }
@@ -537,7 +537,7 @@
           function () {
             setTimeout(() => {
               $(".portfolioCardHolder").removeClass("o-0");
-            }, 500); //To wait until images have loaded. No break, only aesthetic.
+            }, 250); //To wait until images have loaded. No break, only aesthetic.
           }
         );
       }

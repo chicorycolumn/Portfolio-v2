@@ -157,9 +157,9 @@
 
 .projectSquareMinipic {
   border-radius: 10%;
-  box-shadow: var(--myShadow1);
+  /* box-shadow: var(--myShadow1); */
+  /* border: grey groove 1.5px; */
   cursor: pointer;
-  /* box-shadow: 0 0 5px black; */
 }
 
 @media screen and (min-width: 576px) {
