@@ -569,3 +569,8 @@ a.disabled {
 .noHeight {
   height: 0px !important;
 }
+
+.lemon img {
+  width: 60px;
+  height: 60px;
+}

@@ -536,17 +536,16 @@
 
       function fadeAndShowHome(hash) {
         console.log("show home!");
-        console.log("a", Date.now());
+
         $(".portfolioPageHolder").remove();
-        $(".portfolioHolder").load("/content/portfolioCardHolder.html");
-        $(".portfolioHeader").addClass("visibility-h");
-        console.log("b", Date.now());
-        $(".portfolioCardHolder").on("load", function () {
-          console.log("c", Date.now());
-          $("#portfolioSection").addClass("flex-column-reverse");
-          $(".portfolioHeader").addClass("noHeight p-0");
-          $(".portfolioCardHolder").removeClass("o-0");
-        });
+        $(".portfolioHolder").load(
+          "/content/portfolioCardHolder.html",
+          function () {
+            $(".portfolioCardHolder").removeClass("o-0");
+            $(".portfolioHeader").addClass("visibility-h noHeight p-0");
+            $("#portfolioSection").addClass("flex-column-reverse");
+          }
+        );
       }
 
       $(function () {
