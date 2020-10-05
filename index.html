@@ -530,13 +530,13 @@
 
         $(".portfolioPageHolder").remove();
         $(".portfolioHeader").addClass("visibility-h noHeight p-0");
-        $("#portfolioSection").addClass("flex-column-reverse");
+        $("#portfolioSection").addClass("flex-column-reverse o-0");
 
         $(".portfolioHolder").load(
           "/content/portfolioCardHolder.html",
           function () {
             setTimeout(() => {
-              $(".portfolioCardHolder").removeClass("o-0");
+              $("#portfolioSection").removeClass("o-0");
             }, 250); //To wait until images have loaded. No break, only aesthetic.
           }
         );
