@@ -58,7 +58,7 @@ footer img:hover {
 }
 
 footer {
-  height: 450px;
+  height: 750px;
 }
 
 #portfolioSection {
@@ -77,24 +77,25 @@ footer {
   transition: opacity 0.25s ease;
 
   padding-top: 100px;
-  margin-top: 100px;
+  margin-top: 50px;
 }
 
 #aboutMeSection {
-  border: aqua dotted 2px;
+  border: aqua dotted 5px;
   background-color: rgba(0, 0, 0, 0);
   height: fit-content;
-  /* padding-top: 75px; */
+  padding-top: 125px;
   /* margin-bottom: 200px; */
   /* position: relative;
   top: -75px; */
+  margin-top: 50px;
 }
 
 #aboutMeCardHolder,
 #aboutMeCarouselHolder {
   position: relative;
-  top: 100px;
-  border: blue solid 2px;
+  top: 0px;
+  border: darkblue solid 2px;
 }
 
 @media screen and (min-width: 576px) {
@@ -118,6 +119,13 @@ footer {
     padding-top: 50px;
     /* margin-top: 75px; */
     /* top: -150px; */
+  }
+
+  #aboutMeCardHolder,
+  #aboutMeCarouselHolder {
+    position: relative;
+    top: 100px;
+    border: blue solid 2px;
   }
 
   /* **************************************** */

@@ -57,11 +57,23 @@
           })
         }
 
-        setTimeout(() => {
+        setTimeout(() => {         
           if (areCardsInCarousel){
             $(".aboutMeCard").removeClass("appearAnimation")
           }
         }, 250);
+
+//         setTimeout(() => {
+//           console.log("200px")
+//           $("#aboutMeSection").css({"height": "20px"})
+//           setTimeout(() => {
+//             console.log("anaheim")
+
+// let newHeight = $("#aboutMeCarouselHolder").css("height")
+
+//           $("#aboutMeSection").css({"height": newHeight})
+//         }, 1000);
+//         }, 1000);
 
         areCardsInCarousel = true;
       }
