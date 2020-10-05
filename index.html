@@ -497,20 +497,16 @@
                 }
               );
 
-              $(".projectSquareLeftText").load(projectPath);
-
-              setTimeout(() => {
-                //3
+              $(".projectSquareLeftText").load(projectPath, function () {
                 $(".portfolioPageHolder").removeClass("o-0");
                 $(".portfolioHeader").removeClass("o-0");
-              }, 1000); //3
+              });
             } else {
               $("#portfolioSection").addClass("flex-column-reverse");
               $(".portfolioHeader").addClass("o-0");
               setTimeout(() => {
-                //4
                 $(".portfolioHeader").addClass("visibility-h noHeight p-0");
-              }, 2500); //4
+              }, 250); //To wait for after opacity transition. No break, only aesthetic.
             }
 
             setTimeout(() => {
@@ -524,9 +520,9 @@
               let section = $("#portfolioSection")[0];
               section.scrollIntoView({ behavior: "smooth" });
               $('[data-toggle="tooltip"]').tooltip();
-            }, 2000); //5
+            }, 3000); //5
           });
-        }, 250); //This timeout is because the transition for header and holders is 250.
+        }, 250); //To wait for after opacity transition. No break, only aesthetic.
       }
 
       function fadeAndShowHome(hash) {
@@ -541,7 +537,7 @@
           function () {
             setTimeout(() => {
               $(".portfolioCardHolder").removeClass("o-0");
-            }, 500);
+            }, 500); //To wait until images have loaded. No break, only aesthetic.
           }
         );
       }
