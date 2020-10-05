@@ -54,7 +54,6 @@ footer img:hover {
 
 .innerBody {
   padding: 0px;
-  border: indianred dashed 2px;
 }
 
 footer {
@@ -62,32 +61,19 @@ footer {
 }
 
 #portfolioSection {
-  border: purple dotted 2px;
-
-  /* position: relative;
-  top: -75px; */
-  background-color: rgba(0, 0, 0, 0);
   height: fit-content;
   min-height: 560px;
-
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-
   transition: opacity 0.25s ease;
-
   padding-top: 100px;
   margin-top: 50px;
 }
 
 #aboutMeSection {
-  border: aqua dotted 5px;
-  background-color: rgba(0, 0, 0, 0);
   height: fit-content;
   padding-top: 125px;
-  /* margin-bottom: 200px; */
-  /* position: relative;
-  top: -75px; */
   margin-top: 50px;
 }
 
@@ -95,7 +81,6 @@ footer {
 #aboutMeCarouselHolder {
   position: relative;
   top: 0px;
-  border: darkblue solid 2px;
 }
 
 @media screen and (min-width: 576px) {
@@ -117,15 +102,12 @@ footer {
 
   #aboutMeSection {
     padding-top: 50px;
-    /* margin-top: 75px; */
-    /* top: -150px; */
+    margin-top: 75px;
   }
 
   #aboutMeCardHolder,
   #aboutMeCarouselHolder {
-    position: relative;
     top: 100px;
-    border: blue solid 2px;
   }
 
   /* **************************************** */
