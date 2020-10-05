@@ -505,14 +505,14 @@
               setTimeout(() => {
                 $(".portfolioPageHolder").removeClass("o-0");
                 $(".portfolioHeader").removeClass("o-0");
-              }, 200);
-            }, 100);
+              }, 2000);
+            }, 1000);
           } else {
             $("#portfolioSection").addClass("flex-column-reverse");
             $(".portfolioHeader").addClass("o-0");
             setTimeout(() => {
               $(".portfolioHeader").addClass("visibility-h noHeight p-0");
-            }, 250);
+            }, 2500);
           }
 
           setTimeout(() => {
@@ -525,8 +525,8 @@
             let section = $("#portfolioSection")[0];
             section.scrollIntoView({ behavior: "smooth" });
             $('[data-toggle="tooltip"]').tooltip();
-          }, 200);
-        }, 200);
+          }, 2000);
+        }, 2000);
       }
 
       function fadeAndShowHome(hash) {
@@ -538,7 +538,7 @@
           $("#portfolioSection").addClass("flex-column-reverse");
           $(".portfolioHeader").addClass("noHeight p-0");
           $(".portfolioCardHolder").removeClass("o-0");
-        }, 250);
+        }, 2500);
       }
 
       $(function () {
