@@ -19,7 +19,7 @@ header {
 }
 
 footer {
-  height: 900px;
+  height: 450px;
 }
 
 .bgHeader {
@@ -115,6 +115,10 @@ h1 {
   .headerText {
     margin-top: 60px;
     padding-bottom: 175px;
+  }
+
+  footer {
+    height: 900px;
   }
 
   #aboutMeSection {

@@ -664,3 +664,12 @@ a.disabled {
 .shadow3 {
   box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
 }
+
+.hoverFadeout {
+  opacity: 1;
+  transition: opacity 0.75s;
+}
+
+.hoverFadeout:hover {
+  opacity: 0;
+}
