@@ -541,7 +541,7 @@
         $(".portfolioHolder").load("/content/portfolioCardHolder.html");
         $(".portfolioHeader").addClass("visibility-h");
         console.log("b", Date.now());
-        $(".portfolioHolder").on("load", function () {
+        $(".portfolioCardHolder").on("load", function () {
           console.log("c", Date.now());
           $("#portfolioSection").addClass("flex-column-reverse");
           $(".portfolioHeader").addClass("noHeight p-0");
