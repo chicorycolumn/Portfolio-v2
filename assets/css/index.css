@@ -1,25 +1,14 @@
 .bodyGradient1 {
-  /* background-image: linear-gradient(white, white, yellow, yellow, white, white); */
-  /* border: black dotted 2px; */
   background-color: var(--yellowLight7);
   height: 100%;
   min-height: 100vh;
   padding: 0;
 }
 
-.innerBody {
-  padding: 0px;
-  border: indianred dashed 2px;
-}
-
 header {
   height: fit-content;
   padding-top: 0px;
   padding-bottom: 0px;
-}
-
-footer {
-  height: 450px;
 }
 
 .bgHeader {
@@ -32,7 +21,6 @@ footer {
   background-image: linear-gradient(yellow, white);
   transform: skewY(-6deg);
   transform-origin: bottom right;
-  /* border: fuchsia dotted 2px; */
 }
 
 .bgFooter2 {
@@ -45,24 +33,39 @@ footer {
   border-radius: 75% 75% 0px 0px;
 }
 
-h1 {
+.headerText {
   margin: 0;
   padding: 100px 0;
-  font: 44px "Arial";
-  text-align: center;
-}
-
-.headerText {
+  /* font: 44px; */
   position: relative;
   font-size: calc(24px + 1.5vw);
   margin-top: 60px;
 }
 
+footer img {
+  transition: filter 0.5s;
+}
+
+footer img:hover {
+  filter: saturate(10000%);
+}
+
+/* ******************************************************************** */
+
+.innerBody {
+  padding: 0px;
+  border: indianred dashed 2px;
+}
+
+footer {
+  height: 450px;
+}
+
 #portfolioSection {
   border: purple dotted 2px;
 
-  position: relative;
-  top: -75px;
+  /* position: relative;
+  top: -75px; */
   background-color: rgba(0, 0, 0, 0);
   height: fit-content;
   min-height: 560px;
@@ -79,7 +82,6 @@ h1 {
 
 #aboutMeSection {
   border: aqua dotted 2px;
-
   background-color: rgba(0, 0, 0, 0);
   height: fit-content;
   /* padding-top: 75px; */
@@ -88,16 +90,11 @@ h1 {
   top: -75px; */
 }
 
-#aboutMeCardHolder {
+#aboutMeCardHolder,
+#aboutMeCarouselHolder {
   position: relative;
   top: 100px;
-}
-
-.portfolioSectionOverlay {
-  background-color: var(--yellowLight7);
-  visibility: hidden;
-  opacity: 0;
-  transition: opacity 0.1s ease;
+  border: blue solid 2px;
 }
 
 @media screen and (min-width: 576px) {
@@ -112,26 +109,21 @@ h1 {
     padding: 48px;
     padding-top: 0px;
   }
-  .headerText {
-    margin-top: 60px;
-    padding-bottom: 175px;
-  }
 
   footer {
     height: 900px;
   }
 
   #aboutMeSection {
-    /* padding-top: 150px; */
+    padding-top: 50px;
     /* margin-top: 75px; */
     /* top: -150px; */
   }
-}
 
-footer img {
-  transition: filter 0.5s;
-}
+  /* **************************************** */
 
-footer img:hover {
-  filter: saturate(10000%);
+  .headerText {
+    margin-top: 60px;
+    padding-bottom: 175px;
+  }
 }
