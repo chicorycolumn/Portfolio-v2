@@ -40,8 +40,16 @@
   --purpleDark6: rgb(40, 0, 79);
   --purpleDark7: rgb(30, 0, 59);
 
+  /* Large    >= 576 */
+  /* Medium   >= 410 */
+  /* Small    mostly unused */
+  /* Smaller  <  410 */
+
   --cardWidthLarge: 360px;
   --cardHeightLarge: 225px;
+
+  --cardWidthMedium: 330px;
+  --cardHeightMedium: 206px;
 
   --cardWidthSmall: 300px;
   --cardHeightSmall: 187.5px;
@@ -50,6 +58,7 @@
   --cardHeightSmaller: 150px;
 
   --cardHolderWidthLarge: 415px;
+  --cardHolderWidthMedium: 400px;
   --cardHolderWidthSmall: 100%;
 
   --myShadow1: 2px 2px 4px rgba(0, 0, 0, 0.25);

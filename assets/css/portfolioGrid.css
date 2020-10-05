@@ -48,7 +48,7 @@
   transition-delay: 0s;
   color: white;
   text-align: center;
-  opacity: 1 !important;
+  /* opacity: 1 !important; */
 }
 
 .portfolioCard:hover .portfolioCardOverlay {
@@ -60,7 +60,7 @@
 }
 
 .techIconHolder {
-  border: yellow solid 1px;
+  /* border: yellow solid 1px; */
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
@@ -181,7 +181,52 @@
   border-radius: 20px 20px 0px 0px;
 }
 
-/* @media screen and (min-width: 410px) { */
+@media screen and (min-width: 410px) {
+  .portfolioHolder {
+    min-width: var(--cardHolderWidthMedium);
+  }
+
+  .portfolioCard {
+    width: var(--cardWidthMedium) !important;
+    min-width: var(--cardWidthMedium) !important;
+    max-width: var(--cardWidthMedium) !important;
+
+    height: var(--cardHeightMedium) !important;
+    min-height: var(--cardHeightMedium) !important;
+    max-height: var(--cardHeightMedium) !important;
+
+    margin: 15px 20px !important;
+  }
+
+  .portfolioCardOverlay {
+    /* background-color: rgba(50, 150, 50, 0.8); */
+  }
+
+  .portfolioHolder {
+    min-width: var(--cardHolderWidthMedium);
+  }
+
+  .portfolioCardHeader {
+    font-size: 24px;
+  }
+
+  .portfolioCardDesc {
+    font-size: 16px;
+    margin: 3px;
+  }
+
+  .techIcon {
+    margin: 4px;
+    height: 50%;
+    margin-bottom: 0px;
+  }
+
+  .techIconHolder {
+    width: 90%;
+    height: 60px;
+  }
+}
+
 @media screen and (min-width: 576px) {
   .portfolioHolder {
     min-width: var(--cardHolderWidthLarge);
@@ -190,7 +235,7 @@
   .portfolioCardOverlay {
     padding-left: 10%;
     padding-right: 10%;
-    background-color: rgba(0, 0, 100, 0.8);
+    /* background-color: rgba(0, 0, 100, 0.8); */
   }
 
   .portfolioCard {
