@@ -412,6 +412,7 @@
         $(".portfolioHeader").addClass("o-0");
 
         setTimeout(() => {
+          //1
           $(".portfolioHolder").css({
             height: $(".portfolioHolder").css("height"),
           });
@@ -433,6 +434,7 @@
             );
 
             setTimeout(() => {
+              //2
               for (let i = 0; i < card.images.length; i++) {
                 function setMinipicAndModal(i) {
                   if (i) {
@@ -503,19 +505,22 @@
               $(".projectSquareLeftText").load(projectPath);
 
               setTimeout(() => {
+                //3
                 $(".portfolioPageHolder").removeClass("o-0");
                 $(".portfolioHeader").removeClass("o-0");
-              }, 2000);
-            }, 1000);
+              }, 2000); //3
+            }, 1000); //2
           } else {
             $("#portfolioSection").addClass("flex-column-reverse");
             $(".portfolioHeader").addClass("o-0");
             setTimeout(() => {
+              //4
               $(".portfolioHeader").addClass("visibility-h noHeight p-0");
-            }, 2500);
+            }, 2500); //4
           }
 
           setTimeout(() => {
+            //5
             $(".portfolioHolder").css({
               height: "fit-content",
             });
@@ -525,8 +530,8 @@
             let section = $("#portfolioSection")[0];
             section.scrollIntoView({ behavior: "smooth" });
             $('[data-toggle="tooltip"]').tooltip();
-          }, 2000);
-        }, 2000);
+          }, 2000); //5
+        }, 2000); //1
       }
 
       function fadeAndShowHome(hash) {
@@ -535,10 +540,11 @@
         $(".portfolioHolder").load("/content/portfolioCardHolder.html");
         $(".portfolioHeader").addClass("visibility-h");
         setTimeout(() => {
+          //6
           $("#portfolioSection").addClass("flex-column-reverse");
           $(".portfolioHeader").addClass("noHeight p-0");
           $(".portfolioCardHolder").removeClass("o-0");
-        }, 2500);
+        }, 0); //6
       }
 
       $(function () {
