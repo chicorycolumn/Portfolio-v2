@@ -4,12 +4,9 @@
   position: relative;
   overflow: hidden;
   border-radius: 10px;
-  width: 300px;
-  min-width: 300px;
-  /* background-color: cyan; */
+  width: 270px;
+  min-width: 270px;
   background-image: linear-gradient(var(--yellowLight6), var(--yellowLight5));
-  /* transition: opacity 0.05s; */
-  /* transition: visibility 0.05s; */
   height: fit-content;
   padding-right: 30px;
 }
@@ -22,7 +19,6 @@
 
 .bgCard {
   background-color: var(--yellow);
-  /* background-image: linear-gradient(var(--yellowDark2), var(--yellowLight2)); */
   transform: skewY(354deg);
   transform-origin: top left;
   height: 85px;
@@ -39,10 +35,6 @@
   /* opacity: 1; */
   left: 1px;
   opacity: 0.25;
-}
-
-.cardHeading {
-  font-size: 20px;
 }
 
 .card-title {
@@ -72,4 +64,27 @@
   position: relative;
   margin-bottom: -450px;
   z-index: 2;
+}
+
+.cardHeading {
+  font-size: 18px;
+}
+
+.cardText {
+  font-size: 14px;
+}
+
+@media screen and (min-width: 576px) {
+  .cardHeading {
+    font-size: 20px;
+  }
+
+  .cardText {
+    font-size: 16px;
+  }
+
+  .aboutMeCard {
+    width: 300px;
+    min-width: 300px;
+  }
 }

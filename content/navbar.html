@@ -10,6 +10,10 @@
     <script>
       $(function () {
         setTimeout(() => {
+          $(".navbar-brand-image").removeClass("o-0");
+        }, 10);
+
+        setTimeout(() => {
           $(".nav-icon").addClass("nav-icon_transition");
           $(".nav-link").addClass("nav-link_transition");
           $(".nav-item").addClass("nav-item_transition");
@@ -57,7 +61,7 @@
       <p style="color: white">017</p>
       <a class="navbar-brand" href="#">
         <img
-          class="navbar-brand-image"
+          class="navbar-brand-image o-0"
           src="../assets/images/csun-logo-2a.png"
           alt="logo"
         />
