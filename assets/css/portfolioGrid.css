@@ -14,13 +14,13 @@
 }
 
 .portfolioCard {
-  width: var(--cardWidthSmall) !important;
-  min-width: var(--cardWidthSmall) !important;
-  max-width: var(--cardWidthSmall) !important;
+  width: var(--cardWidthSmaller) !important;
+  min-width: var(--cardWidthSmaller) !important;
+  max-width: var(--cardWidthSmaller) !important;
 
-  height: var(--cardHeightSmall) !important;
-  min-height: var(--cardHeightSmall) !important;
-  max-height: var(--cardHeightSmall) !important;
+  height: var(--cardHeightSmaller) !important;
+  min-height: var(--cardHeightSmaller) !important;
+  max-height: var(--cardHeightSmaller) !important;
 
   margin: 15px 0px !important;
 
@@ -71,9 +71,8 @@
 }
 
 .techIcon {
-  margin: 5px;
-  margin-bottom: 0px;
-  height: 60%;
+  margin: 0px;
+  height: 40%;
 }
 
 .techIconImage {
@@ -187,9 +186,13 @@
   .portfolioCardDesc {
     font-size: 16px;
   }
-}
 
-@media screen and (min-width: 576px) {
+  .techIcon {
+    margin: 5px;
+    height: 60%;
+    margin-bottom: 0px;
+  }
+
   .portfolioHeaderButtonImage {
     width: 100px;
     max-width: 100px;
