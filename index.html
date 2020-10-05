@@ -539,12 +539,12 @@
         $(".portfolioPageHolder").remove();
         $(".portfolioHolder").load("/content/portfolioCardHolder.html");
         $(".portfolioHeader").addClass("visibility-h");
-        setTimeout(() => {
-          //6
+
+        $(".portfolioHolder").on("load", function () {
           $("#portfolioSection").addClass("flex-column-reverse");
           $(".portfolioHeader").addClass("noHeight p-0");
           $(".portfolioCardHolder").removeClass("o-0");
-        }, 0); //6
+        });
       }
 
       $(function () {
