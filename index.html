@@ -433,16 +433,42 @@
           .attr("src", techIcons[card.sourceLinks[i].name].src);
       }
 
+      function loadingAnimation(switchOn) {
+        console.log(switchOn);
+
+        let bodyOverlay = $(".bodyOverlay");
+
+        if (switchOn) {
+          bodyOverlay
+            .css({
+              height: $("body").css("height"),
+            })
+            .removeClass("d-none");
+
+          setTimeout(() => {
+            bodyOverlay.removeClass("o-0");
+          }, 250);
+        } else {
+          bodyOverlay.addClass("o-0");
+
+          setTimeout(() => {
+            bodyOverlay.addClass("d-none");
+          }, 250);
+        }
+      }
+
       function showAndScrollTo(incomingSelector) {
+        loadingAnimation(false);
         setTimeout(() => {
           $(".portfolioHolder").css({
             height: "fit-content",
           });
           // $("incomingSelector").removeClass("o-0");
+
           $("#portfolioSection").removeClass("o-0");
           $("#portfolioSection")[0].scrollIntoView({ behavior: "smooth" });
           $('[data-toggle="tooltip"]').tooltip();
-        }, 250);
+        }, 250); //should be 250
       }
 
       function fadeAndShow(
@@ -456,17 +482,19 @@
           incomingPath = "/content/projectTemplate.html";
         }
 
-        console.log({
-          hash,
-          incomingSelector,
-          outgoingSelector,
-          incomingPath,
-          projectPath,
-        });
+        // console.log({
+        //   hash,
+        //   incomingSelector,
+        //   outgoingSelector,
+        //   incomingPath,
+        //   projectPath,
+        // });
 
         let imagePath = "/assets/images/screenshots/";
 
+        loadingAnimation(true);
         $("#portfolioSection").addClass("o-0");
+
         // $(outgoingSelector).addClass("o-0");
         // $(".portfolioHeader").addClass("o-0");
 
@@ -531,6 +559,8 @@
       function fadeAndShowHome(hash) {
         console.log("show home!");
 
+        loadingAnimation(true);
+
         $(".portfolioPageHolder").remove();
         $(".portfolioHeader").addClass("visibility-h noHeight p-0");
         $("#portfolioSection").addClass("flex-column-reverse o-0");
@@ -538,8 +568,9 @@
         $(".portfolioHolder").load(
           "/content/portfolioCardHolder.html",
           function () {
+            loadingAnimation(false);
             setTimeout(() => {
-              $("#portfolioSection").removeClass("o-0");
+              $("#portfolioSection").removeClass("o-0"); //Should be 250 below.
             }, 250); //To wait until images have loaded. No break, only aesthetic.
           }
         );
@@ -554,7 +585,13 @@
     <title>C Matus Portfolio</title>
   </head>
 
-  <body class="bodyGradient1">
+  <body class="bodyGradient1 border-f2">
+    <div class="absoluteSpreadMitigated bodyOverlay z3 d-none">
+      <img
+        src="assets/images/csun-logo-spinner.png"
+        class="loadingImage spinInfinite"
+      />
+    </div>
     <div id="navbarSection"></div>
     <header class="p-rel overflow-h">
       <div class="absoluteSpread bgHeader"></div>
