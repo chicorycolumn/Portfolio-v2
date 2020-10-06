@@ -230,6 +230,12 @@ ul {
 }
 
 @media screen and (min-width: 576px) {
+  .projectSquareLeft p,
+  li,
+  ul {
+    font-size: var(--proseSize2);
+  }
+
   .portfolioHolder {
     min-width: var(--cardHolderWidthLarge);
   }
