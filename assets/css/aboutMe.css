@@ -70,7 +70,7 @@
   font-size: 18px;
 }
 
-.cardText {
+.cardProse {
   font-size: 14px;
 }
 
@@ -79,7 +79,7 @@
     font-size: 20px;
   }
 
-  .cardText {
+  .cardProse {
     font-size: 16px;
   }
 

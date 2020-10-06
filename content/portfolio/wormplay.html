@@ -1,69 +1,58 @@
 <h5>Description</h5>
 <p>
-  An online two-player word game that uses webcam for facial recognition. Upon
-  entering the lobby, players can pull faces to represent four different
-  emotions, and the emotion recognition API uses the webcam to detect which
-  emotion is being expressed, and takes a photo at the correct moment. These
-  photos of the player's own face are transferred onto the 'word worm' - a 2D
-  physics object that crawls around the screen - onto which the player drops
-  Scrabble tiles to spell out words and beat their opponent.
+  An online two-player word game with webcam facial recognition. Players can
+  pull faces for different emotions, and the API detects which emotion is being
+  expressed, and takes a photo at the correct moment. These photos display on
+  the 'word worm' - a 2D physics object - onto which the player drops Scrabble
+  tiles to spell out words and beat their opponent.
   <br />
   <br />
   The game provides:
 </p>
 <ul>
+  <li>A login and lobby system to find other users online, built with React</li>
+  <li>An in-game chatroom, built with Socket.IO</li>
   <li>
-    A login and lobby system to find other users online to play against, built
-    with React
-  </li>
-  <li>An in-game chatroom , built with Socket.IO</li>
-  <li>
-    A webcam feature with facial and emotion recognition, built with a facial
-    recognition API
+    A webcam feature with emotion detection, built with a facial recognition API
   </li>
   <li>A 2D physics game, built with Phaser</li>
   <li>
-    Realtime connections to allow both players to see each other's in-game
-    action instantly, via a backend server using Express and Socket.IO
+    Realtime connections so players see each other's in-game actions instantly,
+    via a backend server with Express and Socket.IO
   </li>
-  <li>
-    Checking of valid words during gameplay, via the Oxford English Dictionary
-    API
-  </li>
+  <li>Checking of valid words, via the Oxford English Dictionary API</li>
 </ul>
 <p>
   This was the final project at Northcoders. It was thought of, designed,
-  developed, and tested all within two weeks. The project started at the
-  beginning of the Covid-19 UK lockdown in 2020, so the team of four
-  collaborated entirely remotely.
+  developed, and tested in two weeks. We started at the beginning of the
+  Covid-19 2020 UK lockdown, so our team of four collaborated remotely.
 </p>
 <h5>Challenges</h5>
 <p>
-  This being our first original project with minimal guidance from tutors and
-  great encouragement to learn and solve problems ourselves, we decided to be
-  ambitious. In addition to learning Phaser - a 2D physics game engine - we
-  decided to add webcam features and realtime facial recognition of emotions. I
-  took the lead in this last part, and spent several weekends intensively
-  spiking webcam features and API integration.
+  As our first original project, with minimal guidance and great encouragement
+  to learn and solve problems ourselves, we chose to be ambitious. In addition
+  to learning Phaser - a 2D physics game engine - we added realtime facial
+  recognition. I took the lead in this last part, spending several weekends
+  intensively spiking webcam features and API integration.
   <br />
   <br />
-  Transferring the images taken by the camera into the Phaser-rendered canvas,
-  as well as integrating the two frameworks (Phaser and React) required much
-  dedicated work. I found that I really enjoy data management in projects,
-  putting in the days needed to spike and develop ways to make data available
-  both between the frameworks, as well as over the server to the other player.
+  Transferring the webcam images into the Phaser-rendered canvas, as well as
+  integrating Phaser with React, required extensive work. I really enjoy data
+  management in projects, putting in the days needed to develop ways to make
+  data available both between the frameworks, as well as over the server to the
+  other player.
 </p>
 <h5>What I learned</h5>
 <p>
-  The team collaboration was fully remote, and I really enjoyed the fast
-  learning curve of teamwork tools and planning aids. We used Trello as a kanban
-  board, had daily standup meetings, ultimately delivering an end-to-end app in
-  an Agile environment. As teammates we made sure to keep each other fully
-  updated about important developments, which gave us confidence to go off
-  individually and put in the hard grind to develop specific features.
+  I really enjoyed the fast learning curve of teamwork tools and planning aids
+  in this fully remote collaboration. We used Trello as a kanban board, had
+  daily standup meetings, delivering an end-to-end app in an Agile environment.
+  As teammates we kept each other fully updated about important developments,
+  which gave us confidence to go off individually and put in the hard grind to
+  develop specific features.
   <br />
   <br />
-  We also learned the importance of testing the hosting early-on in the project,
-  when integrating frameworks that we hadn't worked with before. While we ran
-  into some issues, the game was ultimately launched with full functionality.
+  We learned the importance of testing the hosting early-on when integrating
+  unfamiliar frameworks. While we ran into some issues, the game was ultimately
+  launched with full functionality.
 </p>

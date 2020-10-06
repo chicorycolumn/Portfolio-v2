@@ -34,7 +34,6 @@
           );
         }
         areCardsInCarousel = false;
-
         showOrHideAboutMeCards();
       }
 
@@ -62,18 +61,6 @@
             $(".aboutMeCard").removeClass("appearAnimation")
           }
         }, 250);
-
-//         setTimeout(() => {
-//           console.log("200px")
-//           $("#aboutMeSection").css({"height": "20px"})
-//           setTimeout(() => {
-//             console.log("anaheim")
-
-// let newHeight = $("#aboutMeCarouselHolder").css("height")
-
-//           $("#aboutMeSection").css({"height": newHeight})
-//         }, 1000);
-//         }, 1000);
 
         areCardsInCarousel = true;
       }
@@ -134,7 +121,12 @@
 
       $(function () {
 
+        for (let i = 1; i <= 3; i++){
+          $("#aboutMeCard" + i).find(".card-text").load("content/aboutMe/card" + i + ".html")
+        }
+
         moveCardsToAppropriatePlace();
+        
 
         $(window).on("resize", function () {
           moveCardsToAppropriatePlace();
@@ -161,22 +153,7 @@
         <div class="absoluteSpread bgCard2"></div>
         <div class="card-body z2">
           <h4 class="card-title text-center mb-5 mt-n1">What I do</h4>
-          <div class="card-text color-pd6">
-            <h2 class="cardHeading">Languages</h2>
-            <p class="cardText">JavaScript, Python, PHP</p>
-            <h2 class="cardHeading">Back-end</h2>
-            <p class="cardText">
-              Node.js, Axios, Express, Knex, SQL, Socket.io, Flask
-            </p>
-            <h2 class="cardHeading">Front-end</h2>
-            <p class="cardText">HTML, CSS, React, Angular, Bootstrap</p>
-            <h2 class="cardHeading">Testing</h2>
-            <p class="cardText">Chai, Sinon, Mocha, Jest</p>
-            <h2 class="cardHeading">Additional experience</h2>
-            <p class="cardText">Adobe Premiere Pro, Audacity</p>
-          </div>
-          <a href="#" class="card-link">Card link</a>
-          <a href="#" class="card-link">Another link</a>
+          <div class="card-text color-pd6"></div>
         </div>
       </div>
       <!-- //// -->
@@ -187,16 +164,7 @@
         <div class="absoluteSpread bgCard2"></div>
         <div class="card-body z2">
           <h4 class="card-title text-center mb-5 mt-n1">Who I am</h4>
-          <div class="card-text color-pd6">
-            <h2 class="cardHeading">Training</h2>
-            <p class="cardText">Northcoders was totally rad et cetera et al</p>
-            <h2 class="cardHeading">Strengths</h2>
-            <p class="cardText">I'm a fast learner and so on and so forth</p>
-            <h2 class="cardHeading">Work</h2>
-            <p class="cardText">I've been an English teacher for bla bla</p>
-          </div>
-          <a href="#" class="card-link">Card link</a>
-          <a href="#" class="card-link">Another link</a>
+          <div class="card-text color-pd6"></div>
         </div>
       </div>
       <!-- //// -->
@@ -207,12 +175,7 @@
         <div class="absoluteSpread bgCard2"></div>
         <div class="card-body z2">
           <h4 class="card-title text-center mb-5 mt-n1">What I like</h4>
-          <div class="card-text color-pd6">
-            <h2 class="cardHeading">Languages</h2>
-            <p class="cardText">English, Spanish, Polish</p>
-          </div>
-          <a href="#" class="card-link">Card link</a>
-          <a href="#" class="card-link">Another link</a>
+          <div class="card-text color-pd6"></div>
         </div>
       </div>
       <!-- //// -->
