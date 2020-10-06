@@ -21,7 +21,7 @@
         }, timeout);
       }
 
-      function moveCardsFromCarousel() {
+      function moveCardsFromCarousel(breakpoint) {
         for (let i = 0; i <= 3; i++) {
           $("#aboutMeCardHolder").append(
             $("#aboutMeCard" + i)
@@ -34,7 +34,7 @@
           );
         }
         areCardsInCarousel = false;
-        showOrHideAboutMeCards();
+        showOrHideAboutMeCards(breakpoint);
       }
 
       function moveCardsToCarousel() {
@@ -65,23 +65,24 @@
         areCardsInCarousel = true;
       }
 
-      function moveCardsToAppropriatePlace() {
-        if (!window.matchMedia("(max-width: 991px)").matches) {
+      function moveCardsToAppropriatePlace(breakpoint) {
+
+        if (!window.matchMedia("(max-width: "+breakpoint+"px)").matches) {
           if (areCardsInCarousel) {
-            moveCardsFromCarousel();
+            moveCardsFromCarousel(breakpoint);
           } else {
             areCardsInCarousel = false;
           }
         } else if (
-          window.matchMedia("(max-width: 991px)").matches &&
+          window.matchMedia("(max-width: "+breakpoint+"px)").matches &&
           !areCardsInCarousel
         ) {
           moveCardsToCarousel();
         }
       }
 
-      function showOrHideAboutMeCards() {
-        if (!window.matchMedia("(max-width: 991px)").matches) {
+      function showOrHideAboutMeCards(breakpoint) {
+        if (!window.matchMedia("(max-width: "+breakpoint+"px)").matches) {
           let top_of_element = $(".aboutMeCard").offset().top;
           let bottom_of_element =
             $(".aboutMeCard").offset().top + $(".aboutMeCard").outerHeight();
@@ -121,19 +122,21 @@
 
       $(function () {
 
+        let breakpoint = 1200;
+
         for (let i = 1; i <= 3; i++){
           $("#aboutMeCard" + i).find(".card-text").load("content/aboutMe/card" + i + ".html")
         }
 
-        moveCardsToAppropriatePlace();
+        moveCardsToAppropriatePlace(breakpoint);
         
 
         $(window).on("resize", function () {
-          moveCardsToAppropriatePlace();
+          moveCardsToAppropriatePlace(breakpoint);
         });
 
         $(window).scroll(function () {
-          showOrHideAboutMeCards();
+          showOrHideAboutMeCards(breakpoint);
         });
       });
     </script>
@@ -152,7 +155,7 @@
         <div class="absoluteSpread bgCard"></div>
         <div class="absoluteSpread bgCard2"></div>
         <div class="card-body z2">
-          <h4 class="card-title text-center mb-5 mt-n1">What I do</h4>
+          <h4 class="card-title text-center mb-5 mt-n1">Why I'm here</h4>
           <div class="card-text color-pd6"></div>
         </div>
       </div>
@@ -163,7 +166,7 @@
         <div class="absoluteSpread bgCard"></div>
         <div class="absoluteSpread bgCard2"></div>
         <div class="card-body z2">
-          <h4 class="card-title text-center mb-5 mt-n1">Who I am</h4>
+          <h4 class="card-title text-center mb-5 mt-n1">What I do</h4>
           <div class="card-text color-pd6"></div>
         </div>
       </div>
@@ -184,7 +187,7 @@
     <!-- / -->
     <!-- / -->
     <!-- / -->
-    <div class="container-fluid p-0 d-block d-lg-none" id="aboutMeCarouselHolder">
+    <div class="container-fluid p-0 d-block d-xl-none" id="aboutMeCarouselHolder">
       <div
         id="aboutMeCarousel"
         class="carousel slide"
