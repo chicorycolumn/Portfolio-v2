@@ -131,8 +131,11 @@
   height: 100% !important;
 }
 
-.projectSquareLeft p {
-  font-size: calc(11.5px + 0.5vw);
+.projectSquareLeft p,
+li,
+ul {
+  font-size: calc(10.5px + 0.5vw);
+  /* color: aqua; */
 }
 
 .projectSquareRight {
