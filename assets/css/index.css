@@ -55,6 +55,7 @@ footer img:hover {
 
 .innerBody {
   padding: 0px;
+  border: purple solid 3px;
 }
 
 footer {
@@ -62,6 +63,7 @@ footer {
 }
 
 #portfolioSection {
+  border: hotpink solid 3px;
   height: fit-content;
   min-height: 560px;
   display: flex;
@@ -73,6 +75,7 @@ footer {
 }
 
 #aboutMeSection {
+  border: aqua solid 3px;
   height: fit-content;
   padding-top: 125px;
   margin-top: 50px;
@@ -84,10 +87,15 @@ footer {
   top: 0px;
 }
 
+#aboutMeCarouselHolder {
+  border: chartreuse solid 3px;
+}
+
 @media screen and (min-width: 576px) {
   .innerBody {
     padding: 24px;
     padding-top: 0px;
+    background-color: rgba(255, 0, 0, 0.2);
   }
 }
 
@@ -95,6 +103,7 @@ footer {
   .innerBody {
     padding: 48px;
     padding-top: 0px;
+    background-color: rgba(255, 0, 0, 0);
   }
 
   footer {
