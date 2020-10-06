@@ -33,10 +33,11 @@ header {
   border-radius: 75% 75% 0px 0px;
 }
 
-.headerText {
+.blurb {
   width: 100%;
   margin: 0;
   padding: 100px 0;
+  padding-top: 75px;
   /* font: 44px; */
   position: relative;
   font-size: calc(24px + 1.5vw);
@@ -122,8 +123,7 @@ footer {
 
   /* **************************************** */
 
-  .headerText {
-    margin-top: 60px;
+  .blurb {
     padding-bottom: 175px;
   }
 }

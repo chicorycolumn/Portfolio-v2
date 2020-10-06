@@ -63,7 +63,9 @@
 
   --myShadow1: 2px 2px 4px rgba(0, 0, 0, 0.25);
 
-  --proseSize: calc(11px + 0.5vw);
+  --proseSize0: calc(9px + 0.5vh);
+  --proseSize1: calc(12px + 0.5vh);
+  --proseSize2: calc(11px + 0.5vh);
 }
 
 body {

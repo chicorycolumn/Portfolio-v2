@@ -134,7 +134,7 @@
 .projectSquareLeft p,
 li,
 ul {
-  font-size: var(--proseSize);
+  font-size: var(--proseSize1);
 }
 
 .projectSquareRight {
