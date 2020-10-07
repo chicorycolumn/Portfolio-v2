@@ -517,9 +517,13 @@
                 setMinipicAndModal(i, card, imagePath);
               }
 
-              $(".projectTitle").text(card.projectName);
+              $(".projectTitle").find("h1").text(card.projectName);
 
-              $(".portfolioVisitButton").attr(
+              // $(".portfolioVisitButton").attr(
+              //   "href",
+              //   card.sourceLinks.filter((linkSet) => linkSet.isMain)[0].link
+              // );
+              $(".projectTitle").attr(
                 "href",
                 card.sourceLinks.filter((linkSet) => linkSet.isMain)[0].link
               );
@@ -589,7 +593,7 @@
     <div class="absoluteSpreadMitigated bodyOverlay z3 d-none">
       <img
         src="assets/images/csun-logo-spinner.png"
-        class="loadingImage spinInfinite"
+        class="loadingImage spinInfinite rotateHues"
       />
     </div>
     <div id="navbarSection"></div>

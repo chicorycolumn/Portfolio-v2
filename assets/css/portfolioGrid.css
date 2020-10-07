@@ -108,6 +108,19 @@
 }
 
 .projectTitle {
+  /* width: max-content; */
+  transition: filter 0.5s;
+  cursor: pointer;
+  text-decoration: underline;
+  color: indigo;
+}
+
+.projectTitle:hover {
+  color: indigo;
+  filter: brightness(150%);
+}
+
+.projectTitle h1 {
   font-size: calc(20px + 3vw);
 }
 

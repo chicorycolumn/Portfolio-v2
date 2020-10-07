@@ -9,6 +9,21 @@
   transition: opacity 0.1s linear;
 }
 
+.rotateHues {
+  -webkit-animation-name: rotate-hues;
+  -webkit-animation-duration: 1s;
+  -webkit-animation-iteration-count: 1;
+  -webkit-animation-timing-function: ease-in-out;
+  -moz-animation-name: rotate-hues;
+  -moz-animation-duration: 1s;
+  -moz-animation-iteration-count: 1;
+  -moz-animation-timing-function: ease-in-out;
+  -ms-animation-name: rotate-hues;
+  -ms-animation-duration: 1s;
+  -ms-animation-iteration-count: 1;
+  -ms-animation-timing-function: ease-in-out;
+}
+
 .spinOnce {
   -webkit-animation-name: spin-once;
   -webkit-animation-duration: 1s;
@@ -39,6 +54,22 @@
   -ms-animation-iteration-count: infinite;
   -ms-animation-timing-function: ease-in-out;
   -o-transition: rotate(3600deg);
+}
+
+.lightenInfinite {
+  animation-direction: alternate;
+  -webkit-animation-name: lighten-once;
+  -webkit-animation-duration: 0.5s;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-timing-function: ease-in-out;
+  -moz-animation-name: lighten-once;
+  -moz-animation-duration: 0.5s;
+  -moz-animation-iteration-count: infinite;
+  -moz-animation-timing-function: ease-in-out;
+  -ms-animation-name: lighten-once;
+  -ms-animation-duration: 0.5s;
+  -ms-animation-iteration-count: infinite;
+  -ms-animation-timing-function: ease-in-out;
 }
 
 @-webkit-keyframes bounce {
@@ -104,6 +135,31 @@
   }
 }
 
+@-moz-keyframes lighten-once {
+  from {
+    -moz-filter: brightness(100%);
+  }
+  to {
+    -moz-filter: brightness(150%);
+  }
+}
+@-webkit-keyframes lighten-once {
+  from {
+    -webkit-filter: brightness(150%);
+  }
+  to {
+    -webkit-filter: brightness(200%);
+  }
+}
+@keyframes lighten-once {
+  from {
+    filter: brightness(150%);
+  }
+  to {
+    filter: brightness(200%);
+  }
+}
+
 @-moz-keyframes spin-once {
   from {
     -moz-transform: rotate(0deg);
@@ -126,5 +182,69 @@
   }
   to {
     transform: rotate(360deg);
+  }
+}
+
+@-moz-keyframes rotate-hues {
+  0%,
+  20%,
+  40%,
+  60%,
+  100% {
+    -moz-filter: hue-rotate(45);
+  }
+  20% {
+    -moz-filter: hue-rotate(90);
+  }
+  40% {
+    -moz-filter: hue-rotate(135);
+  }
+  60% {
+    -moz-filter: hue-rotate(180);
+  }
+  80% {
+    -moz-filter: hue-rotate(225);
+  }
+}
+@-webkit-keyframes rotate-hues {
+  0%,
+  20%,
+  40%,
+  60%,
+  100% {
+    -webkit-filter: hue-rotate(45);
+  }
+  20% {
+    -webkit-filter: hue-rotate(90);
+  }
+  40% {
+    -webkit-filter: hue-rotate(135);
+  }
+  60% {
+    -webkit-filter: hue-rotate(180);
+  }
+  80% {
+    -webkit-filter: hue-rotate(225);
+  }
+}
+@keyframes rotate-hues {
+  0%,
+  20%,
+  40%,
+  60%,
+  100% {
+    filter: hue-rotate(45);
+  }
+  20% {
+    filter: hue-rotate(90);
+  }
+  40% {
+    filter: hue-rotate(135);
+  }
+  60% {
+    filter: hue-rotate(180);
+  }
+  80% {
+    filter: hue-rotate(225);
   }
 }
