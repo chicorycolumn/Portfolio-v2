@@ -30,7 +30,7 @@
                 marginRight: "0",
                 marginTop: "0",
               })
-              .addClass("visibility-h").removeClass("verticallyCenterCarouselItems")
+              .addClass("visibility-h").removeClass("verticallyCenter")
           );
         }
         areCardsInCarousel = false;
@@ -38,6 +38,8 @@
       }
 
       function moveCardsToCarousel() {
+        let highestCardHeight = 0
+
         for (let i = 1; i <= 3; i++) {
           $("#carouselItem" + i).append(
             $("#aboutMeCard" + i).css({
@@ -45,9 +47,43 @@
               marginLeft: "auto",
               marginRight: "auto",
               marginTop: "10px",
-            }).removeClass("appearAnimation visibility-h").addClass("verticallyCenterCarouselItems")
-          );
+            }).removeClass("appearAnimation visibility-h").addClass("verticallyCenter"));
+
+            let holderHeight = $("#aboutMeCarousel").find(".carousel-inner").css("height")
+            holderHeight = parseInt(holderHeight.slice(0, holderHeight.indexOf("p")))
+
+            console.log({holderHeight})
+
+            setTimeout(() => {
+              let currentCardHeight = $("#aboutMeCard" + i).css("height")
+
+              console.log({currentCardHeight})
+
+              currentCardHeight = parseInt(currentCardHeight.slice(0, currentCardHeight.indexOf("p")))
+
+              console.log({currentCardHeight})
+
+              if (currentCardHeight > highestCardHeight){
+                highestCardHeight = currentCardHeight; 
+                console.log("New highestCardHeight " + highestCardHeight)
+              }
+
+              if (i == 3){
+                highestCardHeight += 105
+
+                $("#aboutMeCarousel").find(".carousel-inner").css({"height": highestCardHeight + "px"})
+                // $("#aboutMeCarousel").find(".carousel-inner").css({"border": "red dotted 3px"})
+
+                let carouselInnerHeight = $("#aboutMeCarousel").find(".carousel-inner").css("height")
+
+                console.log({carouselInnerHeight})
+              }
+              
+            }, 1000);
         }
+
+  
+
         $("#aboutMeCarousel").carousel({interval: isTouchscreen() ? false : 2000});
 
         if (areCardsInCarousel === null) {
@@ -151,7 +187,7 @@
       <!-- //// -->
       <!-- //// -->
       <div class="card shadow z1 aboutMeCard" id="aboutMeCard1">
-        <img src="../assets/images/csun-logo-2b.png" class="cardMinipic" id="cardMinipic1" />
+        <img src="../assets/images/csun-logo-2b.png" class="cardMinilogo" id="cardMinilogo1" />
         <div class="absoluteSpread bgCard"></div>
         <div class="absoluteSpread bgCard2"></div>
         <div class="card-body z2">
@@ -162,7 +198,7 @@
       <!-- //// -->
       <!-- //// -->
       <div class="card shadow z1 aboutMeCard" id="aboutMeCard2">
-        <img src="../assets/images/csun-logo-2b.png" class="cardMinipic" />
+        <img src="../assets/images/csun-logo-2b.png" class="cardMinilogo" />
         <div class="absoluteSpread bgCard"></div>
         <div class="absoluteSpread bgCard2"></div>
         <div class="card-body z2">
@@ -173,7 +209,7 @@
       <!-- //// -->
       <!-- //// -->
       <div class="card shadow z1 aboutMeCard" id="aboutMeCard3">
-        <img src="../assets/images/csun-logo-2b.png" class="cardMinipic" />
+        <img src="../assets/images/csun-logo-2b.png" class="cardMinilogo" />
         <div class="absoluteSpread bgCard"></div>
         <div class="absoluteSpread bgCard2"></div>
         <div class="card-body z2">

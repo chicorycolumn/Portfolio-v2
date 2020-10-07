@@ -5,6 +5,26 @@
   padding: 0;
 }
 
+.bodyOverlay {
+  background-color: rgba(0, 0, 0, 0.8);
+  transition: opacity 0.25s;
+  /* border: red dotted 20px; */
+  /* height: 100% !important; */
+  /* display: block !important;
+  opacity: 1 !important; */
+}
+
+.loadingImage {
+  position: fixed;
+  left: 50%;
+  margin-left: -50px;
+  top: 45%;
+  margin-top: -50px;
+  width: 100px;
+  height: 100px;
+  /* opacity: 0.9 !important; */
+}
+
 header {
   height: fit-content;
   padding-top: 0px;
@@ -36,8 +56,10 @@ header {
 .blurb {
   width: 100%;
   margin: 0;
-  padding: 100px 0;
+  padding-bottom: 100px;
   padding-top: 75px;
+  padding-left: 5%;
+  padding-right: 5%;
   /* font: 44px; */
   position: relative;
   font-size: calc(24px + 1.5vw);
@@ -77,40 +99,34 @@ footer {
 }
 
 #aboutMeSection {
-  /* border: aqua solid 3px; */
-  height: fit-content;
-  padding-top: 125px;
-  margin-top: 50px;
+  /* border: blue solid 3px; */
+
+  /* padding-top: 125px;
+  height: 50px;
+  margin-top: 50px; */
+
+  padding-top: 75px;
+  height: 250px;
+  margin-top: 100px;
+
+  /* padding-top: 0px;
+  margin-top: 0px;
+  position: relative;
+  top: 600px; */
 }
 
-#aboutMeCardHolder,
-#aboutMeCarouselHolder {
+#aboutMeCardHolder {
   position: relative;
   top: 0px;
 }
 
 #aboutMeCarouselHolder {
+  /* position: relative;
+  top: 0px; */
+}
+
+#aboutMeCarouselHolder {
   /* border: chartreuse solid 3px; */
-}
-
-.bodyOverlay {
-  background-color: rgba(0, 0, 0, 0.8);
-  transition: opacity 0.25s;
-  /* border: red dotted 20px; */
-  /* height: 100% !important; */
-  /* display: block !important;
-  opacity: 1 !important; */
-}
-
-.loadingImage {
-  position: fixed;
-  left: 50%;
-  margin-left: -50px;
-  top: 45%;
-  margin-top: -50px;
-  width: 100px;
-  height: 100px;
-  /* opacity: 0.9 !important; */
 }
 
 @media screen and (min-width: 576px) {
@@ -121,6 +137,11 @@ footer {
 }
 
 @media screen and (min-width: 768px) {
+  .blurb {
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+
   .innerBody {
     padding: 48px;
     padding-top: 0px;
@@ -128,17 +149,22 @@ footer {
   }
 
   footer {
-    height: 900px;
+    height: 750px;
   }
 
   #aboutMeSection {
-    padding-top: 50px;
-    margin-top: 75px;
+    /* border: blue dotted 3px; */
+    padding-top: 100px;
+    margin-top: 150px;
+    height: 300px;
   }
 
-  #aboutMeCardHolder,
-  #aboutMeCarouselHolder {
+  #aboutMeCardHolder {
     top: 100px;
+  }
+
+  #aboutMeCarouselHolder {
+    /* top: 100px; */
   }
 
   /* **************************************** */

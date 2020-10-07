@@ -4,14 +4,14 @@
   position: relative;
   overflow: hidden;
   border-radius: 10px;
-  width: 270px;
-  min-width: 270px;
+  width: 285px;
+  min-width: 285px;
   background-image: linear-gradient(var(--yellowLight6), var(--yellowLight5));
   height: fit-content;
   padding-right: 30px;
 }
 
-.verticallyCenterCarouselItems {
+.verticallyCenter {
   top: 25%;
   transform: translateY(-25%);
   bottom: initial;
@@ -41,7 +41,7 @@
   color: var(--yellowDark7);
 }
 
-.cardMinipic {
+.cardMinilogo {
   position: absolute;
   top: 5px;
   right: 6.5px;
@@ -77,8 +77,11 @@
   font-size: var(--proseSize1);
 }
 
-.card-body {
+.aboutMeCard .card-body {
   padding-bottom: 0px;
+  padding-left: 12.5px;
+  padding-right: 12.5px;
+
   /* padding-right: 10px; */
 }
 
@@ -93,5 +96,15 @@
   .aboutMeCard {
     width: 375px;
     min-width: 375px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .aboutMeCard .card-body {
+    padding-bottom: 0px;
+    padding-left: 20px;
+    padding-right: 20px;
+
+    /* padding-right: 10px; */
   }
 }

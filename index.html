@@ -589,6 +589,11 @@
         $("#portfolioSection").load("content/portfolioGrid.html");
         $("#aboutMeSection").load("content/aboutMe.html");
         $("#navbarSection").load("content/navbar.html");
+
+        setTimeout(() => {
+          console.log($("#aboutMeCarousel").css("height"));
+          console.log($(".carousel-inner").css("height"));
+        }, 1000);
       });
     </script>
     <title>C Matus Portfolio</title>
