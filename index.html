@@ -197,7 +197,7 @@
             },
             {
               isMain: true,
-              title: "Front end",
+              title: "Live site",
               name: "Netlify",
               link: "https://purpleprose.netlify.com/",
             },
@@ -245,7 +245,7 @@
             },
             {
               isMain: true,
-              title: "Front end",
+              title: "Live site",
               name: "Netlify",
               link: "https://wormplay.netlify.app/",
             },
@@ -275,7 +275,7 @@
             },
             {
               isMain: true,
-              title: "Site",
+              title: "Live site",
               name: "Netlify",
               link: "https://c-m-portfolio.netlify.app",
             },
@@ -305,7 +305,7 @@
             },
             {
               isMain: true,
-              title: "Site",
+              title: "Live site",
               name: "Netlify",
               link: "https://sortcut.netlify.app/",
             },
@@ -355,7 +355,7 @@
             },
             {
               isMain: true,
-              title: "Front end",
+              title: "Live site",
               name: "Netlify",
               link: "https://crossword-crocodile.netlify.app/",
             },
@@ -382,7 +382,7 @@
             },
             {
               isMain: true,
-              title: "Site",
+              title: "Live site",
               name: "Heroku",
               link: "http://fruit-makhzan.herokuapp.com/",
             },
@@ -434,7 +434,7 @@
       }
 
       function loadingAnimation(switchOn) {
-        console.log(switchOn);
+        console.log(">>>", switchOn);
 
         let bodyOverlay = $(".bodyOverlay");
 
@@ -447,7 +447,7 @@
 
           setTimeout(() => {
             bodyOverlay.removeClass("o-0");
-          }, 250);
+          }, 10);
         } else {
           bodyOverlay.addClass("o-0");
 
@@ -458,8 +458,9 @@
       }
 
       function showAndScrollTo(incomingSelector) {
-        loadingAnimation(false);
         setTimeout(() => {
+          loadingAnimation(false);
+          // setTimeout(() => {
           $(".portfolioHolder").css({
             height: "fit-content",
           });
@@ -468,7 +469,8 @@
           $("#portfolioSection").removeClass("o-0");
           $("#portfolioSection")[0].scrollIntoView({ behavior: "smooth" });
           $('[data-toggle="tooltip"]').tooltip();
-        }, 250); //should be 250
+          // }, 250);
+        }, 0); //Pretending that loading takes a while.
       }
 
       function fadeAndShow(
@@ -569,15 +571,17 @@
         $(".portfolioHeader").addClass("visibility-h noHeight p-0");
         $("#portfolioSection").addClass("flex-column-reverse o-0");
 
-        $(".portfolioHolder").load(
-          "/content/portfolioCardHolder.html",
-          function () {
-            loadingAnimation(false);
-            setTimeout(() => {
-              $("#portfolioSection").removeClass("o-0"); //Should be 250 below.
-            }, 250); //To wait until images have loaded. No break, only aesthetic.
-          }
-        );
+        setTimeout(() => {
+          $(".portfolioHolder").load(
+            "/content/portfolioCardHolder.html",
+            function () {
+              setTimeout(() => {
+                loadingAnimation(false);
+                $("#portfolioSection").removeClass("o-0");
+              }, 250); //To wait until images have loaded. No break, only aesthetic.
+            }
+          );
+        }, 0); //Pretending that it takes a long time to load.
       }
 
       $(function () {
@@ -589,8 +593,8 @@
     <title>C Matus Portfolio</title>
   </head>
 
-  <body class="bodyGradient1 border-f2">
-    <div class="absoluteSpreadMitigated bodyOverlay z3 d-none">
+  <body class="bodyGradient1">
+    <div class="absoluteSpreadMitigated bodyOverlay z3 d-none o-0">
       <img
         src="assets/images/csun-logo-spinner.png"
         class="loadingImage spinInfinite rotateHues"
@@ -608,8 +612,8 @@
       </div>
     </header>
     <div class="innerBody d-flex flex-column justify-content-center">
-      <div id="portfolioSection" class="d-flex flex-column border-b11"></div>
-      <div id="aboutMeSection" class="border-g11"></div>
+      <div id="portfolioSection" class="d-flex flex-column"></div>
+      <div id="aboutMeSection" class=""></div>
     </div>
     <footer class="p-rel overflow-h">
       <div class="absoluteSpread bgFooter"></div>
@@ -663,6 +667,22 @@
             />
             <img
               src="/assets/images/logo-linkedin-bw.png"
+              class="absoluteSpread z2 hoverFadeout"
+            />
+          </a>
+          <a
+            target="_blank"
+            class="p-rel"
+            href="/assets/C Matus CV.pdf"
+            style="width: 25px; height: 25px"
+            download
+          >
+            <img
+              src="/assets/images/icon-page-yellow.png"
+              class="absoluteSpread z1"
+            />
+            <img
+              src="/assets/images/icon-page.png"
               class="absoluteSpread z2 hoverFadeout"
             />
           </a>
