@@ -40,11 +40,6 @@
   --purpleDark6: rgb(40, 0, 79);
   --purpleDark7: rgb(30, 0, 59);
 
-  /* Large    >= 576 */
-  /* Medium   >= 410 */
-  /* Small    mostly unused */
-  /* Smaller  <  410 */
-
   --cardWidthLarge: 360px;
   --cardHeightLarge: 225px;
 

@@ -10,7 +10,6 @@
   background-color: none;
   height: fit-content;
   min-width: fit-content;
-  /* border: cyan solid 2px; */
   overflow: visible;
 }
 
@@ -29,11 +28,6 @@
   border-radius: 0px 500px 500px 0px;
   margin-top: auto;
   margin-bottom: auto;
-  /* background-image: linear-gradient(
-    to left,
-    rgba(100, 100, 100, 0.1),
-    rgba(0, 0, 0, 0)
-  ); */
 }
 
 .carouselControl:hover {
@@ -47,11 +41,6 @@
 .carouselControlIcon {
   height: 30px;
   width: 30px;
-}
-
-#aboutMeCarousel .carousel-inner {
-  /* height: 50px; */
-  /* border: fuchsia solid 2px; */
 }
 
 @media screen and (min-width: 360px) {
