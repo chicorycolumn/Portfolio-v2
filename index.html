@@ -435,8 +435,6 @@
       }
 
       function loadingAnimation(switchOn) {
-        console.log(">>>", switchOn);
-
         let bodyOverlay = $(".bodyOverlay");
 
         if (switchOn) {
@@ -459,19 +457,14 @@
       }
 
       function showAndScrollTo(incomingSelector) {
-        setTimeout(() => {
-          loadingAnimation(false);
-          // setTimeout(() => {
-          $(".portfolioHolder").css({
-            height: "fit-content",
-          });
-          // $("incomingSelector").removeClass("o-0");
+        loadingAnimation(false);
+        $(".portfolioHolder").css({
+          height: "fit-content",
+        });
 
-          $("#portfolioSection").removeClass("o-0");
-          $("#portfolioSection")[0].scrollIntoView({ behavior: "smooth" });
-          $('[data-toggle="tooltip"]').tooltip();
-          // }, 250);
-        }, 0); //Pretending that loading takes a while.
+        $("#portfolioSection").removeClass("o-0");
+        $("#portfolioSection")[0].scrollIntoView({ behavior: "smooth" });
+        $('[data-toggle="tooltip"]').tooltip();
       }
 
       function fadeAndShow(
@@ -485,21 +478,10 @@
           incomingPath = "/content/projectTemplate.html";
         }
 
-        // console.log({
-        //   hash,
-        //   incomingSelector,
-        //   outgoingSelector,
-        //   incomingPath,
-        //   projectPath,
-        // });
-
         let imagePath = "/assets/images/screenshots/";
 
         loadingAnimation(true);
         $("#portfolioSection").addClass("o-0");
-
-        // $(outgoingSelector).addClass("o-0");
-        // $(".portfolioHeader").addClass("o-0");
 
         setTimeout(() => {
           $(".portfolioHolder").css({
@@ -509,7 +491,6 @@
           $("#portfolioSection").removeClass("flex-column-reverse");
           $(".portfolioHeader").removeClass("noHeight");
 
-          //pCardHolder , pGridHolder
           $(".portfolioHolder").load(incomingPath, function () {
             if (projectPath) {
               let card = portfolioCardData.filter(
@@ -522,10 +503,6 @@
 
               $(".projectTitle").find("h1").text(card.projectName);
 
-              // $(".portfolioVisitButton").attr(
-              //   "href",
-              //   card.sourceLinks.filter((linkSet) => linkSet.isMain)[0].link
-              // );
               $(".projectTitle").attr(
                 "href",
                 card.sourceLinks.filter((linkSet) => linkSet.isMain)[0].link
@@ -549,51 +526,39 @@
               );
 
               $(".projectSquareLeftText").load(projectPath, function () {
-                // $(".portfolioHeader").removeClass("visibility-h o-0");
                 $(".portfolioHeader").removeClass("visibility-h");
                 showAndScrollTo(incomingSelector);
               });
             } else {
               $("#portfolioSection").addClass("flex-column-reverse");
-              // $(".portfolioHeader").addClass("o-0");
               $(".portfolioHeader").addClass("visibility-h noHeight");
               showAndScrollTo(incomingSelector);
             }
           });
-        }, 250); //To wait for after opacity transition. No break, only aesthetic.
+        }, 250);
       }
 
       function fadeAndShowHome(hash) {
-        console.log("show home!");
-
         loadingAnimation(true);
 
         $(".portfolioPageHolder").remove();
         $(".portfolioHeader").addClass("visibility-h noHeight p-0");
         $("#portfolioSection").addClass("flex-column-reverse o-0");
-
-        setTimeout(() => {
-          $(".portfolioHolder").load(
-            "/content/portfolioCardHolder.html",
-            function () {
-              setTimeout(() => {
-                loadingAnimation(false);
-                $("#portfolioSection").removeClass("o-0");
-              }, 250); //To wait until images have loaded. No break, only aesthetic.
-            }
-          );
-        }, 0); //Pretending that it takes a long time to load.
+        $(".portfolioHolder").load(
+          "/content/portfolioCardHolder.html",
+          function () {
+            setTimeout(() => {
+              loadingAnimation(false);
+              $("#portfolioSection").removeClass("o-0");
+            }, 250);
+          }
+        );
       }
 
       $(function () {
         $("#portfolioSection").load("content/portfolioGrid.html");
         $("#aboutMeSection").load("content/aboutMe.html");
         $("#navbarSection").load("content/navbar.html");
-
-        setTimeout(() => {
-          console.log($("#aboutMeCarousel").css("height"));
-          console.log($(".carousel-inner").css("height"));
-        }, 1000);
       });
     </script>
     <title>C Matus Portfolio</title>

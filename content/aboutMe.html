@@ -14,30 +14,16 @@
         $("#aboutMeCarousel").carousel("pause")
       }
       function adjustCarouselHeight(highestCardDimensions, i){
-        console.log("}}}", i)
-
         let currentCardHeight = $("#aboutMeCard" + i).css("height")
-
-        console.log(i, {currentCardHeight})
-
         currentCardHeight = parseInt(currentCardHeight.slice(0, currentCardHeight.indexOf("p")))
-
-        console.log(i, {currentCardHeight})
-
         if (currentCardHeight > highestCardDimensions.height){
           highestCardDimensions.height = currentCardHeight; 
-          console.log(i, "New highestCardDimensions " + highestCardDimensions.height)
         }
 
         if (i === 3){
           highestCardDimensions.height += 52.5
-
           $("#aboutMeCarousel").find(".carousel-inner").css({"height": highestCardDimensions.height + "px"})
-          // $("#aboutMeCarousel").find(".carousel-inner").css({"border": "red dotted 3px"})
-
           let carouselInnerHeight = $("#aboutMeCarousel").find(".carousel-inner").css("height")
-
-          console.log(i, {carouselInnerHeight})
         }
       }
       function classAfterTimeout(selector, timeout, classToAdd, classToRemove) {
@@ -67,9 +53,6 @@
         
  let highestCardDimensions = {"height": 0};
         for (let i = 1; i <= 3; i++) {
-          // console.log("-->" + $("#aboutMeCard" + i).css("height"))
-
-            // setTimeout(() => {
             $("#carouselItem" + i).append(
               $("#aboutMeCard" + i).css({
                 opacity: "1",
@@ -78,12 +61,9 @@
                 marginTop: "10px",
               }).removeClass("appearAnimation visibility-h").addClass("verticallyCenter")
             );
-            // }, 150);
 
             let holderHeight = $("#aboutMeCarousel").find(".carousel-inner").css("height")
             holderHeight = parseInt(holderHeight.slice(0, holderHeight.indexOf("p")))
-
-            console.log({holderHeight})
 
             setTimeout(() => {
                adjustCarouselHeight(highestCardDimensions, i)
@@ -166,7 +146,7 @@
       }
 
       let previousVisibility = false;
-      let areCardsInCarousel = null; //important
+      let areCardsInCarousel = null;
 
       $(function () {
 
@@ -196,8 +176,6 @@
     id="aboutMeCardHolder"
       class="container-fluid p-0 justify-content-xl-around pt-0 d-none d-xl-flex"
     >
-      <!-- //// -->
-      <!-- //// -->
       <div class="card shadow z1 aboutMeCard" id="aboutMeCard1">
         <img src="../assets/images/csun-logo-2b.png" class="cardMinilogo" id="cardMinilogo1" />
         <div class="absoluteSpread bgCard"></div>
@@ -207,8 +185,6 @@
           <div class="card-text color-pd6"></div>
         </div>
       </div>
-      <!-- //// -->
-      <!-- //// -->
       <div class="card shadow z1 aboutMeCard" id="aboutMeCard2">
         <img src="../assets/images/csun-logo-2b.png" class="cardMinilogo" />
         <div class="absoluteSpread bgCard"></div>
@@ -218,8 +194,6 @@
           <div class="card-text color-pd6"></div>
         </div>
       </div>
-      <!-- //// -->
-      <!-- //// -->
       <div class="card shadow z1 aboutMeCard" id="aboutMeCard3">
         <img src="../assets/images/csun-logo-2b.png" class="cardMinilogo" />
         <div class="absoluteSpread bgCard"></div>
@@ -229,12 +203,7 @@
           <div class="card-text color-pd6"></div>
         </div>
       </div>
-      <!-- //// -->
-      <!-- //// -->
     </div>
-    <!-- / -->
-    <!-- / -->
-    <!-- / -->
     <div class="container-fluid p-0 d-block d-xl-none" id="aboutMeCarouselHolder">
       <div
         id="aboutMeCarousel"
@@ -244,13 +213,10 @@
 
         <div class="carousel-inner" >
           <div class="carousel-item active" id="carouselItem1">
-            <!-- <div class="carouseItemInner" id="carouselItemInner1"></div> -->
           </div>
           <div class="carousel-item" id="carouselItem2">
-            <!-- <div class="carouseItemInner" id="carouselItemInner2"></div> -->
           </div>
           <div class="carousel-item" id="carouselItem3">
-            <!-- <div class="carouseItemInner" id="carouselItemInner3"></div> -->
           </div>
         </div>
 
@@ -263,8 +229,5 @@
 
       </div>
     </div>
-    <!-- / -->
-    <!-- / -->
-    <!-- / -->
   </body>
 </html>
