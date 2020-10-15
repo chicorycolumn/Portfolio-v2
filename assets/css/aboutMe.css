@@ -47,6 +47,7 @@
   max-height: 40px;
   max-width: 40px;
   opacity: 0.1;
+  -webkit-filter: brightness(0.5);
   filter: brightness(0.5);
 }
 
