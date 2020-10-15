@@ -13,22 +13,38 @@
 
 .verticallyCenter {
   top: 25%;
+  -webkit-transform: translateY(-25%);
+  -ms-transform: translateY(-25%);
   transform: translateY(-25%);
   bottom: initial;
 }
 
 .bgCard {
   background-color: var(--yellow);
+
+  -webkit-transform: skewY(354deg);
+  -ms-transform: skewY(354deg);
   transform: skewY(354deg);
+
+  -webkit-transform-origin: top left;
+  -ms-transform-origin: top left;
   transform-origin: top left;
+
   height: 85px;
   opacity: 0.25;
 }
 
 .bgCard2 {
   background-color: var(--yellow);
+
+  -webkit-transform: skewY(-96deg);
+  -ms-transform: skewY(-96deg);
   transform: skewY(-96deg);
+
+  -webkit-transform-origin: bottom right;
+  -ms-transform-origin: bottom right;
   transform-origin: bottom right;
+
   height: 550px;
   left: 1px;
   opacity: 0.25;

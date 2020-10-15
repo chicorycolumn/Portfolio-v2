@@ -373,11 +373,13 @@ h5 {
 
 .flipHorizontal {
   -webkit-transform: scaleX(-1);
+  -ms-transform: scaleX(-1);
   transform: scaleX(-1);
 }
 
 .flipVertical {
   -webkit-transform: scaleY(-1);
+  -ms-transform: scaleY(-1);
   transform: scaleY(-1);
 }
 

@@ -3,9 +3,6 @@
   height: 100%;
 }
 
-#aboutMeCarouselHolder {
-}
-
 #aboutMeCarousel {
   background-color: none;
   height: fit-content;
@@ -15,9 +12,6 @@
 
 #aboutMeCarousel .carousel-item {
   height: 100%;
-}
-
-#aboutMeCarousel .carouseItemInner {
 }
 
 .carouselControl {

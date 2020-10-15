@@ -28,13 +28,25 @@ header {
 
 .bgHeader {
   background-image: linear-gradient(white, yellow);
+
+  -webkit-transform: skewY(-6deg);
+  -ms-transform: skewY(-6deg);
   transform: skewY(-6deg);
+
+  -webkit-transform-origin: top left;
+  -ms-transform-origin: top left;
   transform-origin: top left;
 }
 
 .bgFooter {
   background-image: linear-gradient(yellow, white);
+
+  -webkit-transform: skewY(-6deg);
+  -ms-transform: skewY(-6deg);
   transform: skewY(-6deg);
+
+  -webkit-transform-origin: bottom right;
+  -ms-transform-origin: bottom right;
   transform-origin: bottom right;
 }
 
