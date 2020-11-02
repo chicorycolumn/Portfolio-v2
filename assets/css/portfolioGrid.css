@@ -32,10 +32,7 @@
 
 .portfolioCardImage {
   width: 100%;
-
-  -moz-transition: width 0.5s ease-out;
   transition: width 0.5s ease-out;
-
   transition-delay: 0.05s;
 }
 
@@ -92,18 +89,16 @@
 .portfolioCardHeader {
   font-size: 22px;
   padding: 0px;
-  margin: 0px;
-  margin-bottom: 6px;
+  margin: 0px 0px 6px;
 }
 
 .portfolioCardDesc {
-  margin: 0px;
   font-size: 12px;
   height: 25%;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin-bottom: 6px;
+  margin: 0px 0px 6px;
 }
 
 .portfolioHeader {
@@ -224,14 +219,12 @@ ul {
 
   .portfolioCardDesc {
     font-size: 16px;
-    margin: 3px;
-    margin-bottom: 12px;
+    margin: 3px 3px 12px;
   }
 
   .techIcon {
-    margin: 4px;
+    margin: 4px 4px 0px;
     height: 50%;
-    margin-bottom: 0px;
   }
 
   .techIconHolder {
@@ -275,14 +268,12 @@ ul {
 
   .portfolioCardDesc {
     font-size: 16px;
-    margin: 6px;
-    margin-bottom: 24px;
+    margin: 6px 6px 24px;
   }
 
   .techIcon {
-    margin: 5px;
+    margin: 5px 5px 0px;
     height: 60%;
-    margin-bottom: 0px;
   }
 
   .techIconHolder {
