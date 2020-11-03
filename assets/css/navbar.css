@@ -55,19 +55,15 @@
   -webkit-animation-duration: 0.75s;
   -webkit-animation-iteration-count: 1;
   -webkit-animation-timing-function: ease-in-out;
-  -moz-animation-name: spin-once;
-  -moz-animation-duration: 0.75s;
-  -moz-animation-iteration-count: 1;
-  -moz-animation-timing-function: ease-in-out;
   -ms-animation-name: spin-once;
   -ms-animation-duration: 0.75s;
   -ms-animation-iteration-count: 1;
   -ms-animation-timing-function: ease-in-out;
+  -o-transition: rotate(3600deg);
   animation-name: spin-once;
   animation-duration: 0.75s;
   animation-iteration-count: 1;
   animation-timing-function: ease-in-out;
-  -o-transition: rotate(3600deg);
 }
 
 @media only screen and (min-width: 768px) {

@@ -1,8 +1,10 @@
 .appearAnimation {
   opacity: 1;
   -webkit-animation-duration: 1s;
+  -ms-animation-duration: 1s;
   animation-duration: 1s;
   -webkit-animation-fill-mode: forwards;
+  -ms-animation-fill-mode: forwards;
   animation-fill-mode: forwards;
   -webkit-animation-name: bounce;
   -ms-animation-name: bounce;
@@ -15,14 +17,10 @@
   -webkit-animation-duration: 3s;
   -webkit-animation-iteration-count: infinite;
   -webkit-animation-timing-function: linear;
-  -moz-animation-name: rotate-hues;
-  -moz-animation-duration: 3s;
-  -moz-animation-iteration-count: infinite;
-  -moz-animation-timing-function: linear;
-  -ms-animation-name: rotate-hues;
-  -ms-animation-duration: 3s;
-  -ms-animation-iteration-count: infinite;
-  -ms-animation-timing-function: linear;
+  animation-name: rotate-hues;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
 }
 
 @keyframes rotate-hues {
