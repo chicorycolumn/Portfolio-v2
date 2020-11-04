@@ -59,7 +59,6 @@
   -ms-animation-duration: 0.75s;
   -ms-animation-iteration-count: 1;
   -ms-animation-timing-function: ease-in-out;
-  -o-transition: rotate(3600deg);
   animation-name: spin-once;
   animation-duration: 0.75s;
   animation-iteration-count: 1;
