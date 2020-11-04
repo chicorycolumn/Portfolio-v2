@@ -51,7 +51,6 @@
   animation-duration: 1s;
   animation-iteration-count: 1;
   animation-timing-function: ease-in-out;
-  -o-transition: rotate(3600deg);
 }
 
 .spinInfinite {
@@ -67,7 +66,6 @@
   animation-duration: 1s;
   animation-iteration-count: infinite;
   animation-timing-function: ease-in-out;
-  -o-transition: rotate(3600deg);
 }
 
 .lightenInfinite {
