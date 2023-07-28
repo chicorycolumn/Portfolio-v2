@@ -11,6 +11,10 @@
 
     <script>
       $(function () {
+        portfolioCardData = portfolioCardData.filter(
+          (cardData) => !cardData.hidden
+        );
+
         portfolioCardData.forEach((data, index) => {
           let card =
             index === 0
