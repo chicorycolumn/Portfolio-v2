@@ -158,7 +158,6 @@ let portfolioCardData = [
     ],
   },
   {
-    hidden: true,
     projectName: "Crossword Crocodile",
     portfolioCardDesc:
       "A Python-based crossword creator with high customisability",
