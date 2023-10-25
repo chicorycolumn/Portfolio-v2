@@ -1,7 +1,6 @@
 let portfolioCardData = [
   {
-    hidden: true,
-    projectName: "NC News",
+    projectName: "Purple Prose",
     portfolioCardDesc: "A fullstack Reddit-style news aggregation board",
     tech: [
       "JavaScript",
@@ -15,13 +14,13 @@ let portfolioCardData = [
       "Mocha",
     ],
     bgColor: "yellow",
-    portfolioCardImage: "assets/images/screenshots/screen75-ncnews-1.jpg",
-    hash: "#nc_news",
+    portfolioCardImage: "assets/images/screenshots/screen75-purpleprose-1.jpg",
+    hash: "#purple_prose",
     images: [
-      "screen75-ncnews-1.jpg",
-      "screen75-ncnews-2.jpg",
-      "phone75-ncnews-1.jpg",
-      "phone75-ncnews-2.jpg",
+      "screen75-purpleprose-1.jpg",
+      "screen75-purpleprose-2.jpg",
+      "phone75-purpleprose-1.jpg",
+      "phone75-purpleprose-2.jpg",
     ],
     projectSquareTextProse_Language: "JavaScript",
     projectSquareTextProse_Backend: "MySQL, PSQL, Axios, Express, Knex",
@@ -31,17 +30,17 @@ let portfolioCardData = [
       {
         title: "Back end code",
         name: "Github",
-        link: "https://github.com/chicorycolumn/be-nc-news",
+        link: "https://github.com/chicorycolumn/Purple-Prose-BE",
       },
       {
         title: "Back end",
         name: "Heroku",
-        link: "https://nc-news-c-matus.herokuapp.com/api/",
+        link: "https://purple-prose-0fde376a3dc3.herokuapp.com/api/",
       },
       {
         title: "Front end code",
         name: "Github",
-        link: "https://github.com/chicorycolumn/fe-nc-news",
+        link: "https://github.com/chicorycolumn/Purple-Prose-FE",
       },
       {
         isMain: true,
