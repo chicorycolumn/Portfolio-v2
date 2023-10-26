@@ -239,7 +239,7 @@ let portfolioCardData = [
     ],
   },
   {
-    hidden: true,
+    hidden: false,
     projectName: "Fruit Makhzan",
     portfolioCardDesc:
       "A fruit-selling database game, built in PHP with graphical displays",
